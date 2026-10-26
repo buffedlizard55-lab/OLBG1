@@ -1,0 +1,543 @@
+{
+  "audit": "e25879f7",
+  "desk": "aa2881ac",
+  "audit_date": "2026-10-26",
+  "snapshot_read_window": "2026-10-26T04:45Z to 05:25Z",
+  "desk_generated_at": "2026-10-26T05:30Z",
+  "counts": {
+    "sports": 15,
+    "fixtures": 48,
+    "priced": 39,
+    "markets": 105,
+    "picks": 34,
+    "high": 11,
+    "medium": 8,
+    "low": 15,
+    "predictions": 20,
+    "discovery": 66,
+    "outrights": 6,
+    "sources": 39,
+    "flags": 26,
+    "audit": 16,
+    "sports_with_picks": 6
+  },
+  "sport_rows": [
+    {
+      "slug": "ice-hockey",
+      "sport": "Ice Hockey",
+      "official_fixture_rows": 14,
+      "picks": 10,
+      "high_picks": 4,
+      "written_predictions": 5,
+      "official_source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Ice_Hockey/13"
+    },
+    {
+      "slug": "tennis",
+      "sport": "Tennis",
+      "official_fixture_rows": 13,
+      "picks": 9,
+      "high_picks": 5,
+      "written_predictions": 5,
+      "official_source": "https://www.atptour.com/en/scores/current",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Tennis/3"
+    },
+    {
+      "slug": "handball",
+      "sport": "Handball",
+      "official_fixture_rows": 12,
+      "picks": 10,
+      "high_picks": 2,
+      "written_predictions": 5,
+      "official_source": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Handball/20"
+    },
+    {
+      "slug": "baseball",
+      "sport": "Baseball",
+      "official_fixture_rows": 2,
+      "picks": 1,
+      "high_picks": 0,
+      "written_predictions": 1,
+      "official_source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-20&endDate=2026-11-05&gameType=W&hydrate=probablePitcher,linescore",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Baseball/12"
+    },
+    {
+      "slug": "volleyball",
+      "sport": "Volleyball",
+      "official_fixture_rows": 2,
+      "picks": 2,
+      "high_picks": 0,
+      "written_predictions": 2,
+      "official_source": "https://www.legavolleyfemminile.it/classifica/",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Volleyball/21"
+    },
+    {
+      "slug": "motor-racing",
+      "sport": "Motor Racing",
+      "official_fixture_rows": 1,
+      "picks": 2,
+      "high_picks": 0,
+      "written_predictions": 2,
+      "official_source": "https://www.formula1.com/en/results/2026/races",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Motor_Racing/14"
+    },
+    {
+      "slug": "cricket",
+      "sport": "Cricket",
+      "official_fixture_rows": 4,
+      "picks": 0,
+      "high_picks": 0,
+      "written_predictions": 0,
+      "official_source": "https://www.icc-cricket.com/rankings/team-rankings/mens/t20i",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Cricket/7"
+    },
+    {
+      "slug": "gaelic",
+      "sport": "Gaelic Sports",
+      "official_fixture_rows": 0,
+      "picks": 0,
+      "high_picks": 0,
+      "written_predictions": 0,
+      "official_source": "https://www.gaa.ie/fixtures-results/",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Gaelic_Football/25"
+    },
+    {
+      "slug": "greyhounds",
+      "sport": "Greyhounds",
+      "official_fixture_rows": 0,
+      "picks": 0,
+      "high_picks": 0,
+      "written_predictions": 0,
+      "official_source": "https://www.gbgb.org.uk/",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Greyhounds/28"
+    },
+    {
+      "slug": "basketball",
+      "sport": "Basketball",
+      "official_fixture_rows": 0,
+      "picks": 0,
+      "high_picks": 0,
+      "written_predictions": 0,
+      "official_source": "https://www.nba.com/standings?GroupedBy=Conference",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Basketball/4"
+    },
+    {
+      "slug": "golf",
+      "sport": "Golf",
+      "official_fixture_rows": 0,
+      "picks": 0,
+      "high_picks": 0,
+      "written_predictions": 0,
+      "official_source": "https://www.pgatour.com/schedule",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Golf/5"
+    },
+    {
+      "slug": "snooker",
+      "sport": "Snooker",
+      "official_fixture_rows": 0,
+      "picks": 0,
+      "high_picks": 0,
+      "written_predictions": 0,
+      "official_source": "https://www.wst.tv/",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Snooker/8"
+    },
+    {
+      "slug": "darts",
+      "sport": "Darts",
+      "official_fixture_rows": 0,
+      "picks": 0,
+      "high_picks": 0,
+      "written_predictions": 0,
+      "official_source": "https://www.pdc.tv/",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Darts/15"
+    },
+    {
+      "slug": "rugby-union",
+      "sport": "Rugby Union",
+      "official_fixture_rows": 0,
+      "picks": 0,
+      "high_picks": 0,
+      "written_predictions": 0,
+      "official_source": "https://www.sixnationsrugby.com/",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Rugby_Union/9"
+    },
+    {
+      "slug": "rugby-league",
+      "sport": "Rugby League",
+      "official_fixture_rows": 0,
+      "picks": 0,
+      "high_picks": 0,
+      "written_predictions": 0,
+      "official_source": "https://www.nrl.com/",
+      "olbg_discovery": "https://www.olbg.com/betting-tips/Rugby_League/10"
+    }
+  ],
+  "high_picks": [
+    {
+      "id": "nhl-2026020185-ml",
+      "sport": "ice-hockey",
+      "event": "Los Angeles Kings @ New York Rangers",
+      "selection": "New York Rangers win",
+      "market": "Money Line (incl. OT/SO)",
+      "fair_price": "-229",
+      "probability": 0.6962,
+      "prediction_words": 65,
+      "prediction_url": "../aa2881ac/predictions.html#nhl-2026020185-ml",
+      "official_source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+      "has_prediction": true
+    },
+    {
+      "id": "nhl-2026020197-ml",
+      "sport": "ice-hockey",
+      "event": "Vancouver Canucks @ Anaheim Ducks",
+      "selection": "Anaheim Ducks win",
+      "market": "Money Line (incl. OT/SO)",
+      "fair_price": "-222",
+      "probability": 0.6895,
+      "prediction_words": 56,
+      "prediction_url": "../aa2881ac/predictions.html#nhl-2026020197-ml",
+      "official_source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+      "has_prediction": true
+    },
+    {
+      "id": "nhl-2026020187-ml",
+      "sport": "ice-hockey",
+      "event": "Detroit Red Wings @ Edmonton Oilers",
+      "selection": "Edmonton Oilers win",
+      "market": "Money Line (incl. OT/SO)",
+      "fair_price": "-220",
+      "probability": 0.6876,
+      "prediction_words": 56,
+      "prediction_url": "../aa2881ac/predictions.html#nhl-2026020187-ml",
+      "official_source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+      "has_prediction": true
+    },
+    {
+      "id": "nhl-2026020193-ml",
+      "sport": "ice-hockey",
+      "event": "New Jersey Devils @ Dallas Stars",
+      "selection": "Dallas Stars win",
+      "market": "Money Line (incl. OT/SO)",
+      "fair_price": "-165",
+      "probability": 0.6231,
+      "prediction_words": 57,
+      "prediction_url": "../aa2881ac/predictions.html#nhl-2026020193-ml",
+      "official_source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+      "has_prediction": true
+    },
+    {
+      "id": "bas-djo-hum-ml",
+      "sport": "tennis",
+      "event": "Novak Djokovic v Ugo Humbert",
+      "selection": "Novak Djokovic win",
+      "market": "Match Winner",
+      "fair_price": "-243",
+      "probability": 0.7087,
+      "prediction_words": 64,
+      "prediction_url": "../aa2881ac/predictions.html#bas-djo-hum-ml",
+      "official_source": "https://www.atptour.com/en/scores/current/basel/328/draws",
+      "has_prediction": true
+    },
+    {
+      "id": "vie-van-tie-ml",
+      "sport": "tennis",
+      "event": "Luca Van Assche v Learner Tien",
+      "selection": "Learner Tien win",
+      "market": "Match Winner",
+      "fair_price": "-212",
+      "probability": 0.6797,
+      "prediction_words": 56,
+      "prediction_url": "../aa2881ac/predictions.html#vie-van-tie-ml",
+      "official_source": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+      "has_prediction": true
+    },
+    {
+      "id": "bas-tab-jod-ml",
+      "sport": "tennis",
+      "event": "Alejandro Tabilo v Rafael Jodar",
+      "selection": "Rafael Jodar win",
+      "market": "Match Winner",
+      "fair_price": "-207",
+      "probability": 0.6739,
+      "prediction_words": 49,
+      "prediction_url": "../aa2881ac/predictions.html#bas-tab-jod-ml",
+      "official_source": "https://www.atptour.com/en/scores/current/basel/328/draws",
+      "has_prediction": true
+    },
+    {
+      "id": "vie-fer-fea-ml",
+      "sport": "tennis",
+      "event": "Arthur Fery v Jacob Fearnley",
+      "selection": "Arthur Fery win",
+      "market": "Match Winner",
+      "fair_price": "-205",
+      "probability": 0.6721,
+      "prediction_words": 52,
+      "prediction_url": "../aa2881ac/predictions.html#vie-fer-fea-ml",
+      "official_source": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+      "has_prediction": true
+    },
+    {
+      "id": "vie-dar-arn-ml",
+      "sport": "tennis",
+      "event": "Luciano Darderi v Matteo Arnaldi",
+      "selection": "Luciano Darderi win",
+      "market": "Match Winner",
+      "fair_price": "-165",
+      "probability": 0.6223,
+      "prediction_words": 57,
+      "prediction_url": "../aa2881ac/predictions.html#vie-dar-arn-ml",
+      "official_source": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+      "has_prediction": true
+    },
+    {
+      "id": "ehf-202711020101046-1x2",
+      "sport": "handball",
+      "event": "IFK Kristianstad v OTP Bank-PICK Szeged",
+      "selection": "OTP Bank-PICK Szeged win",
+      "market": "Match Result (1X2)",
+      "fair_price": "-238",
+      "probability": 0.7044,
+      "prediction_words": 56,
+      "prediction_url": "../aa2881ac/predictions.html#ehf-202711020101046-1x2",
+      "official_source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101046/IFKKristianstad-OTPBankPICKSzeged/",
+      "has_prediction": true
+    },
+    {
+      "id": "ehf-202711020101016-1x2",
+      "sport": "handball",
+      "event": "Orlen Wisla Plock v HBC Nantes",
+      "selection": "Orlen Wisla Plock win",
+      "market": "Match Result (1X2)",
+      "fair_price": "-164",
+      "probability": 0.6211,
+      "prediction_words": 60,
+      "prediction_url": "../aa2881ac/predictions.html#ehf-202711020101016-1x2",
+      "official_source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101016/OrlenWislaPlock-HBCNantes/",
+      "has_prediction": true
+    }
+  ],
+  "prediction_word_min": 49,
+  "prediction_word_max": 75,
+  "prediction_vocab_hits": [],
+  "sources_by_role": {
+    "discovery": 15,
+    "official": 18,
+    "official_attempt": 6
+  },
+  "flags": [
+    {
+      "id": "F01",
+      "sport": "basketball",
+      "kind": "source",
+      "text": "No official NBA game list for 26 October could be read: the cdn.nba.com scoreboard and schedule JSON returned HTTP 500, stats.nba.com did not answer, and nba.com/games is rendered in the browser. OLBG listed no basketball market either. No basketball fixture or pick is published.",
+      "url": "https://www.nba.com/games?date=2026-10-26"
+    },
+    {
+      "id": "F02",
+      "sport": "golf",
+      "kind": "coverage",
+      "text": "OLBG returned \"No tips found.\" on the golf hub. The PGA TOUR schedule page was read but no field or player figure was captured, so nothing is priced.",
+      "url": "https://www.pgatour.com/schedule"
+    },
+    {
+      "id": "F03",
+      "sport": "snooker",
+      "kind": "coverage",
+      "text": "OLBG returned \"No tips found.\" on the snooker hub and no WST draw was read.",
+      "url": "https://www.olbg.com/betting-tips/Snooker/8"
+    },
+    {
+      "id": "F04",
+      "sport": "darts",
+      "kind": "coverage",
+      "text": "OLBG listed only the 2027 PDC World Championship outright (Luke Littler most tipped). Earlier desks recorded a cookie wall on pdc.tv; no darts match is priced.",
+      "url": "https://www.olbg.com/betting-tips/Darts/15"
+    },
+    {
+      "id": "F05",
+      "sport": "rugby-union",
+      "kind": "coverage",
+      "text": "OLBG listed only the Six Nations 2027 outright. No rugby union match market existed to price.",
+      "url": "https://www.olbg.com/betting-tips/Rugby_Union/9"
+    },
+    {
+      "id": "F06",
+      "sport": "rugby-league",
+      "kind": "coverage",
+      "text": "OLBG listed three 2027 outrights (State of Origin, Super League, NRL) and no match market.",
+      "url": "https://www.olbg.com/betting-tips/Rugby_League/10"
+    },
+    {
+      "id": "F07",
+      "sport": "gaelic",
+      "kind": "source",
+      "text": "OLBG lists two club football handicaps for 1 November (Cork and Limerick club competitions). No county board fixture page was read, so the rows are discovery only and unpriced.",
+      "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25"
+    },
+    {
+      "id": "F08",
+      "sport": "greyhounds",
+      "kind": "source",
+      "text": "OLBG listed one Monmore race (3:19) with one tip on Tullymurry Skies. No GBGB racecard was read, so trap, form and price are blank.",
+      "url": "https://www.olbg.com/betting-tips/Greyhounds/28"
+    },
+    {
+      "id": "F09",
+      "sport": "cricket",
+      "kind": "source",
+      "text": "Four OLBG cricket fixtures were matched to ICC match pages, but the ICC team-rankings table rendered empty, so there is no official rating to price from. The WBBL rows were not matched to any official page.",
+      "url": "https://www.icc-cricket.com/rankings/team-rankings/mens/t20i"
+    },
+    {
+      "id": "F10",
+      "sport": "tennis",
+      "kind": "capture",
+      "text": "Holger Rune, Lukas Neumayer, Stan Wawrinka, Dominic Stricker and Mika Brunold are outside the top 150 on the ATP list that was read (rank 150 holds 378 points). Their exact points are not on that list, so their matches are not priced. Wawrinka v Lehecka sits in the half of the Basel draw that was not captured, so it is listed by OLBG only.",
+      "url": "https://www.atptour.com/en/rankings/singles"
+    },
+    {
+      "id": "F11",
+      "sport": "tennis",
+      "kind": "time",
+      "text": "The Basel order of play for Djokovic v Humbert and Tabilo v Jodar was not yet published at read time. Both matches are confirmed in the official draw; the date column is blank.",
+      "url": "https://www.atptour.com/en/scores/current/basel/328/draws"
+    },
+    {
+      "id": "F12",
+      "sport": "tennis",
+      "kind": "coverage",
+      "text": "Every WTA, ITF and Challenger row on OLBG is listed unpriced: no official draw or ranking list for those events was read this session.",
+      "url": "https://www.olbg.com/betting-tips/Tennis/3"
+    },
+    {
+      "id": "F13",
+      "sport": "volleyball",
+      "kind": "time",
+      "text": "Omag Consolini v Bergamo (27 Oct on OLBG) and Conegliano v Vallefoglia (28 Oct on OLBG) involve clubs with one game fewer than the rest, which fits rescheduled fixtures, but no official LVF page read this session gave their dates. Both are priced from the official table and their grade is capped at Low.",
+      "url": "https://www.legavolleyfemminile.it/classifica/"
+    },
+    {
+      "id": "F14",
+      "sport": "volleyball",
+      "kind": "naming",
+      "text": "OLBG names the LVF club \"Marignano\"; the official table calls it \"Omag Consolini Volley 1907\". The match is treated as the same fixture on that basis.",
+      "url": "https://www.legavolleyfemminile.it/classifica/"
+    },
+    {
+      "id": "F15",
+      "sport": "volleyball",
+      "kind": "source",
+      "text": "tauronliga.pl/table.html, the women's TAURON Liga address, returned tiles naming men's PlusLiga clubs (for example Slepsk Suwalki). No women's table was extracted, so the three Polish women's rows on OLBG are unpriced.",
+      "url": "https://www.tauronliga.pl/table.html"
+    },
+    {
+      "id": "F16",
+      "sport": "volleyball",
+      "kind": "coverage",
+      "text": "Brazilian Superliga and Austrian AVL rows on OLBG are unpriced: no official league table was read for them.",
+      "url": "https://www.olbg.com/betting-tips/Volleyball/21"
+    },
+    {
+      "id": "F17",
+      "sport": "ice-hockey",
+      "kind": "capture",
+      "text": "The PENNY DEL table that was read stops at 13 clubs; the Iserlohn Roosters row was cut off. The league scoring average used for the DEL price is therefore built from 13 clubs.",
+      "url": "https://www.penny-del.org/tabelle"
+    },
+    {
+      "id": "F18",
+      "sport": "ice-hockey",
+      "kind": "source",
+      "text": "Danish Metal Ligaen, Swedish SHL and Finnish Liiga rows on OLBG are unpriced: shl.se returned no table and liiga.fi returned 404.",
+      "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13"
+    },
+    {
+      "id": "F19",
+      "sport": "baseball",
+      "kind": "method",
+      "text": "The league runs-per-game baseline (4.64) comes from the 11 clubs on the first page of the MLB team-stats read, not all 30.",
+      "url": "https://statsapi.mlb.com/api/v1/teams/stats?season=2026&group=hitting,pitching&stats=season&sportIds=1&gameType=R"
+    },
+    {
+      "id": "F20",
+      "sport": "baseball",
+      "kind": "irregularity",
+      "text": "Freddy Peralta's 2026 line is split: 22 starts for the Mets (4.99 ERA) and 10 for the Rays (3.25 ERA). The Game 3 price uses his full-season figure.",
+      "url": "https://statsapi.mlb.com/api/v1/people/642547/stats?stats=season&group=pitching&season=2026&gameType=R"
+    },
+    {
+      "id": "F21",
+      "sport": "baseball",
+      "kind": "coverage",
+      "text": "The OLBG baseball hub page read here showed no tips, so the MLB rows carry no OLBG comparison. The peer desk 103ea76b reports the World Series game on an OLBG MLB sub-hub that this desk did not read.",
+      "url": "https://www.olbg.com/betting-tips/Baseball/12"
+    },
+    {
+      "id": "F22",
+      "sport": "handball",
+      "kind": "discovery",
+      "text": "Ten of the twelve EHF Champions League rows on OLBG show \"Tie\" as the most-tipped money-line outcome. That is reproduced as published and not used as a signal.",
+      "url": "https://www.olbg.com/betting-tips/Handball/20"
+    },
+    {
+      "id": "F23",
+      "sport": "handball",
+      "kind": "naming",
+      "text": "OLBG lists \"Skanderborg v Barcelona\"; the official EHF fixture is SAH-Aarhus v Barca (match 202711020101054).",
+      "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+    },
+    {
+      "id": "F24",
+      "sport": "motor-racing",
+      "kind": "source",
+      "text": "The formula1.com drivers page returned names without a points column, and no Mexico City grid existed at read time. The race-winner price uses 2026 race wins only. The race date and time are OLBG's label.",
+      "url": "https://www.formula1.com/en/results/2026/drivers"
+    },
+    {
+      "id": "F25",
+      "sport": "all",
+      "kind": "capture",
+      "text": "No injury report, lineup or team sheet was read for any fixture, so no written prediction names an injured or returning player.",
+      "url": "https://api-web.nhle.com/v1/standings/2026-10-25"
+    },
+    {
+      "id": "F26",
+      "sport": "all",
+      "kind": "time",
+      "text": "OLBG prints relative labels such as \"Today 19:07\" in US Eastern time; the NHL feed gives 23:00Z (19:00 ET) for the same Rangers game, so OLBG times are never used as start times.",
+      "url": "https://api-web.nhle.com/v1/schedule/2026-10-26"
+    }
+  ],
+  "findings": [
+    {
+      "id": "A01",
+      "severity": "Review",
+      "title": "The root landing page mixes a 26 October archive link with a 24 October live snapshot.",
+      "detail": "index.html begins with a banner to the 26 October aa2881ac desk, but the page snapshot marker, KPI strip, high-confidence picks table and footer are generated from the canonical 24 October snapshot. Readers can mistake those older rows for the current 26 October picks.",
+      "review_link": "https://github.com/buffedlizard55-lab/OLBG1/blob/86dcc9fd6b30ad6232f5bfa29e339b989640fd41/index.html"
+    },
+    {
+      "id": "A02",
+      "severity": "Coverage limit",
+      "title": "The five-picks-per-sport target is not met by the retained evidence.",
+      "detail": "The 26 October desk has 48 official fixture rows across seven sports, 34 graded selections across six sports, 11 High selections and 20 written predictions. Nine requested sports have no graded pick in this snapshot. This audit does not create filler selections; the desk's own Flagged page records the reasons and missing source reads.",
+      "review_link": "../aa2881ac/flagged.html"
+    },
+    {
+      "id": "A03",
+      "severity": "Coverage limit",
+      "title": "No injury, lineup or team-sheet source was read for any fixture.",
+      "detail": "Flag F25 explicitly records the missing availability evidence. The published prediction prose therefore contains no injury or player-availability assertions.",
+      "review_link": "https://api-web.nhle.com/v1/standings/2026-10-25"
+    },
+    {
+      "id": "A04",
+      "severity": "Freshness limit",
+      "title": "This is a captured snapshot, not a live odds or fixture feed.",
+      "detail": "The desk records OLBG discovery and official reads between 04:45Z and 05:25Z on 26 October 2026. Prices are project-originated estimates; the page does not claim to represent a sportsbook quote or subsequent event change.",
+      "review_link": "../aa2881ac/sources.html"
+    }
+  ]
+}
