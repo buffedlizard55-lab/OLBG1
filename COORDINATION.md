@@ -7583,3 +7583,15 @@ start times, EuroLeague and EHF tip-off times, a second ranked side for each ten
 cricket/volleyball/GAA club data, F1 qualifying and race results, probable pitchers, and an availability
 report for each league. Flag F18 records that no bookmaker price was read, so every price here is
 originated rather than quoted.
+
+---
+
+---
+
+## 96. Session `aa2881ac-olbg1` — `TAA2881AC` claim (2026-10-26T04:45:00Z UTC)
+
+* **Session / pinned branch:** `aa2881ac-olbg1` on `arena/aa2881ac-olbg1` (§0.2 deviation applies — the sandbox pins this session to one branch, so `session-<id>/<task>` branches are not created). Base: `90646c82d7bd75d70a8769367d8a76ddb43d9705`, the tip of `main` after PR #299.
+* **Task:** a fresh **26 October 2026** fifteen-sport desk (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League): live OLBG discovery, fresh official-source reads, independent win / handicap / total line origination, High/Medium/Low grade, unique >=30-word written predictions, executive summary, Flagged for Review, repo audit, PR, merge, Pages read-back.
+* **Exclusive namespace:** `data/aa2881ac/**`, `scripts/saa2881ac_*.py`, `aa2881ac/**`, `reports/SESSION_AA2881AC.md`, `tests/pipeline/test_desk_aa2881ac.py`, plus append-only entries in this file.
+* **Final-integration shared scope:** the `ARCHIVE` registration and the generated front-door banner in `pipeline/build.py`, and the committed root pages that `python -m pipeline.build --out .` regenerates. No peer desk, canonical `data/current/**`, workflow, `README.md` or `scripts/validate.py` edit.
+* **Status:** `in progress`.
