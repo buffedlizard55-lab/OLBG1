@@ -7604,3 +7604,10 @@ originated rather than quoted.
 * **Conflict log:** rebase onto `c5f67c9` conflicted with §98 (103ea76b) in this file; both sections kept verbatim. 103ea76b's front-door panel kept unchanged; ours inserted above it.
 * **Gates (local):** desk validator `errors: 0`; `tests/pipeline` OK; `tests` 38 OK; `pipeline.validate --site .` and `_site` 0 errors; `scripts/validate.py` passed; `browser.cjs` passed.
 * **Status:** awaiting PR / merge (receipt §96.2 follows).
+
+### 96.2 `TAA2881AC` publication receipt (2026-10-26, session `aa2881ac-olbg1`)
+
+* **PR:** #302 `arena/aa2881ac-olbg1` → `main`, required check "Evidence, model, site and browser gates" passed (run 40272343342), merged with a merge commit `e9a1b187d5b4c7b3cdbeac83b81d457c8a0a0be6` at 2026-10-26T05:06:41Z.
+* **Pages:** push run 40272498734 on `e9a1b18` — gates `success`, "Publish canonical GitHub Pages" `success`. Read-back: https://buffedlizard55-lab.github.io/OLBG1/aa2881ac/index.html serves the desk (11 High, 8 Medium, 15 Low); the front door (cache-busted `index.html?v=e9a1b18`) shows the aa2881ac panel above the unchanged 103ea76b panel.
+* **Open for a later session (not fixed here, scope):** literal banner/summary prose in `pipeline/build.py` (R01–R05), canonical validator not walking desk folders (R08–R09), missing LVF/DEL hosts in `PUBLISHERS` (R11); peer-desk items R13–R16.
+* **Final claim status:** `done`.
