@@ -14,6 +14,7 @@ GRADE_RANK = {'High': 3, 'Medium': 2, 'Low': 1, 'none': 0}
 MAX_PICKS_PER_SPORT = 10
 PREDICTIONS_PER_SPORT = 5
 REPO = 'https://github.com/buffedlizard55-lab/OLBG1/blob/90646c82d7bd75d70a8769367d8a76ddb43d9705'
+PEER = 'https://github.com/buffedlizard55-lab/OLBG1/blob/4e4603ebf09953f9248dfa77c9e9d4a48548ef36'
 AVAILABILITY = ('No official injury report, lineup or team sheet was read for this fixture, '
                 'so no player availability is claimed.')
 
@@ -334,8 +335,9 @@ def flags():
          'page of the MLB team-stats read, not all 30.', S['mlb-team-hitting']['url']),
         ('baseball', 'irregularity', 'Freddy Peralta\'s 2026 line is split: 22 starts for the Mets (4.99 ERA) and '
          '10 for the Rays (3.25 ERA). The Game 3 price uses his full-season figure.', S['mlb-peralta']['url']),
-        ('baseball', 'coverage', 'OLBG\'s baseball hub listed no World Series market at read time, so the two MLB '
-         'rows have no OLBG comparison.', S['olbg-baseball']['url']),
+        ('baseball', 'coverage', 'The OLBG baseball hub page read here showed no tips, so the MLB rows carry no OLBG '
+         'comparison. The peer desk 103ea76b reports the World Series game on an OLBG MLB sub-hub that this desk '
+         'did not read.', S['olbg-baseball']['url']),
         ('handball', 'discovery', 'Ten of the twelve EHF Champions League rows on OLBG show "Tie" as the most-tipped '
          'money-line outcome. That is reproduced as published and not used as a signal.', S['olbg-handball']['url']),
         ('handball', 'naming', 'OLBG lists "Skanderborg v Barcelona"; the official EHF fixture is SAH-Aarhus v '
@@ -401,9 +403,31 @@ def audit():
          'The other 59 (for example 0c9bc692/, 1707d752/, 2360a617/) are committed but are neither copied into '
          'the Pages artifact nor linked from the front door.'),
     ]
+    peer = [
+        ('medium', 'data/103ea76b/desk.json', 'L1035-L1050',
+         'The peer 26 October desk (103ea76b, merged as PR #300 while this desk was being built) prices World '
+         'Series Game 5 and grades Tampa Bay +1.5 High at -167. The official MLB schedule marks Game 5 "if '
+         'necessary"; Milwaukee lead 2-0, so the game only happens if Tampa Bay win at least once first. The '
+         'conditional status is not shown next to the pick.'),
+        ('medium', 'data/103ea76b/desk.json', 'L902',
+         'Games 3, 4 and 5 on that desk carry the identical probability (0.625908) and price, so the published '
+         'Game 3 probable starters (Gasser and Peralta, both on the official feed) do not enter its price.'),
+        ('medium', 'data/103ea76b/desk.json', 'L1663',
+         'NBA picks there are graded High (for example Oklahoma City -177) on fixtures whose start time is blank '
+         'because no official schedule was readable; fixture existence rests on the OLBG listing plus the NBA '
+         'standings. This desk read the same gap and issued no basketball pick.'),
+        ('low', '103ea76b/sports/baseball.html', 'L15',
+         'The baseball page says "No price today" directly above a picks table that lists a priced World Series '
+         'pick.'),
+    ]
     out = []
     for i, (sev, path, lines, text) in enumerate(a, 1):
-        url = f'{REPO}/{path}' + (f'#{lines}' if lines else '') if path != 'repository root' else \
-            'https://github.com/buffedlizard55-lab/OLBG1/tree/90646c82d7bd75d70a8769367d8a76ddb43d9705'
+        if path == 'repository root':
+            url = 'https://github.com/buffedlizard55-lab/OLBG1/tree/90646c82d7bd75d70a8769367d8a76ddb43d9705'
+        else:
+            url = f'{REPO}/{path}' + (f'#{lines}' if lines else '')
         out.append(dict(id=f'R{i:02d}', severity=sev, path=path, lines=lines, text=text, url=url))
+    for i, (sev, path, lines, text) in enumerate(peer, len(a) + 1):
+        out.append(dict(id=f'R{i:02d}', severity=sev, path=path, lines=lines, text=text,
+                        url=f'{PEER}/{path}#{lines}'))
     return out

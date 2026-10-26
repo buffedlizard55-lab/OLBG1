@@ -213,14 +213,14 @@ def build():
         ('flagged.html', 'Flagged for review', 'Gaps, conflicts and unverifiable values with links'),
         ('audit.html', 'Repo review', 'Line-linked findings from the repository')])
     def names(slugs):
-        names_ = [SPORT_NAME[x] for x in D.SPORT_INDEX if x in slugs]
+        names_ = [SPORT_NAME[x].lower() for x in D.SPORT_INDEX if x in slugs]
         return ', '.join(names_[:-1]) + ' and ' + names_[-1] if len(names_) > 1 else ''.join(names_)
     high_sports = {p['sport'] for p in picks if p['grade'] == 'High'}
     other_sports = {p['sport'] for p in picks} - high_sports
     lead_pick = (today_high or later_high)[0]
     hero = f"""<div class="note"><p><strong>Highest-confidence call today: {e(lead_pick['selection'])}
 ({e(lead_pick['event'])}) at {e(lead_pick['price_text'])}.</strong> {c['high']} High picks are live across
-{e(names(high_sports).lower())}, all priced between -250 and +10000. {e(names(other_sports))} carry Medium or Low
+{e(names(high_sports))}, all priced between -250 and +10000. {e(names(other_sports).capitalize())} carry Medium or Low
 picks only. {len(nopick)} sports have no pick because no official fixture or no official figure was readable:
 {e(', '.join(nopick))}.</p></div>"""
     body = (hero + f'<section class="cards">{cards}</section>'
@@ -309,11 +309,12 @@ picks only. {len(nopick)} sports have no pick because no official fixture or no 
     rows = [[e(r['id']), f'<span class="pill sev-{r["severity"]}">{e(r["severity"])}</span>',
              f'<code>{e(r["path"])}</code>' + (f' {e(r["lines"])}' if r['lines'] else ''), e(r['text']),
              a(r['url'], 'view on GitHub')] for r in desk['audit']]
-    body = ('<p>Reviewed at commit <code>90646c8</code> (main after PR #299). Each finding links to the exact '
-            'lines. Items marked fixed in this change are noted in the session report.</p>'
+    body = ('<p>R01 to R12 were read at commit <code>90646c8</code> (main after PR #299). R13 to R16 cover the peer '
+            '26 October desk 103ea76b, read at commit <code>4e4603e</code> after it merged as PR #300. Each finding '
+            'links to the exact lines. What this change fixes is listed in the session report.</p>'
             + table(['#', 'Severity', 'File', 'Finding', 'Lines'], rows, tight=True))
     write('audit.html', page('Repo review', body, f'{c["audit"]} findings from a line-by-line read of the build, '
-                             'validator, workflow and the previous desk.', 'audit.html'))
+                             'validator, workflow and the two previous desks.', 'audit.html'))
 
     # ---- methodology ---------------------------------------------------
     k = desk['constants']
