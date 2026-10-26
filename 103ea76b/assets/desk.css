@@ -1,0 +1,62 @@
+
+:root{--ink:#16202b;--mut:#5b6b7c;--line:#dfe6ee;--bg:#f6f8fb;--card:#fff;--hi:#0b7a3b;--md:#9a6400;--lo:#5b6b7c;--acc:#1a4fa0}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+header.top .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:10px}
+.brand a{font-weight:800;color:var(--ink);text-decoration:none;font-size:18px}
+.brand .date{margin-left:10px;color:var(--mut);font-size:13px}
+nav a{margin-right:14px;color:var(--acc);text-decoration:none;font-size:14px;font-weight:600}
+nav a:hover{text-decoration:underline}
+.strip{display:flex;gap:18px;flex-wrap:wrap;margin:18px 0 4px;color:var(--mut);font-size:14px}
+.strip b{color:var(--ink)}
+h1{font-size:34px;line-height:1.15;margin:10px 0 16px}
+h2{font-size:21px;margin:34px 0 10px}
+h3{font-size:17px;margin:22px 0 8px}
+p{margin:10px 0}
+.big{font-size:17px}
+.warn{background:#fff8e6;border-left:4px solid #d69e00;padding:12px 14px;border-radius:6px}
+.note{color:var(--mut);font-size:14px}
+.lede{color:var(--mut)}
+.scroll{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:10px}
+table.t{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+table.t th{text-align:left;background:#eef3f9;color:var(--ink);font-size:12px;text-transform:uppercase;letter-spacing:.04em;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+table.t td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+table.t tr:last-child td{border-bottom:none}
+table.t a{color:var(--acc);text-decoration:none}
+table.t a:hover{text-decoration:underline}
+.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.sub{color:var(--mut);font-size:12px}
+.muted{color:var(--mut)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--mut)}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:700;color:#fff}
+.badge.hi{background:var(--hi)}.badge.md{background:var(--md)}.badge.lo{background:var(--lo)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin:14px 0}
+.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;text-decoration:none;color:var(--ink)}
+.card:hover{border-color:var(--acc)}
+.card .k{font-weight:700;font-size:14px}
+.card .v{font-size:24px;font-weight:800;margin:4px 0}
+.card .s{color:var(--mut);font-size:12px}
+.exec{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 20px 16px}
+.pred{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 20px 16px;margin:18px 0}
+.predhead{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.predhead h2{margin:14px 0 2px;font-size:19px}
+.meta{color:var(--mut);font-size:13px;margin:2px 0 10px}
+.bet{background:#eef6ff;border-left:4px solid var(--acc);padding:10px 12px;border-radius:6px}
+.prose{font-size:16px}
+.facts,.gaps{font-size:14px}
+.gaps{color:var(--mut)}
+.srcsline{font-size:13px}
+.srcs a.src{margin-right:2px}
+.flag{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px 20px 14px;margin:14px 0}
+.flag h2{font-size:18px}
+.kvbox{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 18px}
+.kv{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding:8px 0;font-size:14px}
+.kv:last-child{border-bottom:none}
+.kv dt{color:var(--mut);text-transform:capitalize}
+.kv dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums}
+.rule{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:2px 18px 8px;margin:12px 0}
+.rule h3{font-size:15px}
+.rule p{font-size:14px;color:var(--mut)}
+footer{border-top:1px solid var(--line);margin-top:50px;padding:18px 20px 40px;color:var(--mut);font-size:13px}
