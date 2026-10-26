@@ -7583,3 +7583,24 @@ start times, EuroLeague and EHF tip-off times, a second ranked side for each ten
 cricket/volleyball/GAA club data, F1 qualifying and race results, probable pitchers, and an availability
 report for each league. Flag F18 records that no bookmaker price was read, so every price here is
 originated rather than quoted.
+
+---
+
+---
+
+## 96. Session `aa2881ac-olbg1` — `TAA2881AC` claim (2026-10-26T04:45:00Z UTC)
+
+* **Session / pinned branch:** `aa2881ac-olbg1` on `arena/aa2881ac-olbg1` (§0.2 deviation applies — the sandbox pins this session to one branch, so `session-<id>/<task>` branches are not created). Base: `90646c82d7bd75d70a8769367d8a76ddb43d9705`, the tip of `main` after PR #299.
+* **Task:** a fresh **26 October 2026** fifteen-sport desk (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League): live OLBG discovery, fresh official-source reads, independent win / handicap / total line origination, High/Medium/Low grade, unique >=30-word written predictions, executive summary, Flagged for Review, repo audit, PR, merge, Pages read-back.
+* **Exclusive namespace:** `data/aa2881ac/**`, `scripts/saa2881ac_*.py`, `aa2881ac/**`, `reports/SESSION_AA2881AC.md`, `tests/pipeline/test_desk_aa2881ac.py`, plus append-only entries in this file.
+* **Final-integration shared scope:** the `ARCHIVE` registration and the generated front-door banner in `pipeline/build.py`, and the committed root pages that `python -m pipeline.build --out .` regenerates. No peer desk, canonical `data/current/**`, workflow, `README.md` or `scripts/validate.py` edit.
+* **Status:** `in progress`.
+
+### 96.1 `TAA2881AC` receipts (2026-10-26, session `aa2881ac-olbg1`)
+
+* **Delivered:** `aa2881ac/` (25 pages), `data/aa2881ac/` (desk.json + raw captures), `scripts/saa2881ac_*.py`, `tests/pipeline/test_desk_aa2881ac.py`, `reports/SESSION_AA2881AC.md`; integration: one `ARCHIVE` row + data-driven `desk_panel_aa2881ac` in `pipeline/build.py`, root `index.html` mirror regenerated (other root pages reverted to avoid revision-only churn, as 103ea76b did).
+* **Counts:** 48 official fixtures, 39 priced across 105 markets, 34 picks (11 High / 8 Medium / 15 Low), 20 written predictions, 39 sources, 26 flags, 16 repo findings.
+* **Sources:** NHL api-web schedule/standings, PENNY DEL table, MLB statsapi (schedule, team stats, starters), ATP rankings JSON + Vienna/Basel order of play and Basel draw, EHF CL standings/fixtures, LVF Serie A1 classifica, formula1.com 2026 results; OLBG 15 hubs for discovery only.
+* **Conflict log:** rebase onto `c5f67c9` conflicted with §98 (103ea76b) in this file; both sections kept verbatim. 103ea76b's front-door panel kept unchanged; ours inserted above it.
+* **Gates (local):** desk validator `errors: 0`; `tests/pipeline` OK; `tests` 38 OK; `pipeline.validate --site .` and `_site` 0 errors; `scripts/validate.py` passed; `browser.cjs` passed.
+* **Status:** awaiting PR / merge (receipt §96.2 follows).

@@ -34,6 +34,7 @@ OFFICIAL_HOSTS = set(PUBLISHERS) | {'www.nhl.com', 'www.mlb.com'}
 #   link='b2719ad3/index.html'   link='37003e61/index.html'
 #   link='8cfb80b2/index.html'   link='02d3d515/index.html'   link='3d121822/index.html'
 ARCHIVE = [
+    ('aa2881ac/index.html', '26 Oct 2026 independent fifteen-sport desk (aa2881ac): own lines on official NHL, DEL, MLB, ATP, EHF Champions League, Serie A1 women and F1 fixtures; live counts on the desk and in the front-door panel'),
     ('103ea76b/index.html', '26 Oct 2026 fifteen-sport desk (103ea76b): 33 fixtures priced across 81 originated markets and 162 outcome prices, 24 graded picks (16 High, 8 Medium), 24 written predictions, 15 sports captured from OLBG, 26 official and listing sources, 20 flagged gaps, 6 repo audit findings'),
     ('a394f91e/index.html', '25 Oct 2026 fifteen-sport desk (a394f91e): 9 official fixtures priced across 17 originated markets, 3 graded picks (2 High, 1 Medium), 3 written predictions, 82 OLBG markets and 13 outrights recorded, 29 sources, 22 flags, 10 repo findings'),
     ('0239d718/index.html', '24 Oct 2026 clarity desk (0239d718): 15 sports, 57 matches, 75 written picks, 28 strict-gate High picks, 228 originated lines, 50 official sources, 22 flags'),
@@ -257,7 +258,7 @@ publisher's own price is shown separately where the official feed carries one. 1
         high = [f for f in d['picks'] if f['pick']['confidence'] == 'high']
         gaps = [meta['name'] for code, meta in SPORT_INDEX.items()
                 if not any(f['sport'] == code for f in d['fixtures'])]
-        body = f"""
+        body = self.desk_panel_aa2881ac() + f"""
 <div class="panel highlight">
 <p style="font-size:18px;margin-bottom:10px"><strong>26 October 2026 desk is live.</strong>
 Fresh reads of OLBG's fifteen sport hubs and of the official NHL, MLB, NBA, EuroLeague, EHF Champions
@@ -349,6 +350,26 @@ their own conventions and their own snapshot times; nothing on this page is draw
 """
         self.shell('index.html', 'Today\'s summary', 'Today\'s picks, and where they are',
                    body, active='summary')
+
+    def desk_panel_aa2881ac(self):
+        """Front-door panel for the aa2881ac desk. Counts come from its desk.json, not literals."""
+        path = ROOT / 'data' / 'aa2881ac' / 'desk.json'
+        if not path.is_file() or not (ROOT / 'aa2881ac' / 'index.html').is_file():
+            return ''
+        c = json.loads(path.read_text(encoding='utf-8'))['counts']
+        return f"""
+<div class="panel highlight">
+<p style="font-size:18px;margin-bottom:10px"><strong>Independent 26 October 2026 desk (aa2881ac).</strong>
+Separate reads of OLBG and of the official NHL, PENNY DEL, MLB, ATP, EHF Champions League, Lega Volley
+Femminile and Formula 1 pages: {c['priced']} of {c['fixtures']} official fixtures priced across {c['markets']}
+markets, {c['picks']} graded picks ({c['high']} High, {c['medium']} Medium, {c['low']} Low) and
+{c['predictions']} written predictions, with {c['flags']} items flagged and {c['audit']} line-linked repo findings.</p>
+<p style="margin-bottom:0"><a href="{self.href('aa2881ac/index.html', 'index.html')}"><strong>Open the aa2881ac desk →</strong></a>
+&nbsp;·&nbsp;<a href="{self.href('aa2881ac/picks.html', 'index.html')}">Picks →</a>
+&nbsp;·&nbsp;<a href="{self.href('aa2881ac/predictions.html', 'index.html')}">Predictions →</a>
+&nbsp;·&nbsp;<a href="{self.href('aa2881ac/flagged.html', 'index.html')}">Flagged for review →</a></p>
+</div>
+"""
 
     def archive_panel(self, page):
         items = ''.join(
