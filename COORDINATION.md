@@ -4,7 +4,7 @@
 working on what. It exists so that multiple agent sessions can work on this repository at the
 same time without duplicating work or overwriting each other.
 
-Last updated: **2026-10-25T04:02:00Z** (UTC) (T0239D718: 15-sport desk built, canonical front door registered, all local gates green; PR/merge/Pages read-back pending)
+Last updated: **2026-10-26T04:42:00Z** (UTC) (TFD38DE81: fresh 26 Oct 2026 fifteen-sport desk claimed; live discovery, official verification, originated lines, written picks, site, PR/merge/Pages)
 
 ---
 
@@ -66,6 +66,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 
 | # | Task | Status | Session | File scope | Started (UTC) | Notes |
 |---|------|--------|---------|------------|---------------|-------|
+| TFD38DE81 | **Fresh 26 Oct 2026 fifteen-sport desk and final integration (`fd38de81-olbg1`):** live OLBG discovery for the exact 15 brief sports; fresh official governing-body/league/tour reads; independent win/handicap/total line origination; −250…+10000 High band; unique ≥30-word human predictions from published official facts; line-by-line repo audit with links; Flagged for Review; clean executive-summary dashboard with 15 sport pages; validator/tests/build green; PR → merge → Pages read-back | in progress | fd38de81-olbg1 | `data/fd38de81/**`, `scripts/sfd38de81_*.py`, `fd38de81/**`, `reports/SESSION_FD38DE81.md`, `tests/pipeline/test_desk_fd38de81.py`, append-only `COORDINATION.md`; final integration only: `pipeline/build.py` front-door/ARCHIVE hunk and its committed `index.html` mirror | 2026-10-26T04:42:00Z | Pinned Arena branch `arena/fd38de81-olbg1` per §0.2. Unique namespace; no peer desk, canonical `data/current`, workflow or other session scope edits. Five-per-sport is an evidence-capped aim, never a quota. |
 | TA394F91E | **Fresh 25 Oct 2026 fifteen-sport desk and final integration (`a394f91e-olbg1`):** live OLBG discovery for the exact 15 brief sports; fresh official governing-body/league/tour reads; independent win/handicap/total line origination; -250..+10000 High band; unique >=30-word human predictions built only from official published facts; line-by-line repo audit with source links; Flagged for Review page; canonical front-door integration; validator + tests + build green; PR -> merge -> GitHub Pages read-back | done | a394f91e-olbg1 | `data/a394f91e/**`, `scripts/sa394f91e_*.py`, `a394f91e/**`, `reports/SESSION_A394F91E.md`, `tests/pipeline/test_desk_a394f91e.py`, append-only `COORDINATION.md`; final integration only: `pipeline/build.py` front-door/ARCHIVE hunk and its committed `index.html` mirror | 2026-10-25T03:15:00Z | Pinned Arena branch `arena/a394f91e-olbg1` per §0.2. Unique namespace; no peer desk, canonical `data/current`, workflow or other session scope edits. Five-per-sport remains an evidence-capped aim, never a quota. |
 | T0239D718 | **Fresh 24–25 Oct 2026 clarity desk and final integration (`0239d718-olbg1`):** reverse-engineer OLBG discovery for the exact 15 brief sports; re-read governing-body/league/tour sources line by line; blank-and-flag unconfirmed fields; originate independent winner/handicap/total prices; apply a strict >70% and −250…+10000 High gate; write unique ≥30-word human predictions; publish a clean namespaced executive-summary dashboard with 15 sport/category pages, tables, audit, sources and Flagged for Review; run validators/tests/build; PR → merge → Pages read-back | done | 0239d718-olbg1 | `data/0239d718/**`, `scripts/s0239d718_*.py`, `0239d718/**`, `reports/SESSION_0239D718.md`, `tests/pipeline/test_desk_0239d718.py`, append-only `COORDINATION.md`; final integration only: one `ARCHIVE` row plus the canonical front-door banner in `pipeline/build.py` and its committed `index.html` mirror | 2026-10-24T22:26:00Z | Pinned Arena branch `arena/0239d718-olbg1` per §0.2. Unique session namespace; no peer desk, canonical data, workflow or other session scope edits. Five-per-sport is an evidence-capped aim, never a quota. |
 | T7F1B | **Clarity rebuild + final integration (`7f1bf9f7-olbg1`, 24 Oct 2026):** one clean, obvious picks desk at `/today/` (executive summary first, picks and their location unmistakable), fresh live OLBG discovery across the exact 15 requested sports, own originated multi-market lines, `-250…+10000` High band with ≥70% probability, unique ≥30-word predictions written from official-source facts, line-by-line repo audit with source links, Flagged for Review page, canonical root banner pointing at the desk, validator + tests green, PR → merge → Pages read-back | done | 7f1bf9f7-olbg1 | `data/today/**`, `scripts/today_*.py`, `today/**`, `reports/SESSION_7F1BF9F7.{md}`, `tests/pipeline/test_today_desk.py`, append-only `COORDINATION.md`, surgical banner/nav hunk in `pipeline/build.py` | 2026-10-24T17:15Z | Pinned Arena branch `arena/7f1bf9f7-olbg1`. No peer desk, shared canonical data or peer workflow edits. Final integration for main. |
@@ -7519,3 +7520,18 @@ Status: **desk built, all local gates green; PR, merge and Pages read-back recor
   canonical-snapshot zeros and repository size.
 * **Final claim status:** `done` — every item published on the site's **Flagged for review** and
   **Repository audit** pages for after-the-fact review.
+
+
+## 96. Session `fd38de81-olbg1` — TFD38DE81 (claim, 2026-10-26T04:42Z UTC)
+
+* Pinned branch `arena/fd38de81-olbg1`; this branch is both the work branch and the final
+  integration branch (§0.2). No other branch will be created, switched to or pushed from this session.
+* Claimed scope: `data/fd38de81/**`, `scripts/sfd38de81_*.py`, `fd38de81/**`,
+  `reports/SESSION_FD38DE81.md`, `tests/pipeline/test_desk_fd38de81.py`, append-only
+  `COORDINATION.md`; at final integration only, the additive front-door/ARCHIVE hunk in
+  `pipeline/build.py` and its committed `index.html` mirror.
+* Pre-existing repository findings (100+ archived desks, root/canonical divergence, stale
+  `data/current` values) will be re-checked line by line and published on the audit and
+  Flagged for Review pages rather than silently rewritten.
+* Verification contract: every table row links to an official publisher that was actually fetched
+  and read; unconfirmed values stay blank and are flagged; originated prices are labelled estimates.
