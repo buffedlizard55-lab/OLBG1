@@ -7611,3 +7611,13 @@ originated rather than quoted.
 * **Pages:** push run 40272498734 on `e9a1b18` — gates `success`, "Publish canonical GitHub Pages" `success`. Read-back: https://buffedlizard55-lab.github.io/OLBG1/aa2881ac/index.html serves the desk (11 High, 8 Medium, 15 Low); the front door (cache-busted `index.html?v=e9a1b18`) shows the aa2881ac panel above the unchanged 103ea76b panel.
 * **Open for a later session (not fixed here, scope):** literal banner/summary prose in `pipeline/build.py` (R01–R05), canonical validator not walking desk folders (R08–R09), missing LVF/DEL hosts in `PUBLISHERS` (R11); peer-desk items R13–R16.
 * **Final claim status:** `done`.
+
+---
+
+## 99. Session `b1b210b4-olbg1` — `TB1B210B4` claim (2026-10-26T05:20:00Z UTC)
+
+* **Session / pinned branch:** `b1b210b4-olbg1` on `arena/b1b210b4-olbg1` (§0.2 deviation applies). Base: `86dcc9f`, the tip of `main` after PR #303.
+* **Task:** fresh **26 October 2026 05:20Z** fifteen-sport desk (after the earlier 04:40Z desk). Live OLBG discovery for exactly the fifteen sports named in the brief (Golf, Volleyball, Rugby Union, Cricket, Snooker, Darts, Baseball, Gaelic Sports, Greyhounds, Tennis, Motor Racing, Handball, Ice Hockey, Basketball, Rugby League), fresh reads of official league / governing body / tour pages, independent origination of win, handicap and match-total lines, High/Medium/Low grade with the −250…+10000 band, and a unique ≥30-word written prediction for every High pick; line-by-line repo audit, Flagged for Review, clean executive-summary dashboard, local/CI gates, PR, merge and GitHub Pages read-back.
+* **Exclusive namespace:** `data/b1b210b4/**`, `scripts/sb1b210b4_*.py`, `b1b210b4/**`, `reports/SESSION_B1B210B4.md`, `tests/pipeline/test_desk_b1b210b4.py`, plus append-only entries in this file. One additive `ARCHIVE` registration and one root `index.html` banner at final integration.
+* **Method:** OLBG = discovery only. Every published fixture, record, form line and statistic is fetched and read this session from the official publisher, with the exact URL and UTC read time retained. Unconfirmed values are blank and flagged. Prices are originated here and labelled as independent estimates. Predictions avoid “model” / “verified”, name the selection, and pass the ≥30-word and uniqueness gates.
+* **Status:** `in progress`. Receipts for sources, gates, PR/merge and served-content read-back will be appended in §99.x as they occur.
