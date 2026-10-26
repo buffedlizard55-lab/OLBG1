@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repository audit · OLBG research desk</title><link rel="stylesheet" href="assets/desk.css"></head>
+<body data-snapshot="2026-10-26T04:40:00Z">
+<header class="top"><div class="wrap">
+<div class="brand"><a href="index.html">OLBG research desk</a><span class="date">26 October 2026</span></div>
+<nav><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="predictions.html">Predictions</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="sports.html">Sports</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="audit.html">Repo audit</a><a href="methodology.html">Method</a></nav></div></header>
+<main class="wrap">
+<div class="strip"><span><b>24</b> picks</span><span><b>16</b> High</span><span><b>8</b> Medium</span><span><b>15</b> sports captured</span><span><b>33</b> priced fixtures</span><span><b>20</b> flagged</span></div>
+<h1>Repository audit</h1>
+
+
+<p class="note">A line-by-line read of the committed repository as it stood at the base of this session.
+Each finding names the file, the value read and the place to look. These are irregularities in earlier work, not in today's picks.</p>
+
+<article class="flag" id="A01">
+<div class="predhead"><h2>data/current/snapshot.json</h2>
+<span class="badge hi">High</span></div>
+<p>The committed snapshot reports 108 fixtures, 0 current listings, 0 priced matches, 0 predictions and 0 high-grade picks. data/desk/desk.json in the same commit reports 21 fixtures, 13 priced, 11 picks with 6 High and 5 Medium, and README.md repeats the 6 High figure.</p>
+<p class="mono">Evidence: data/current/snapshot.json: counts.current_listings=0, counts.priced_matches=0, counts.high=0, predictions=[]; data/desk/desk.json: counts.picks=11, counts.high=6; README.md line 35.</p>
+<p class="srcsline">Where to look: <a class="src" href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/README.md" target="_blank" rel="noopener noreferrer">README.md</a></p>
+</article>
+<article class="flag" id="A02">
+<div class="predhead"><h2>data/current/discovery.json</h2>
+<span class="badge hi">High</span></div>
+<p>All 17 OLBG pages are recorded as &quot;unverified&quot; with the reason &quot;robots policy unavailable; request withheld&quot;, and the events list is empty, so the canonical snapshot contains no OLBG observation at all. Earlier desks nevertheless publish OLBG listings.</p>
+<p class="mono">Evidence: data/current/discovery.json: 17 pages, statuses all &quot;unverified&quot;, events=[].</p>
+<p class="srcsline">Where to look: <a class="src" href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/current/discovery.json" target="_blank" rel="noopener noreferrer">data/current/discovery.json</a></p>
+</article>
+<article class="flag" id="A03">
+<div class="predhead"><h2>published page weight</h2>
+<span class="badge md">Medium</span></div>
+<p>Two committed pages are far heavier than the rest of the site: markets.html is 2,187 KB and verification.html is 883 KB. Both are carried into the published artifact by the archive copy step.</p>
+<p class="mono">Evidence: File sizes measured on the checkout: markets.html 2,187 KB, verification.html 883 KB, index.html 30 KB.</p>
+<p class="srcsline">Where to look: <a class="src" href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/markets.html" target="_blank" rel="noopener noreferrer">markets.html</a></p>
+</article>
+<article class="flag" id="A04">
+<div class="predhead"><h2>repository layout</h2>
+<span class="badge md">Medium</span></div>
+<p>Seventy-nine top-level directories are named with an eight-character session hash. Each holds a complete copy of a desk, and the canonical build copies every archived desk into the artifact on each deploy.</p>
+<p class="mono">Evidence: 79 directories matching [0-9a-f]{8} at the repository root.</p>
+<p class="srcsline">Where to look: <a class="src" href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/pipeline/build.py" target="_blank" rel="noopener noreferrer">pipeline/build.py</a></p>
+</article>
+<article class="flag" id="A05">
+<div class="predhead"><h2>COORDINATION.md</h2>
+<span class="badge lo">Low</span></div>
+<p>Section numbers are reused: four or more headings share a number and at least ten numbers appear twice, so the board cannot be read as a sequence.</p>
+<p class="mono">Evidence: Duplicate top-level section numbers detected in COORDINATION.md, including 4, 13, 43, 60, 64, 71, 74, 75, 78 and 82.</p>
+<p class="srcsline">Where to look: <a class="src" href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/COORDINATION.md" target="_blank" rel="noopener noreferrer">COORDINATION.md</a></p>
+</article>
+<article class="flag" id="A06">
+<div class="predhead"><h2>data/current/matches.csv</h2>
+<span class="badge lo">Low</span></div>
+<p>The canonical CSV contains a UTF-8 byte-order mark before the &quot;id&quot; header, and every row in it carries no price, no confidence and no model probability.</p>
+<p class="mono">Evidence: data/current/matches.csv: first bytes are EF BB BF; experimental_selection, confidence, model_probability and fair_decimal are empty on the sampled rows.</p>
+<p class="srcsline">Where to look: <a class="src" href="https://github.com/buffedlizard55-lab/OLBG1/blob/main/data/current/matches.csv" target="_blank" rel="noopener noreferrer">data/current/matches.csv</a></p>
+</article>
+
+</main>
+<footer class="wrap"><p>Independent research. Not affiliated with OLBG. Prices are originated here, not quoted from a bookmaker.
+Every number links to the official page it came from; blanks mean the official page did not publish it.
+Generated 2026-10-26T04:40:00Z.</p></footer>
+</body></html>

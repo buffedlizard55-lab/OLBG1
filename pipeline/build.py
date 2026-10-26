@@ -34,6 +34,7 @@ OFFICIAL_HOSTS = set(PUBLISHERS) | {'www.nhl.com', 'www.mlb.com'}
 #   link='b2719ad3/index.html'   link='37003e61/index.html'
 #   link='8cfb80b2/index.html'   link='02d3d515/index.html'   link='3d121822/index.html'
 ARCHIVE = [
+    ('103ea76b/index.html', '26 Oct 2026 fifteen-sport desk (103ea76b): 33 fixtures priced across 81 originated markets and 162 outcome prices, 24 graded picks (16 High, 8 Medium), 24 written predictions, 15 sports captured from OLBG, 26 official and listing sources, 20 flagged gaps, 6 repo audit findings'),
     ('a394f91e/index.html', '25 Oct 2026 fifteen-sport desk (a394f91e): 9 official fixtures priced across 17 originated markets, 3 graded picks (2 High, 1 Medium), 3 written predictions, 82 OLBG markets and 13 outrights recorded, 29 sources, 22 flags, 10 repo findings'),
     ('0239d718/index.html', '24 Oct 2026 clarity desk (0239d718): 15 sports, 57 matches, 75 written picks, 28 strict-gate High picks, 228 originated lines, 50 official sources, 22 flags'),
     ('f840c28a/index.html', '24 Oct 2026 clarity desk (f840c28a): 15 sports, 20 fixtures, 16 priced matches, 3 High picks, 10 written predictions, 13 flags'),
@@ -258,15 +259,21 @@ publisher's own price is shown separately where the official feed carries one. 1
                 if not any(f['sport'] == code for f in d['fixtures'])]
         body = f"""
 <div class="panel highlight">
-<p style="font-size:18px;margin-bottom:10px"><strong>25 October 2026 desk is live.</strong>
-Fresh reads of the official NHL, MLB, NBA and Formula 1 pages taken on 25 October 2026.
-Nine fixtures priced across seventeen originated markets, three graded picks (two High, one Medium)
-and three written predictions, alongside 82 OLBG match markets and 13 outrights recorded across the
-fifteen brief sports. All fifteen sports are published, including the twelve with no priced match and
-the reason for each gap.</p>
-<p style="margin-bottom:0"><a href="{self.href('a394f91e/index.html', 'index.html')}"><strong>Open the 25 October desk →</strong></a>
-&nbsp;·&nbsp;<a href="{self.href('a394f91e/picks.html', 'index.html')}">Picks →</a>
-&nbsp;·&nbsp;<a href="{self.href('a394f91e/flagged.html', 'index.html')}">Flagged for review →</a></p>
+<p style="font-size:18px;margin-bottom:10px"><strong>26 October 2026 desk is live.</strong>
+Fresh reads of OLBG's fifteen sport hubs and of the official NHL, MLB, NBA, EuroLeague, EHF Champions
+League, Formula 1 and ATP pages on 26 October 2026. Thirty-three fixtures are priced across 81
+originated markets and 162 outcome prices, carrying 24 graded picks (16 High, 8 Medium) and 24 written
+predictions, with 20 gaps flagged and six findings from a line-by-line read of this repository. All
+fifteen sports are published, including the eleven with no priced match and the reason for each gap.</p>
+<p style="margin-bottom:0"><a href="{self.href('103ea76b/index.html', 'index.html')}"><strong>Open the 26 October desk →</strong></a>
+&nbsp;·&nbsp;<a href="{self.href('103ea76b/picks.html', 'index.html')}">Picks →</a>
+&nbsp;·&nbsp;<a href="{self.href('103ea76b/predictions.html', 'index.html')}">Predictions →</a>
+&nbsp;·&nbsp;<a href="{self.href('103ea76b/flagged.html', 'index.html')}">Flagged for review →</a></p>
+</div>
+
+<div class="panel">
+<p style="margin-bottom:0"><strong>Earlier desk:</strong> the 25 October 2026 desk (nine fixtures, three
+graded picks) stays published at <a href="{self.href('a394f91e/index.html', 'index.html')}">a394f91e →</a></p>
 </div>
 
 <div class="panel highlight">

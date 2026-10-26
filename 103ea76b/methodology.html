@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology · OLBG research desk</title><link rel="stylesheet" href="assets/desk.css"></head>
+<body data-snapshot="2026-10-26T04:40:00Z">
+<header class="top"><div class="wrap">
+<div class="brand"><a href="index.html">OLBG research desk</a><span class="date">26 October 2026</span></div>
+<nav><a href="index.html">Summary</a><a href="picks.html">Picks</a><a href="predictions.html">Predictions</a><a href="matches.html">Matches</a><a href="markets.html">Markets</a><a href="sports.html">Sports</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged</a><a href="audit.html">Repo audit</a><a href="methodology.html">Method</a></nav></div></header>
+<main class="wrap">
+<div class="strip"><span><b>24</b> picks</span><span><b>16</b> High</span><span><b>8</b> Medium</span><span><b>15</b> sports captured</span><span><b>33</b> priced fixtures</span><span><b>20</b> flagged</span></div>
+<h1>How the prices are made</h1>
+
+
+<h2>The rule, in one line</h2>
+<p class="big">High is 60% or better, Medium is 55–60%, and a pick must sit between −250 and +10000.
+Nothing shorter than −250 is published, which is the brief's objection to short-priced favourites turned into a filter.
+The chance shown is the originated probability, not a bookmaker's, because no bookmaker price was read.</p>
+<h2>Method</h2>
+<div class="rule"><h3>Version</h3><p>originated-1.0</p></div><div class="rule"><h3>Band</h3><p>A selection is in band when its fair American price is between -250 and +10000, i.e. an implied probability from 0.0099 to 0.7143. Nothing shorter than -250 and nothing longer than +10000 is published as a pick.</p></div><div class="rule"><h3>Tiers</h3><p>High: originated probability &gt;= 0.60 and in band. Medium: &gt;= 0.55 and &lt; 0.60. Low: &gt;= 0.45 and &lt; 0.55. Below 0.45 no pick is published.</p></div><div class="rule"><h3>Pick Rule</h3><p>For each priced fixture the pick is the in-band outcome with the highest originated probability; if no outcome reaches 0.45 the fixture carries no pick and says why.</p></div><div class="rule"><h3>Team Model</h3><p>Scoring rates are shrunk toward a sport prior before use: rate = (published total + prior_games * prior_rate) / (games played + prior_games). NHL prior 3.00 goals in 10 games; MLB prior 4.50 runs in 20 games; handball prior 30.0 goals in 5 games. Basketball uses the published win-loss record shrunk to .500 with a 10-game prior.</p></div><div class="rule"><h3>Margin Model</h3><p>Expected goals or points for each side = mean of that side&#x27;s shrunk scoring rate and the opponent&#x27;s shrunk conceding rate, plus or minus half of the published home edge. NHL 0.30 goals, MLB 0.20 runs, handball 1.20 goals. The margin is the difference; a normal distribution gives win, handicap and total probabilities. Score standard deviations: NHL 1.8, MLB 4.2, handball 8.0; totals 2.3, 4.6 and 9.0.</p></div><div class="rule"><h3>Mlb Note</h3><p>MLB run line is fixed at 1.5 runs, which is the standard posted line.</p></div><div class="rule"><h3>Withheld</h3><p>Player props are withheld on every fixture because no confirmed lineup or availability list was read. Correct-score and period markets are withheld because no per-period distribution was read. NBA pointspread and game-total markets are withheld because no official NBA points-for or points-against table was captured; the NBA rows therefore carry money-line prices only.</p></div><div class="rule"><h3>Honesty</h3><p>Every number quoted in a prediction appears on the official page linked on the same row. Where a page did not publish something - NBA start times, NBA points, injuries, lineups - the field is blank and the gap is named on the fixture row and the Flagged for review page.</p></div>
+<h2>What this desk contains</h2>
+<div class="kvbox"><div class="kv"><dt>sports requested</dt><dd>15</dd></div><div class="kv"><dt>sports with fixtures</dt><dd>4</dd></div><div class="kv"><dt>fixtures</dt><dd>33</dd></div><div class="kv"><dt>priced fixtures</dt><dd>33</dd></div><div class="kv"><dt>unpriced fixtures</dt><dd>0</dd></div><div class="kv"><dt>markets</dt><dd>81</dd></div><div class="kv"><dt>outcomes</dt><dd>162</dd></div><div class="kv"><dt>withheld markets</dt><dd>93</dd></div><div class="kv"><dt>picks</dt><dd>24</dd></div><div class="kv"><dt>high</dt><dd>16</dd></div><div class="kv"><dt>medium</dt><dd>8</dd></div><div class="kv"><dt>predictions</dt><dd>24</dd></div><div class="kv"><dt>sources</dt><dd>26</dd></div><div class="kv"><dt>flags</dt><dd>20</dd></div><div class="kv"><dt>sports with picks</dt><dd>4</dd></div><div class="kv"><dt>low</dt><dd>0</dd></div><div class="kv"><dt>sports with olbg capture</dt><dd>15</dd></div><div class="kv"><dt>listings only rows</dt><dd>26</dd></div></div>
+
+</main>
+<footer class="wrap"><p>Independent research. Not affiliated with OLBG. Prices are originated here, not quoted from a bookmaker.
+Every number links to the official page it came from; blanks mean the official page did not publish it.
+Generated 2026-10-26T04:40:00Z.</p></footer>
+</body></html>
