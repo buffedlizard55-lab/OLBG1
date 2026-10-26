@@ -1,0 +1,5934 @@
+{
+ "desk": "aa2881ac",
+ "generated_for": "2026-10-26",
+ "built_at": "2026-10-26T05:30Z",
+ "read_window": "2026-10-26T04:45Z to 05:25Z",
+ "counts": {
+  "sports": 15,
+  "fixtures": 48,
+  "priced": 39,
+  "markets": 105,
+  "picks": 34,
+  "high": 11,
+  "medium": 8,
+  "low": 15,
+  "predictions": 20,
+  "discovery": 66,
+  "outrights": 6,
+  "sources": 39,
+  "flags": 26,
+  "audit": 12,
+  "sports_with_picks": 6
+ },
+ "sources": [
+  {
+   "id": "olbg-golf",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Golf/5",
+   "read_at": "2026-10-26T04:46Z",
+   "role": "discovery",
+   "supports": "Hub returned \"No tips found.\" No golf market listed."
+  },
+  {
+   "id": "olbg-volleyball",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "read_at": "2026-10-26T04:46Z",
+   "role": "discovery",
+   "supports": "Fourteen volleyball events (Brazil, Poland, Austria and Italy) with the most-tipped selection and tip share."
+  },
+  {
+   "id": "olbg-rugby-union",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Rugby_Union/9",
+   "read_at": "2026-10-26T04:47Z",
+   "role": "discovery",
+   "supports": "Only the Six Nations 2027 outright was listed. No match market."
+  },
+  {
+   "id": "olbg-cricket",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "read_at": "2026-10-26T04:47Z",
+   "role": "discovery",
+   "supports": "Five match markets plus a man-of-the-match market for South Africa v Australia."
+  },
+  {
+   "id": "olbg-snooker",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Snooker/8",
+   "read_at": "2026-10-26T04:47Z",
+   "role": "discovery",
+   "supports": "Hub returned \"No tips found.\""
+  },
+  {
+   "id": "olbg-darts",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Darts/15",
+   "read_at": "2026-10-26T04:48Z",
+   "role": "discovery",
+   "supports": "Only the PDC World Championship 2027 outright was listed."
+  },
+  {
+   "id": "olbg-baseball",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Baseball/12",
+   "read_at": "2026-10-26T04:48Z",
+   "role": "discovery",
+   "supports": "Hub returned \"No tips found.\" The World Series was not listed."
+  },
+  {
+   "id": "olbg-gaelic-football",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+   "read_at": "2026-10-26T04:48Z",
+   "role": "discovery",
+   "supports": "Two Munster club football fixtures plus the All-Ireland 2027 outright."
+  },
+  {
+   "id": "olbg-greyhounds",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+   "read_at": "2026-10-26T04:49Z",
+   "role": "discovery",
+   "supports": "A single race listed: 3:19 Monmore, one tip on Tullymurry Skies."
+  },
+  {
+   "id": "olbg-tennis",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "read_at": "2026-10-26T04:50Z",
+   "role": "discovery",
+   "supports": "Twenty match markets read from the first two of five pages (ATP Basel and Vienna, plus WTA and lower-tier matches)."
+  },
+  {
+   "id": "olbg-motor-racing",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+   "read_at": "2026-10-26T04:51Z",
+   "role": "discovery",
+   "supports": "One market: Mexico City Grand Prix winner, Charles Leclerc on 1 of 2 tips."
+  },
+  {
+   "id": "olbg-handball",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Handball/20",
+   "read_at": "2026-10-26T04:52Z",
+   "role": "discovery",
+   "supports": "Twelve EHF Champions League round-six fixtures plus one Swedish league match. \"Tie\" was the most-tipped outcome in nine of them."
+  },
+  {
+   "id": "olbg-ice-hockey",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "read_at": "2026-10-26T04:45Z",
+   "role": "discovery",
+   "supports": "Three NHL games, two Danish games, and four Liiga, SHL and DEL games."
+  },
+  {
+   "id": "olbg-basketball",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Basketball/4",
+   "read_at": "2026-10-26T04:53Z",
+   "role": "discovery",
+   "supports": "Hub returned \"No tips found.\" No NBA or European market."
+  },
+  {
+   "id": "olbg-rugby-league",
+   "publisher": "OLBG",
+   "url": "https://www.olbg.com/betting-tips/Rugby_League/10",
+   "read_at": "2026-10-26T04:54Z",
+   "role": "discovery",
+   "supports": "Outrights only: State of Origin 2027, Super League and NRL 2027 Grand Finals."
+  },
+  {
+   "id": "nhl-schedule",
+   "publisher": "NHL",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+   "read_at": "2026-10-26T04:58Z",
+   "role": "official",
+   "supports": "The 26 October games (LAK@NYR, TOR@CGY, DET@EDM), ten of the eleven 27 October games, venues and UTC start times."
+  },
+  {
+   "id": "nhl-standings",
+   "publisher": "NHL",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+   "read_at": "2026-10-26T04:55Z",
+   "role": "official",
+   "supports": "All 32 clubs: GP, W, L, OTL, goals for and against, home and road splits, last ten and streak (standingsDateTimeUtc 2026-10-26T04:41:45Z)."
+  },
+  {
+   "id": "nhl-standings-page",
+   "publisher": "NHL",
+   "url": "https://www.nhl.com/standings/2026-10-25/league",
+   "read_at": "2026-10-26T04:55Z",
+   "role": "official",
+   "supports": "Human-readable view of the same standings table (the JSON above is what was read)."
+  },
+  {
+   "id": "del-table",
+   "publisher": "PENNY DEL",
+   "url": "https://www.penny-del.org/tabelle",
+   "read_at": "2026-10-26T05:18Z",
+   "role": "official",
+   "supports": "Koelner Haie v Adler Mannheim on 27 Oct at 19:00 CET, plus the table rows for thirteen of the fourteen clubs (Iserlohn row cut off in the read)."
+  },
+  {
+   "id": "mlb-ws",
+   "publisher": "MLB",
+   "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-20&endDate=2026-11-05&gameType=W&hydrate=probablePitcher,linescore",
+   "read_at": "2026-10-26T05:00Z",
+   "role": "official",
+   "supports": "World Series G1 MIL 3 TB 2 and G2 MIL 5 TB 4 (both finals). G3 at Tropicana Field 27 Oct 00:00Z with Gasser v Peralta probable. G4 has no probables published."
+  },
+  {
+   "id": "mlb-team-hitting",
+   "publisher": "MLB",
+   "url": "https://statsapi.mlb.com/api/v1/teams/stats?season=2026&group=hitting,pitching&stats=season&sportIds=1&gameType=R",
+   "read_at": "2026-10-26T05:03Z",
+   "role": "official",
+   "supports": "Regular-season runs scored: MIL 832, TB 736, plus nine other clubs on the first page read."
+  },
+  {
+   "id": "mlb-mil-pitching",
+   "publisher": "MLB",
+   "url": "https://statsapi.mlb.com/api/v1/teams/158/stats?stats=season&group=pitching&season=2026&gameType=R",
+   "read_at": "2026-10-26T05:04Z",
+   "role": "official",
+   "supports": "MIL runs allowed 618, ERA 3.51, 103-59."
+  },
+  {
+   "id": "mlb-tb-pitching",
+   "publisher": "MLB",
+   "url": "https://statsapi.mlb.com/api/v1/teams/139/stats?stats=season&group=pitching&season=2026&gameType=R",
+   "read_at": "2026-10-26T05:04Z",
+   "role": "official",
+   "supports": "TB runs allowed 650, ERA 3.70, 98-64."
+  },
+  {
+   "id": "mlb-starters",
+   "publisher": "MLB",
+   "url": "https://statsapi.mlb.com/api/v1/people?personIds=688107,642547&hydrate=stats(group=[pitching],type=[season],season=2026)",
+   "read_at": "2026-10-26T05:04Z",
+   "role": "official",
+   "supports": "Robert Gasser 2026: 20 starts, 3.87 ERA, 1.19 WHIP, 4.03 runs per nine."
+  },
+  {
+   "id": "mlb-peralta",
+   "publisher": "MLB",
+   "url": "https://statsapi.mlb.com/api/v1/people/642547/stats?stats=season&group=pitching&season=2026&gameType=R",
+   "read_at": "2026-10-26T05:05Z",
+   "role": "official",
+   "supports": "Freddy Peralta 2026: 32 starts, 4.42 ERA overall (4.99 in 22 starts for the Mets, 3.25 in 10 for Tampa Bay), 4.85 runs per nine."
+  },
+  {
+   "id": "atp-rankings",
+   "publisher": "ATP Tour",
+   "url": "https://www.atptour.com/en/rankings/singles",
+   "read_at": "2026-10-26T05:10Z",
+   "role": "official",
+   "supports": "Singles ranking and points dated 26 Oct 2026 (top 150, read from the page JSON feed at /en/-/www/rank/sglroll/150)."
+  },
+  {
+   "id": "atp-basel-op",
+   "publisher": "ATP Tour",
+   "url": "https://www.atptour.com/en/scores/current/basel/328/daily-schedule",
+   "read_at": "2026-10-26T05:07Z",
+   "role": "official",
+   "supports": "Basel order of play for Monday 26 October (Day 3)."
+  },
+  {
+   "id": "atp-basel-draw",
+   "publisher": "ATP Tour",
+   "url": "https://www.atptour.com/en/scores/current/basel/328/draws",
+   "read_at": "2026-10-26T05:12Z",
+   "role": "official",
+   "supports": "Basel R32 pairings, including Djokovic (4, WC) v Humbert and Tabilo v Jodar (3)."
+  },
+  {
+   "id": "atp-vienna-op",
+   "publisher": "ATP Tour",
+   "url": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+   "read_at": "2026-10-26T05:07Z",
+   "role": "official",
+   "supports": "Vienna order of play for Monday 26 October (Day 3)."
+  },
+  {
+   "id": "atp-scores",
+   "publisher": "ATP Tour",
+   "url": "https://www.atptour.com/en/scores/current",
+   "read_at": "2026-10-26T05:06Z",
+   "role": "official",
+   "supports": "Qualifying results: Neumayer d. Droguet, Machac d. Marozsan (walkover), J.M. Cerundolo d. Altmaier."
+  },
+  {
+   "id": "ehf-cl",
+   "publisher": "EHF",
+   "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+   "read_at": "2026-10-26T05:15Z",
+   "role": "official",
+   "supports": "EHF Champions League group tables after five rounds and the round-six fixture list for 28 and 29 October."
+  },
+  {
+   "id": "f1-races",
+   "publisher": "Formula 1",
+   "url": "https://www.formula1.com/en/results/2026/races",
+   "read_at": "2026-10-26T05:15Z",
+   "role": "official",
+   "supports": "Winner of each of the eighteen 2026 races held so far, the latest being the United States GP on 25 Oct."
+  },
+  {
+   "id": "f1-drivers",
+   "publisher": "Formula 1",
+   "url": "https://www.formula1.com/en/results/2026/drivers",
+   "read_at": "2026-10-26T05:14Z",
+   "role": "official_attempt",
+   "supports": "Lists driver names only. The text that came back had no points column."
+  },
+  {
+   "id": "lvf-table",
+   "publisher": "Lega Volley Femminile",
+   "url": "https://www.legavolleyfemminile.it/classifica/",
+   "read_at": "2026-10-26T05:20Z",
+   "role": "official",
+   "supports": "Serie A1 women table after round five: matches, wins, sets and rally points for every club."
+  },
+  {
+   "id": "icc-fixtures",
+   "publisher": "ICC",
+   "url": "https://www.icc-cricket.com/rankings/team-rankings/mens/t20i",
+   "read_at": "2026-10-26T05:22Z",
+   "role": "official_attempt",
+   "supports": "The fixture strip lists NZ v IND T20 (271648), NAM v IRE ODI (275412), PAK v SL ODI (274146) and SA v AUS Test (269792). The rankings table came back as empty cells."
+  },
+  {
+   "id": "nba-standings",
+   "publisher": "NBA",
+   "url": "https://www.nba.com/standings?GroupedBy=Conference",
+   "read_at": "2026-10-26T05:00Z",
+   "role": "official_attempt",
+   "supports": "2026-27 standings read, two to four games in. The game list for 26 Oct could not be read from nba.com/games (client-rendered) or the cdn.nba.com feeds (HTTP 500)."
+  },
+  {
+   "id": "nba-games",
+   "publisher": "NBA",
+   "url": "https://www.nba.com/games?date=2026-10-26",
+   "read_at": "2026-10-26T04:59Z",
+   "role": "official_attempt",
+   "supports": "Calendar shows 9 games on 26 Oct and 4 on 27 Oct, but the matchups were not rendered (\"Sorry, something went wrong\")."
+  },
+  {
+   "id": "pga-schedule",
+   "publisher": "PGA TOUR",
+   "url": "https://www.pgatour.com/schedule",
+   "read_at": "2026-10-26T05:20Z",
+   "role": "official_attempt",
+   "supports": "2026 schedule page was read, but no tournament field or player-form figures were captured, so no golf price is originated."
+  },
+  {
+   "id": "tauron-liga",
+   "publisher": "TAURON Liga",
+   "url": "https://www.tauronliga.pl/table.html",
+   "read_at": "2026-10-26T05:22Z",
+   "role": "official_attempt",
+   "supports": "Page returned fifteen chunks of men's PlusLiga match tiles under the TAURON Liga (women) banner. No women's table was extracted."
+  }
+ ],
+ "fixtures": [
+  {
+   "key": "nhl-2026020185",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "event": "Los Angeles Kings @ New York Rangers",
+   "home": "New York Rangers",
+   "away": "Los Angeles Kings",
+   "date": "2026-10-26",
+   "start": "2026-10-26T23:00Z",
+   "venue": "Madison Square Garden",
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+     "publisher": "NHL"
+    },
+    {
+     "id": "nhl-standings",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+     "publisher": "NHL"
+    }
+   ],
+   "olbg": {
+    "event_id": 200101,
+    "label": "Today 19:07",
+    "tip": "New York Rangers",
+    "market": "Money Line",
+    "share": "3/3",
+    "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 2.48,
+     "home": 3.43,
+     "total": 5.92,
+     "margin": 0.95
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "Los Angeles Kings win",
+        "prob": 0.3038,
+        "price": 229
+       },
+       {
+        "name": "New York Rangers win",
+        "prob": 0.6962,
+        "price": -229
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "New York Rangers -1.5",
+        "prob": 0.3831,
+        "price": 161
+       },
+       {
+        "name": "Los Angeles Kings +1.5",
+        "prob": 0.6169,
+        "price": -161
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 5.5",
+      "outcomes": [
+       {
+        "name": "Over 5.5",
+        "prob": 0.5693,
+        "price": -132
+       },
+       {
+        "name": "Under 5.5",
+        "prob": 0.4307,
+        "price": 132
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "nhl-2026020186",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "event": "Toronto Maple Leafs @ Calgary Flames",
+   "home": "Calgary Flames",
+   "away": "Toronto Maple Leafs",
+   "date": "2026-10-26",
+   "start": "2026-10-27T00:30Z",
+   "venue": "Scotiabank Saddledome",
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+     "publisher": "NHL"
+    },
+    {
+     "id": "nhl-standings",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+     "publisher": "NHL"
+    }
+   ],
+   "olbg": {
+    "event_id": 200103,
+    "label": "Today 20:37",
+    "tip": "Calgary +1.5",
+    "market": "Puck Line",
+    "share": "1/1",
+    "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 3.87,
+     "home": 2.82,
+     "total": 6.69,
+     "margin": -1.06
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "Toronto Maple Leafs win",
+        "prob": 0.7163,
+        "price": -252
+       },
+       {
+        "name": "Calgary Flames win",
+        "prob": 0.2837,
+        "price": 252
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "Toronto Maple Leafs -1.5",
+        "prob": 0.4056,
+        "price": 147
+       },
+       {
+        "name": "Calgary Flames +1.5",
+        "prob": 0.5944,
+        "price": -147
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 6.5",
+      "outcomes": [
+       {
+        "name": "Over 6.5",
+        "prob": 0.5318,
+        "price": -114
+       },
+       {
+        "name": "Under 6.5",
+        "prob": 0.4682,
+        "price": 114
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "nhl-2026020187",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "event": "Detroit Red Wings @ Edmonton Oilers",
+   "home": "Edmonton Oilers",
+   "away": "Detroit Red Wings",
+   "date": "2026-10-26",
+   "start": "2026-10-27T01:30Z",
+   "venue": "Rogers Place",
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+     "publisher": "NHL"
+    },
+    {
+     "id": "nhl-standings",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+     "publisher": "NHL"
+    }
+   ],
+   "olbg": {
+    "event_id": 200102,
+    "label": "Today 21:37",
+    "tip": "Edmonton Oilers",
+    "market": "Money Line",
+    "share": "1/1",
+    "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 2.98,
+     "home": 3.89,
+     "total": 6.87,
+     "margin": 0.9
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "Detroit Red Wings win",
+        "prob": 0.3124,
+        "price": 220
+       },
+       {
+        "name": "Edmonton Oilers win",
+        "prob": 0.6876,
+        "price": -220
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "Edmonton Oilers -1.5",
+        "prob": 0.3739,
+        "price": 167
+       },
+       {
+        "name": "Detroit Red Wings +1.5",
+        "prob": 0.6261,
+        "price": -167
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 6.5",
+      "outcomes": [
+       {
+        "name": "Over 6.5",
+        "prob": 0.5605,
+        "price": -128
+       },
+       {
+        "name": "Under 6.5",
+        "prob": 0.4395,
+        "price": 128
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "nhl-2026020188",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "event": "Columbus Blue Jackets @ Philadelphia Flyers",
+   "home": "Philadelphia Flyers",
+   "away": "Columbus Blue Jackets",
+   "date": "2026-10-27",
+   "start": "2026-10-27T23:00Z",
+   "venue": "Xfinity Mobile Arena",
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+     "publisher": "NHL"
+    },
+    {
+     "id": "nhl-standings",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+     "publisher": "NHL"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 2.77,
+     "home": 2.57,
+     "total": 5.34,
+     "margin": -0.2
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "Columbus Blue Jackets win",
+        "prob": 0.5424,
+        "price": -119
+       },
+       {
+        "name": "Philadelphia Flyers win",
+        "prob": 0.4576,
+        "price": 119
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "Columbus Blue Jackets -1.5",
+        "prob": 0.2406,
+        "price": 316
+       },
+       {
+        "name": "Philadelphia Flyers +1.5",
+        "prob": 0.7594,
+        "price": -316
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 5.5",
+      "outcomes": [
+       {
+        "name": "Over 5.5",
+        "prob": 0.4728,
+        "price": 111
+       },
+       {
+        "name": "Under 5.5",
+        "prob": 0.5272,
+        "price": -111
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "nhl-2026020189",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "event": "Boston Bruins @ Carolina Hurricanes",
+   "home": "Carolina Hurricanes",
+   "away": "Boston Bruins",
+   "date": "2026-10-27",
+   "start": "2026-10-28T00:00Z",
+   "venue": "Lenovo Center",
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+     "publisher": "NHL"
+    },
+    {
+     "id": "nhl-standings",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+     "publisher": "NHL"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 3.13,
+     "home": 3.07,
+     "total": 6.19,
+     "margin": -0.06
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "Boston Bruins win",
+        "prob": 0.5131,
+        "price": -105
+       },
+       {
+        "name": "Carolina Hurricanes win",
+        "prob": 0.4869,
+        "price": 105
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "Boston Bruins -1.5",
+        "prob": 0.2183,
+        "price": 358
+       },
+       {
+        "name": "Carolina Hurricanes +1.5",
+        "prob": 0.7817,
+        "price": -358
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 6.5",
+      "outcomes": [
+       {
+        "name": "Over 6.5",
+        "prob": 0.4491,
+        "price": 123
+       },
+       {
+        "name": "Under 6.5",
+        "prob": 0.5509,
+        "price": -123
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "nhl-2026020190",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "event": "Los Angeles Kings @ Chicago Blackhawks",
+   "home": "Chicago Blackhawks",
+   "away": "Los Angeles Kings",
+   "date": "2026-10-27",
+   "start": "2026-10-28T00:00Z",
+   "venue": "United Center",
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+     "publisher": "NHL"
+    },
+    {
+     "id": "nhl-standings",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+     "publisher": "NHL"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 3.02,
+     "home": 2.89,
+     "total": 5.92,
+     "margin": -0.13
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "Los Angeles Kings win",
+        "prob": 0.5275,
+        "price": -112
+       },
+       {
+        "name": "Chicago Blackhawks win",
+        "prob": 0.4725,
+        "price": 112
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "Los Angeles Kings -1.5",
+        "prob": 0.2291,
+        "price": 336
+       },
+       {
+        "name": "Chicago Blackhawks +1.5",
+        "prob": 0.7709,
+        "price": -336
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 5.5",
+      "outcomes": [
+       {
+        "name": "Over 5.5",
+        "prob": 0.5688,
+        "price": -132
+       },
+       {
+        "name": "Under 5.5",
+        "prob": 0.4312,
+        "price": 132
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "nhl-2026020191",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "event": "Montreal Canadiens @ St. Louis Blues",
+   "home": "St. Louis Blues",
+   "away": "Montreal Canadiens",
+   "date": "2026-10-27",
+   "start": "2026-10-28T00:00Z",
+   "venue": "Enterprise Center",
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+     "publisher": "NHL"
+    },
+    {
+     "id": "nhl-standings",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+     "publisher": "NHL"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 3.14,
+     "home": 3.32,
+     "total": 6.46,
+     "margin": 0.18
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "Montreal Canadiens win",
+        "prob": 0.4612,
+        "price": 117
+       },
+       {
+        "name": "St. Louis Blues win",
+        "prob": 0.5388,
+        "price": -117
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "St. Louis Blues -1.5",
+        "prob": 0.2378,
+        "price": 321
+       },
+       {
+        "name": "Montreal Canadiens +1.5",
+        "prob": 0.7622,
+        "price": -321
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 6.5",
+      "outcomes": [
+       {
+        "name": "Over 6.5",
+        "prob": 0.4937,
+        "price": 103
+       },
+       {
+        "name": "Under 6.5",
+        "prob": 0.5063,
+        "price": -103
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "nhl-2026020192",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "event": "New York Islanders @ Nashville Predators",
+   "home": "Nashville Predators",
+   "away": "New York Islanders",
+   "date": "2026-10-27",
+   "start": "2026-10-28T00:00Z",
+   "venue": "Bridgestone Arena",
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+     "publisher": "NHL"
+    },
+    {
+     "id": "nhl-standings",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+     "publisher": "NHL"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 2.95,
+     "home": 2.81,
+     "total": 5.76,
+     "margin": -0.14
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "New York Islanders win",
+        "prob": 0.5297,
+        "price": -113
+       },
+       {
+        "name": "Nashville Predators win",
+        "prob": 0.4703,
+        "price": 113
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "New York Islanders -1.5",
+        "prob": 0.2308,
+        "price": 333
+       },
+       {
+        "name": "Nashville Predators +1.5",
+        "prob": 0.7692,
+        "price": -333
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 5.5",
+      "outcomes": [
+       {
+        "name": "Over 5.5",
+        "prob": 0.5434,
+        "price": -119
+       },
+       {
+        "name": "Under 5.5",
+        "prob": 0.4566,
+        "price": 119
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "nhl-2026020193",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "event": "New Jersey Devils @ Dallas Stars",
+   "home": "Dallas Stars",
+   "away": "New Jersey Devils",
+   "date": "2026-10-27",
+   "start": "2026-10-28T00:00Z",
+   "venue": "American Airlines Center",
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+     "publisher": "NHL"
+    },
+    {
+     "id": "nhl-standings",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+     "publisher": "NHL"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 2.41,
+     "home": 2.99,
+     "total": 5.41,
+     "margin": 0.58
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "New Jersey Devils win",
+        "prob": 0.3769,
+        "price": 165
+       },
+       {
+        "name": "Dallas Stars win",
+        "prob": 0.6231,
+        "price": -165
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "Dallas Stars -1.5",
+        "prob": 0.3095,
+        "price": 223
+       },
+       {
+        "name": "New Jersey Devils +1.5",
+        "prob": 0.6905,
+        "price": -223
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 5.5",
+      "outcomes": [
+       {
+        "name": "Over 5.5",
+        "prob": 0.4842,
+        "price": 107
+       },
+       {
+        "name": "Under 5.5",
+        "prob": 0.5158,
+        "price": -107
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "nhl-2026020194",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "event": "Florida Panthers @ Winnipeg Jets",
+   "home": "Winnipeg Jets",
+   "away": "Florida Panthers",
+   "date": "2026-10-27",
+   "start": "2026-10-28T00:00Z",
+   "venue": "Canada Life Centre",
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+     "publisher": "NHL"
+    },
+    {
+     "id": "nhl-standings",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+     "publisher": "NHL"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 2.72,
+     "home": 2.8,
+     "total": 5.53,
+     "margin": 0.08
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "Florida Panthers win",
+        "prob": 0.4827,
+        "price": 107
+       },
+       {
+        "name": "Winnipeg Jets win",
+        "prob": 0.5173,
+        "price": -107
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "Winnipeg Jets -1.5",
+        "prob": 0.2214,
+        "price": 352
+       },
+       {
+        "name": "Florida Panthers +1.5",
+        "prob": 0.7786,
+        "price": -352
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 5.5",
+      "outcomes": [
+       {
+        "name": "Over 5.5",
+        "prob": 0.5044,
+        "price": -102
+       },
+       {
+        "name": "Under 5.5",
+        "prob": 0.4956,
+        "price": 102
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "nhl-2026020195",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "event": "Minnesota Wild @ Utah Mammoth",
+   "home": "Utah Mammoth",
+   "away": "Minnesota Wild",
+   "date": "2026-10-27",
+   "start": "2026-10-28T01:00Z",
+   "venue": "Delta Center",
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+     "publisher": "NHL"
+    },
+    {
+     "id": "nhl-standings",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+     "publisher": "NHL"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 3.16,
+     "home": 3.08,
+     "total": 6.24,
+     "margin": -0.08
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "Minnesota Wild win",
+        "prob": 0.5176,
+        "price": -107
+       },
+       {
+        "name": "Utah Mammoth win",
+        "prob": 0.4824,
+        "price": 107
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "Minnesota Wild -1.5",
+        "prob": 0.2217,
+        "price": 351
+       },
+       {
+        "name": "Utah Mammoth +1.5",
+        "prob": 0.7783,
+        "price": -351
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 6.5",
+      "outcomes": [
+       {
+        "name": "Over 6.5",
+        "prob": 0.4572,
+        "price": 119
+       },
+       {
+        "name": "Under 6.5",
+        "prob": 0.5428,
+        "price": -119
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "nhl-2026020196",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "event": "Ottawa Senators @ Vegas Golden Knights",
+   "home": "Vegas Golden Knights",
+   "away": "Ottawa Senators",
+   "date": "2026-10-27",
+   "start": "2026-10-28T02:00Z",
+   "venue": "T-Mobile Arena",
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+     "publisher": "NHL"
+    },
+    {
+     "id": "nhl-standings",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+     "publisher": "NHL"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 2.94,
+     "home": 3.32,
+     "total": 6.26,
+     "margin": 0.38
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "Ottawa Senators win",
+        "prob": 0.4196,
+        "price": 138
+       },
+       {
+        "name": "Vegas Golden Knights win",
+        "prob": 0.5804,
+        "price": -138
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "Vegas Golden Knights -1.5",
+        "prob": 0.2716,
+        "price": 268
+       },
+       {
+        "name": "Ottawa Senators +1.5",
+        "prob": 0.7284,
+        "price": -268
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 6.5",
+      "outcomes": [
+       {
+        "name": "Over 6.5",
+        "prob": 0.4595,
+        "price": 118
+       },
+       {
+        "name": "Under 6.5",
+        "prob": 0.5405,
+        "price": -118
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "nhl-2026020197",
+   "sport": "ice-hockey",
+   "competition": "NHL",
+   "event": "Vancouver Canucks @ Anaheim Ducks",
+   "home": "Anaheim Ducks",
+   "away": "Vancouver Canucks",
+   "date": "2026-10-27",
+   "start": "2026-10-28T02:00Z",
+   "venue": "Honda Center",
+   "sources": [
+    {
+     "id": "nhl-schedule",
+     "url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+     "publisher": "NHL"
+    },
+    {
+     "id": "nhl-standings",
+     "url": "https://api-web.nhle.com/v1/standings/2026-10-25",
+     "publisher": "NHL"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 2.99,
+     "home": 3.91,
+     "total": 6.9,
+     "margin": 0.91
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "Vancouver Canucks win",
+        "prob": 0.3105,
+        "price": 222
+       },
+       {
+        "name": "Anaheim Ducks win",
+        "prob": 0.6895,
+        "price": -222
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "Anaheim Ducks -1.5",
+        "prob": 0.3758,
+        "price": 166
+       },
+       {
+        "name": "Vancouver Canucks +1.5",
+        "prob": 0.6242,
+        "price": -166
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 6.5",
+      "outcomes": [
+       {
+        "name": "Over 6.5",
+        "prob": 0.5666,
+        "price": -131
+       },
+       {
+        "name": "Under 6.5",
+        "prob": 0.4334,
+        "price": 131
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "del-koe-man",
+   "sport": "ice-hockey",
+   "competition": "PENNY DEL",
+   "event": "Adler Mannheim @ Koelner Haie",
+   "home": "Koelner Haie",
+   "away": "Adler Mannheim",
+   "date": "2026-10-27",
+   "start": "2026-10-27 19:00 CET",
+   "venue": "",
+   "sources": [
+    {
+     "id": "del-table",
+     "url": "https://www.penny-del.org/tabelle",
+     "publisher": "PENNY DEL"
+    }
+   ],
+   "olbg": {
+    "event_id": 200100,
+    "label": "Tomorrow 14:00",
+    "tip": "Mannheim",
+    "market": "Money Line",
+    "share": "1/1",
+    "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 3.53,
+     "home": 3.14,
+     "total": 6.66,
+     "margin": -0.39
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line (incl. OT/SO)",
+      "outcomes": [
+       {
+        "name": "Adler Mannheim win",
+        "prob": 0.5831,
+        "price": -140
+       },
+       {
+        "name": "Koelner Haie win",
+        "prob": 0.4169,
+        "price": 140
+       }
+      ]
+     },
+     {
+      "key": "pl",
+      "name": "Puck Line",
+      "outcomes": [
+       {
+        "name": "Adler Mannheim -1.5",
+        "prob": 0.2739,
+        "price": 265
+       },
+       {
+        "name": "Koelner Haie +1.5",
+        "prob": 0.7261,
+        "price": -265
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 6.5",
+      "outcomes": [
+       {
+        "name": "Over 6.5",
+        "prob": 0.5271,
+        "price": -111
+       },
+       {
+        "name": "Under 6.5",
+        "prob": 0.4729,
+        "price": 111
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "mlb-849804",
+   "sport": "baseball",
+   "competition": "MLB World Series, Game 3",
+   "event": "Milwaukee Brewers @ Tampa Bay Rays",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "date": "2026-10-26",
+   "start": "2026-10-27T00:00Z",
+   "venue": "Tropicana Field",
+   "sources": [
+    {
+     "id": "mlb-ws",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-20&endDate=2026-11-05&gameType=W&hydrate=probablePitcher,linescore",
+     "publisher": "MLB"
+    },
+    {
+     "id": "mlb-team-hitting",
+     "url": "https://statsapi.mlb.com/api/v1/teams/stats?season=2026&group=hitting,pitching&stats=season&sportIds=1&gameType=R",
+     "publisher": "MLB"
+    },
+    {
+     "id": "mlb-starters",
+     "url": "https://statsapi.mlb.com/api/v1/people?personIds=688107,642547&hydrate=stats(group=[pitching],type=[season],season=2026)",
+     "publisher": "MLB"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "away": 4.85,
+     "home": 3.95,
+     "total": 8.8,
+     "margin": 0.9
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Money Line",
+      "outcomes": [
+       {
+        "name": "Milwaukee Brewers win",
+        "prob": 0.5832,
+        "price": -140
+       },
+       {
+        "name": "Tampa Bay Rays win",
+        "prob": 0.4168,
+        "price": 140
+       }
+      ]
+     },
+     {
+      "key": "rl",
+      "name": "Run Line",
+      "outcomes": [
+       {
+        "name": "Milwaukee Brewers -1.5",
+        "prob": 0.4448,
+        "price": 125
+       },
+       {
+        "name": "Tampa Bay Rays +1.5",
+        "prob": 0.5552,
+        "price": -125
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Runs 8.5",
+      "outcomes": [
+       {
+        "name": "Over 8.5",
+        "prob": 0.527,
+        "price": -111
+       },
+       {
+        "name": "Under 8.5",
+        "prob": 0.473,
+        "price": 111
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "mlb-849803",
+   "sport": "baseball",
+   "competition": "MLB World Series, Game 4",
+   "event": "Milwaukee Brewers @ Tampa Bay Rays",
+   "home": "Tampa Bay Rays",
+   "away": "Milwaukee Brewers",
+   "date": "2026-10-27",
+   "start": "2026-10-28T00:00Z",
+   "venue": "Tropicana Field",
+   "sources": [
+    {
+     "id": "mlb-ws",
+     "url": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-20&endDate=2026-11-05&gameType=W&hydrate=probablePitcher,linescore",
+     "publisher": "MLB"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": null,
+   "unpriced": "The official feed lists no probable starter for either club yet, and the Game 3 method needs both starters."
+  },
+  {
+   "key": "vie-ber-etc",
+   "sport": "tennis",
+   "competition": "ATP 500 Vienna, R32",
+   "event": "Matteo Berrettini v Tomas Martin Etcheverry",
+   "home": "Matteo Berrettini",
+   "away": "Tomas Martin Etcheverry",
+   "date": "2026-10-26",
+   "start": "Mon 26 Oct, Centre Court, first match 13:30 CET",
+   "venue": "",
+   "seeds": "",
+   "sources": [
+    {
+     "id": "atp-vienna-op",
+     "url": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+     "publisher": "ATP Tour"
+    },
+    {
+     "id": "atp-rankings",
+     "url": "https://www.atptour.com/en/rankings/singles",
+     "publisher": "ATP Tour"
+    }
+   ],
+   "olbg": {
+    "event_id": 902208,
+    "label": "Today 08:30",
+    "tip": "Berrettini",
+    "market": "Win Match",
+    "share": "3/4",
+    "url": "https://www.olbg.com/betting-tips/Tennis/3"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "points_a": 1083,
+     "points_b": 1565,
+     "set_prob_a": 0.439
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Match Winner",
+      "outcomes": [
+       {
+        "name": "Matteo Berrettini win",
+        "prob": 0.409,
+        "price": 145
+       },
+       {
+        "name": "Tomas Martin Etcheverry win",
+        "prob": 0.591,
+        "price": -145
+       }
+      ]
+     },
+     {
+      "key": "sets",
+      "name": "Set Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Tomas Martin Etcheverry -1.5 sets (2-0)",
+        "prob": 0.3147,
+        "price": 218
+       },
+       {
+        "name": "Matteo Berrettini +1.5 sets",
+        "prob": 0.6853,
+        "price": -218
+       }
+      ]
+     }
+    ]
+   },
+   "unpriced": null
+  },
+  {
+   "key": "vie-mac-dem",
+   "sport": "tennis",
+   "competition": "ATP 500 Vienna, R32",
+   "event": "Tomas Machac v Alex de Minaur",
+   "home": "Tomas Machac",
+   "away": "Alex de Minaur",
+   "date": "2026-10-26",
+   "start": "Mon 26 Oct, Centre Court, second match",
+   "venue": "",
+   "seeds": "Machac (Q); de Minaur seeded 5",
+   "sources": [
+    {
+     "id": "atp-vienna-op",
+     "url": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+     "publisher": "ATP Tour"
+    },
+    {
+     "id": "atp-rankings",
+     "url": "https://www.atptour.com/en/rankings/singles",
+     "publisher": "ATP Tour"
+    }
+   ],
+   "olbg": {
+    "event_id": 902318,
+    "label": "Today",
+    "tip": "De Minaur",
+    "market": "Win Match",
+    "share": "2/2",
+    "url": "https://www.olbg.com/betting-tips/Tennis/3"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "points_a": 804,
+     "points_b": 3280,
+     "set_prob_a": 0.285
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Match Winner",
+      "outcomes": [
+       {
+        "name": "Tomas Machac win",
+        "prob": 0.1969,
+        "price": 408
+       },
+       {
+        "name": "Alex de Minaur win",
+        "prob": 0.8031,
+        "price": -408
+       }
+      ]
+     },
+     {
+      "key": "sets",
+      "name": "Set Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Alex de Minaur -1.5 sets (2-0)",
+        "prob": 0.5118,
+        "price": -105
+       },
+       {
+        "name": "Tomas Machac +1.5 sets",
+        "prob": 0.4882,
+        "price": 105
+       }
+      ]
+     }
+    ]
+   },
+   "unpriced": null
+  },
+  {
+   "key": "vie-men-neu",
+   "sport": "tennis",
+   "competition": "ATP 500 Vienna, R32",
+   "event": "Jakub Mensik v Lukas Neumayer",
+   "home": "Jakub Mensik",
+   "away": "Lukas Neumayer",
+   "date": "2026-10-26",
+   "start": "Mon 26 Oct, Centre Court, not before 17:30 CET",
+   "venue": "",
+   "seeds": "Mensik seeded 8; Neumayer (Q)",
+   "sources": [
+    {
+     "id": "atp-vienna-op",
+     "url": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+     "publisher": "ATP Tour"
+    },
+    {
+     "id": "atp-rankings",
+     "url": "https://www.atptour.com/en/rankings/singles",
+     "publisher": "ATP Tour"
+    }
+   ],
+   "olbg": {
+    "event_id": 902321,
+    "label": "Today 12:30",
+    "tip": "Mensik",
+    "market": "Win Match",
+    "share": "3/3",
+    "url": "https://www.olbg.com/betting-tips/Tennis/3"
+   },
+   "confirmed": true,
+   "priced": null,
+   "unpriced": "Lukas Neumayer sits outside the top 150 on the ATP list that was read, so no exact ranking-points figure is available and the match is not priced."
+  },
+  {
+   "key": "vie-van-tie",
+   "sport": "tennis",
+   "competition": "ATP 500 Vienna, R32",
+   "event": "Luca Van Assche v Learner Tien",
+   "home": "Luca Van Assche",
+   "away": "Learner Tien",
+   "date": "2026-10-26",
+   "start": "Mon 26 Oct, Centre Court, not before 20:00 CET",
+   "venue": "",
+   "seeds": "",
+   "sources": [
+    {
+     "id": "atp-vienna-op",
+     "url": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+     "publisher": "ATP Tour"
+    },
+    {
+     "id": "atp-rankings",
+     "url": "https://www.atptour.com/en/rankings/singles",
+     "publisher": "ATP Tour"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "points_a": 1105,
+     "points_b": 2345,
+     "set_prob_a": 0.378
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Match Winner",
+      "outcomes": [
+       {
+        "name": "Luca Van Assche win",
+        "prob": 0.3203,
+        "price": 212
+       },
+       {
+        "name": "Learner Tien win",
+        "prob": 0.6797,
+        "price": -212
+       }
+      ]
+     },
+     {
+      "key": "sets",
+      "name": "Set Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Learner Tien -1.5 sets (2-0)",
+        "prob": 0.3872,
+        "price": 158
+       },
+       {
+        "name": "Luca Van Assche +1.5 sets",
+        "prob": 0.6128,
+        "price": -158
+       }
+      ]
+     }
+    ]
+   },
+   "unpriced": null
+  },
+  {
+   "key": "vie-fer-fea",
+   "sport": "tennis",
+   "competition": "ATP 500 Vienna, R32",
+   "event": "Arthur Fery v Jacob Fearnley",
+   "home": "Arthur Fery",
+   "away": "Jacob Fearnley",
+   "date": "2026-10-26",
+   "start": "Mon 26 Oct, Glaubandich Court, 17:30 CET",
+   "venue": "",
+   "seeds": "Fearnley (Q)",
+   "sources": [
+    {
+     "id": "atp-vienna-op",
+     "url": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+     "publisher": "ATP Tour"
+    },
+    {
+     "id": "atp-rankings",
+     "url": "https://www.atptour.com/en/rankings/singles",
+     "publisher": "ATP Tour"
+    }
+   ],
+   "olbg": {
+    "event_id": 902319,
+    "label": "Today",
+    "tip": "Fearnley",
+    "market": "Win Match",
+    "share": "1/1",
+    "url": "https://www.olbg.com/betting-tips/Tennis/3"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "points_a": 1406,
+     "points_b": 686,
+     "set_prob_a": 0.617
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Match Winner",
+      "outcomes": [
+       {
+        "name": "Arthur Fery win",
+        "prob": 0.6721,
+        "price": -205
+       },
+       {
+        "name": "Jacob Fearnley win",
+        "prob": 0.3279,
+        "price": 205
+       }
+      ]
+     },
+     {
+      "key": "sets",
+      "name": "Set Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Arthur Fery -1.5 sets (2-0)",
+        "prob": 0.3805,
+        "price": 163
+       },
+       {
+        "name": "Jacob Fearnley +1.5 sets",
+        "prob": 0.6195,
+        "price": -163
+       }
+      ]
+     }
+    ]
+   },
+   "unpriced": null
+  },
+  {
+   "key": "vie-dar-arn",
+   "sport": "tennis",
+   "competition": "ATP 500 Vienna, R32",
+   "event": "Luciano Darderi v Matteo Arnaldi",
+   "home": "Luciano Darderi",
+   "away": "Matteo Arnaldi",
+   "date": "2026-10-26",
+   "start": "Mon 26 Oct, Glaubandich Court, second match",
+   "venue": "",
+   "seeds": "",
+   "sources": [
+    {
+     "id": "atp-vienna-op",
+     "url": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+     "publisher": "ATP Tour"
+    },
+    {
+     "id": "atp-rankings",
+     "url": "https://www.atptour.com/en/rankings/singles",
+     "publisher": "ATP Tour"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "points_a": 2160,
+     "points_b": 1311,
+     "set_prob_a": 0.582
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Match Winner",
+      "outcomes": [
+       {
+        "name": "Luciano Darderi win",
+        "prob": 0.6223,
+        "price": -165
+       },
+       {
+        "name": "Matteo Arnaldi win",
+        "prob": 0.3777,
+        "price": 165
+       }
+      ]
+     },
+     {
+      "key": "sets",
+      "name": "Set Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Luciano Darderi -1.5 sets (2-0)",
+        "prob": 0.339,
+        "price": 195
+       },
+       {
+        "name": "Matteo Arnaldi +1.5 sets",
+        "prob": 0.661,
+        "price": -195
+       }
+      ]
+     }
+    ]
+   },
+   "unpriced": null
+  },
+  {
+   "key": "bas-vac-nav",
+   "sport": "tennis",
+   "competition": "ATP 500 Basel, R32",
+   "event": "Valentin Vacherot v Mariano Navone",
+   "home": "Valentin Vacherot",
+   "away": "Mariano Navone",
+   "date": "2026-10-26",
+   "start": "Mon 26 Oct, Center Court, first match 13:30 CET",
+   "venue": "",
+   "seeds": "",
+   "sources": [
+    {
+     "id": "atp-basel-op",
+     "url": "https://www.atptour.com/en/scores/current/basel/328/daily-schedule",
+     "publisher": "ATP Tour"
+    },
+    {
+     "id": "atp-rankings",
+     "url": "https://www.atptour.com/en/rankings/singles",
+     "publisher": "ATP Tour"
+    }
+   ],
+   "olbg": {
+    "event_id": 902237,
+    "label": "Today",
+    "tip": "Navone",
+    "market": "Win Match",
+    "share": "1/2",
+    "url": "https://www.olbg.com/betting-tips/Tennis/3"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "points_a": 1480,
+     "points_b": 1164,
+     "set_prob_a": 0.54
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Match Winner",
+      "outcomes": [
+       {
+        "name": "Valentin Vacherot win",
+        "prob": 0.5598,
+        "price": -127
+       },
+       {
+        "name": "Mariano Navone win",
+        "prob": 0.4402,
+        "price": 127
+       }
+      ]
+     },
+     {
+      "key": "sets",
+      "name": "Set Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Valentin Vacherot -1.5 sets (2-0)",
+        "prob": 0.2915,
+        "price": 243
+       },
+       {
+        "name": "Mariano Navone +1.5 sets",
+        "prob": 0.7085,
+        "price": -243
+       }
+      ]
+     }
+    ]
+   },
+   "unpriced": null
+  },
+  {
+   "key": "bas-run-hal",
+   "sport": "tennis",
+   "competition": "ATP 500 Basel, R32",
+   "event": "Holger Rune v Quentin Halys",
+   "home": "Holger Rune",
+   "away": "Quentin Halys",
+   "date": "2026-10-26",
+   "start": "Mon 26 Oct, Center Court, second match",
+   "venue": "",
+   "seeds": "",
+   "sources": [
+    {
+     "id": "atp-basel-op",
+     "url": "https://www.atptour.com/en/scores/current/basel/328/daily-schedule",
+     "publisher": "ATP Tour"
+    },
+    {
+     "id": "atp-rankings",
+     "url": "https://www.atptour.com/en/rankings/singles",
+     "publisher": "ATP Tour"
+    }
+   ],
+   "olbg": {
+    "event_id": 902236,
+    "label": "Today",
+    "tip": "Halys",
+    "market": "Win Match",
+    "share": "1/2",
+    "url": "https://www.olbg.com/betting-tips/Tennis/3"
+   },
+   "confirmed": true,
+   "priced": null,
+   "unpriced": "Holger Rune sits outside the top 150 on the ATP list that was read, so no exact ranking-points figure is available and the match is not priced."
+  },
+  {
+   "key": "bas-str-ruu",
+   "sport": "tennis",
+   "competition": "ATP 500 Basel, R32",
+   "event": "Dominic Stricker v Casper Ruud",
+   "home": "Dominic Stricker",
+   "away": "Casper Ruud",
+   "date": "2026-10-26",
+   "start": "Mon 26 Oct, Center Court, not before 20:00 CET",
+   "venue": "",
+   "seeds": "Stricker (WC); Ruud seeded 9",
+   "sources": [
+    {
+     "id": "atp-basel-op",
+     "url": "https://www.atptour.com/en/scores/current/basel/328/daily-schedule",
+     "publisher": "ATP Tour"
+    },
+    {
+     "id": "atp-rankings",
+     "url": "https://www.atptour.com/en/rankings/singles",
+     "publisher": "ATP Tour"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": null,
+   "unpriced": "Dominic Stricker sits outside the top 150 on the ATP list that was read, so no exact ranking-points figure is available and the match is not priced."
+  },
+  {
+   "key": "bas-bru-bor",
+   "sport": "tennis",
+   "competition": "ATP 500 Basel, R32",
+   "event": "Mika Brunold v Nuno Borges",
+   "home": "Mika Brunold",
+   "away": "Nuno Borges",
+   "date": "2026-10-26",
+   "start": "Mon 26 Oct, IWB Court 1, not before 13:30 CET",
+   "venue": "",
+   "seeds": "Brunold (LL)",
+   "sources": [
+    {
+     "id": "atp-basel-op",
+     "url": "https://www.atptour.com/en/scores/current/basel/328/daily-schedule",
+     "publisher": "ATP Tour"
+    },
+    {
+     "id": "atp-rankings",
+     "url": "https://www.atptour.com/en/rankings/singles",
+     "publisher": "ATP Tour"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": null,
+   "unpriced": "Mika Brunold sits outside the top 150 on the ATP list that was read, so no exact ranking-points figure is available and the match is not priced."
+  },
+  {
+   "key": "bas-alt-cer",
+   "sport": "tennis",
+   "competition": "ATP 500 Basel, R32",
+   "event": "Daniel Altmaier v Juan Manuel Cerundolo",
+   "home": "Daniel Altmaier",
+   "away": "Juan Manuel Cerundolo",
+   "date": "2026-10-26",
+   "start": "Mon 26 Oct, IWB Court 1, second match",
+   "venue": "",
+   "seeds": "Altmaier (LL); Cerundolo (Q)",
+   "sources": [
+    {
+     "id": "atp-basel-op",
+     "url": "https://www.atptour.com/en/scores/current/basel/328/daily-schedule",
+     "publisher": "ATP Tour"
+    },
+    {
+     "id": "atp-rankings",
+     "url": "https://www.atptour.com/en/rankings/singles",
+     "publisher": "ATP Tour"
+    }
+   ],
+   "olbg": null,
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "points_a": 874,
+     "points_b": 1000,
+     "set_prob_a": 0.478
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Match Winner",
+      "outcomes": [
+       {
+        "name": "Daniel Altmaier win",
+        "prob": 0.4664,
+        "price": 114
+       },
+       {
+        "name": "Juan Manuel Cerundolo win",
+        "prob": 0.5336,
+        "price": -114
+       }
+      ]
+     },
+     {
+      "key": "sets",
+      "name": "Set Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Juan Manuel Cerundolo -1.5 sets (2-0)",
+        "prob": 0.2729,
+        "price": 266
+       },
+       {
+        "name": "Daniel Altmaier +1.5 sets",
+        "prob": 0.7271,
+        "price": -266
+       }
+      ]
+     }
+    ]
+   },
+   "unpriced": null
+  },
+  {
+   "key": "bas-djo-hum",
+   "sport": "tennis",
+   "competition": "ATP 500 Basel, R32",
+   "event": "Novak Djokovic v Ugo Humbert",
+   "home": "Novak Djokovic",
+   "away": "Ugo Humbert",
+   "date": "",
+   "start": "Order of play not yet published at read time",
+   "venue": "",
+   "seeds": "Djokovic seeded 4 (WC)",
+   "sources": [
+    {
+     "id": "atp-basel-draw",
+     "url": "https://www.atptour.com/en/scores/current/basel/328/draws",
+     "publisher": "ATP Tour"
+    },
+    {
+     "id": "atp-rankings",
+     "url": "https://www.atptour.com/en/rankings/singles",
+     "publisher": "ATP Tour"
+    }
+   ],
+   "olbg": {
+    "event_id": 902233,
+    "label": "Tomorrow 06:00",
+    "tip": "Djokovic",
+    "market": "Win Match",
+    "share": "4/5",
+    "url": "https://www.olbg.com/betting-tips/Tennis/3"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "points_a": 3090,
+     "points_b": 1270,
+     "set_prob_a": 0.643
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Match Winner",
+      "outcomes": [
+       {
+        "name": "Novak Djokovic win",
+        "prob": 0.7087,
+        "price": -243
+       },
+       {
+        "name": "Ugo Humbert win",
+        "prob": 0.2913,
+        "price": 243
+       }
+      ]
+     },
+     {
+      "key": "sets",
+      "name": "Set Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Novak Djokovic -1.5 sets (2-0)",
+        "prob": 0.4135,
+        "price": 142
+       },
+       {
+        "name": "Ugo Humbert +1.5 sets",
+        "prob": 0.5865,
+        "price": -142
+       }
+      ]
+     }
+    ]
+   },
+   "unpriced": null
+  },
+  {
+   "key": "bas-tab-jod",
+   "sport": "tennis",
+   "competition": "ATP 500 Basel, R32",
+   "event": "Alejandro Tabilo v Rafael Jodar",
+   "home": "Alejandro Tabilo",
+   "away": "Rafael Jodar",
+   "date": "",
+   "start": "Order of play not yet published at read time",
+   "venue": "",
+   "seeds": "Jodar seeded 3",
+   "sources": [
+    {
+     "id": "atp-basel-draw",
+     "url": "https://www.atptour.com/en/scores/current/basel/328/draws",
+     "publisher": "ATP Tour"
+    },
+    {
+     "id": "atp-rankings",
+     "url": "https://www.atptour.com/en/rankings/singles",
+     "publisher": "ATP Tour"
+    }
+   ],
+   "olbg": {
+    "event_id": 902238,
+    "label": "Tomorrow",
+    "tip": "Tabilo",
+    "market": "Win Match",
+    "share": "2/4",
+    "url": "https://www.olbg.com/betting-tips/Tennis/3"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "points_a": 1565,
+     "points_b": 3234,
+     "set_prob_a": 0.382
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Match Winner",
+      "outcomes": [
+       {
+        "name": "Alejandro Tabilo win",
+        "prob": 0.3261,
+        "price": 207
+       },
+       {
+        "name": "Rafael Jodar win",
+        "prob": 0.6739,
+        "price": -207
+       }
+      ]
+     },
+     {
+      "key": "sets",
+      "name": "Set Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Rafael Jodar -1.5 sets (2-0)",
+        "prob": 0.3821,
+        "price": 162
+       },
+       {
+        "name": "Alejandro Tabilo +1.5 sets",
+        "prob": 0.6179,
+        "price": -162
+       }
+      ]
+     }
+    ]
+   },
+   "unpriced": null
+  },
+  {
+   "key": "ehf-202711020101016",
+   "sport": "handball",
+   "competition": "EHF Champions League, Group B",
+   "event": "Orlen Wisla Plock v HBC Nantes",
+   "home": "Orlen Wisla Plock",
+   "away": "HBC Nantes",
+   "date": "2026-10-28",
+   "start": "2026-10-28 18:45 CET",
+   "venue": "",
+   "sources": [
+    {
+     "id": "ehf-match",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101016/OrlenWislaPlock-HBCNantes/",
+     "publisher": "EHF"
+    },
+    {
+     "id": "ehf-cl",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+     "publisher": "EHF"
+    }
+   ],
+   "olbg": {
+    "event_id": 12138,
+    "label": "28 Oct",
+    "tip": "Tie",
+    "market": "Money Line",
+    "share": "4/6",
+    "url": "https://www.olbg.com/betting-tips/Handball/20"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "home": 28.4,
+     "away": 26.2,
+     "total": 54.6,
+     "margin": 2.2
+    },
+    "markets": [
+     {
+      "key": "1x2",
+      "name": "Match Result (1X2)",
+      "outcomes": [
+       {
+        "name": "Orlen Wisla Plock win",
+        "prob": 0.6211,
+        "price": -164
+       },
+       {
+        "name": "Draw",
+        "prob": 0.0669,
+        "price": 1395
+       },
+       {
+        "name": "HBC Nantes win",
+        "prob": 0.312,
+        "price": 221
+       }
+      ]
+     },
+     {
+      "key": "hcap",
+      "name": "Handicap 2.5",
+      "outcomes": [
+       {
+        "name": "Orlen Wisla Plock -2.5",
+        "prob": 0.478,
+        "price": 109
+       },
+       {
+        "name": "HBC Nantes +2.5",
+        "prob": 0.522,
+        "price": -109
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 54.5",
+      "outcomes": [
+       {
+        "name": "Over 54.5",
+        "prob": 0.5072,
+        "price": -103
+       },
+       {
+        "name": "Under 54.5",
+        "prob": 0.4928,
+        "price": 103
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "ehf-202711020101004",
+   "sport": "handball",
+   "competition": "EHF Champions League, Group A",
+   "event": "FC Porto v One Veszprem HC",
+   "home": "FC Porto",
+   "away": "One Veszprem HC",
+   "date": "2026-10-28",
+   "start": "2026-10-28 18:45 CET",
+   "venue": "",
+   "sources": [
+    {
+     "id": "ehf-match",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101004/FCPorto-OneVeszpr%C3%A9mHC/",
+     "publisher": "EHF"
+    },
+    {
+     "id": "ehf-cl",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+     "publisher": "EHF"
+    }
+   ],
+   "olbg": {
+    "event_id": 12127,
+    "label": "28 Oct",
+    "tip": "Tie",
+    "market": "Money Line",
+    "share": "3/6",
+    "url": "https://www.olbg.com/betting-tips/Handball/20"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "home": 30.8,
+     "away": 36.1,
+     "total": 66.9,
+     "margin": -5.4
+    },
+    "markets": [
+     {
+      "key": "1x2",
+      "name": "Match Result (1X2)",
+      "outcomes": [
+       {
+        "name": "FC Porto win",
+        "prob": 0.1421,
+        "price": 604
+       },
+       {
+        "name": "Draw",
+        "prob": 0.0449,
+        "price": 2129
+       },
+       {
+        "name": "One Veszprem HC win",
+        "prob": 0.813,
+        "price": -435
+       }
+      ]
+     },
+     {
+      "key": "hcap",
+      "name": "Handicap 5.5",
+      "outcomes": [
+       {
+        "name": "One Veszprem HC -5.5",
+        "prob": 0.4921,
+        "price": 103
+       },
+       {
+        "name": "FC Porto +5.5",
+        "prob": 0.5079,
+        "price": -103
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 66.5",
+      "outcomes": [
+       {
+        "name": "Over 66.5",
+        "prob": 0.5268,
+        "price": -111
+       },
+       {
+        "name": "Under 66.5",
+        "prob": 0.4732,
+        "price": 111
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "ehf-202711020101022",
+   "sport": "handball",
+   "competition": "EHF Champions League, Group B",
+   "event": "HC Vardar 1961 v MT Melsungen",
+   "home": "HC Vardar 1961",
+   "away": "MT Melsungen",
+   "date": "2026-10-28",
+   "start": "2026-10-28 18:45 CET",
+   "venue": "",
+   "sources": [
+    {
+     "id": "ehf-match",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101022/HCVardar1961-MTMelsungen/",
+     "publisher": "EHF"
+    },
+    {
+     "id": "ehf-cl",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+     "publisher": "EHF"
+    }
+   ],
+   "olbg": {
+    "event_id": 12130,
+    "label": "28 Oct",
+    "tip": "Tie",
+    "market": "Money Line",
+    "share": "4/7",
+    "url": "https://www.olbg.com/betting-tips/Handball/20"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "home": 29.3,
+     "away": 28.3,
+     "total": 57.6,
+     "margin": 1.0
+    },
+    "markets": [
+     {
+      "key": "1x2",
+      "name": "Match Result (1X2)",
+      "outcomes": [
+       {
+        "name": "HC Vardar 1961 win",
+        "prob": 0.5393,
+        "price": -117
+       },
+       {
+        "name": "Draw",
+        "prob": 0.0711,
+        "price": 1306
+       },
+       {
+        "name": "MT Melsungen win",
+        "prob": 0.3895,
+        "price": 157
+       }
+      ]
+     },
+     {
+      "key": "hcap",
+      "name": "Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "HC Vardar 1961 -1.5",
+        "prob": 0.4669,
+        "price": 114
+       },
+       {
+        "name": "MT Melsungen +1.5",
+        "prob": 0.5331,
+        "price": -114
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 57.5",
+      "outcomes": [
+       {
+        "name": "Over 57.5",
+        "prob": 0.5049,
+        "price": -102
+       },
+       {
+        "name": "Under 57.5",
+        "prob": 0.4951,
+        "price": 102
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "ehf-202711020101067",
+   "sport": "handball",
+   "competition": "EHF Champions League, Group F",
+   "event": "Industria Kielce v Kolstad Handball",
+   "home": "Industria Kielce",
+   "away": "Kolstad Handball",
+   "date": "2026-10-28",
+   "start": "2026-10-28 20:45 CET",
+   "venue": "",
+   "sources": [
+    {
+     "id": "ehf-match",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101067/IndustriaKielce-KolstadH%C3%A5ndball/",
+     "publisher": "EHF"
+    },
+    {
+     "id": "ehf-cl",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+     "publisher": "EHF"
+    }
+   ],
+   "olbg": {
+    "event_id": 12132,
+    "label": "28 Oct",
+    "tip": "Tie",
+    "market": "Money Line",
+    "share": "5/8",
+    "url": "https://www.olbg.com/betting-tips/Handball/20"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "home": 34.3,
+     "away": 28.3,
+     "total": 62.6,
+     "margin": 6.0
+    },
+    "markets": [
+     {
+      "key": "1x2",
+      "name": "Match Result (1X2)",
+      "outcomes": [
+       {
+        "name": "Industria Kielce win",
+        "prob": 0.8422,
+        "price": -534
+       },
+       {
+        "name": "Draw",
+        "prob": 0.0399,
+        "price": 2409
+       },
+       {
+        "name": "Kolstad Handball win",
+        "prob": 0.1179,
+        "price": 748
+       }
+      ]
+     },
+     {
+      "key": "hcap",
+      "name": "Handicap 6.5",
+      "outcomes": [
+       {
+        "name": "Industria Kielce -6.5",
+        "prob": 0.4652,
+        "price": 115
+       },
+       {
+        "name": "Kolstad Handball +6.5",
+        "prob": 0.5348,
+        "price": -115
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 62.5",
+      "outcomes": [
+       {
+        "name": "Over 62.5",
+        "prob": 0.5082,
+        "price": -103
+       },
+       {
+        "name": "Under 62.5",
+        "prob": 0.4918,
+        "price": 103
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "ehf-202711020101036",
+   "sport": "handball",
+   "competition": "EHF Champions League, Group C",
+   "event": "RK Celje v HC Zagreb",
+   "home": "RK Celje",
+   "away": "HC Zagreb",
+   "date": "2026-10-28",
+   "start": "2026-10-28 20:45 CET",
+   "venue": "",
+   "sources": [
+    {
+     "id": "ehf-match",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101036/RKCeljePivovarnaLa%C5%A1ko-HCZagreb/",
+     "publisher": "EHF"
+    },
+    {
+     "id": "ehf-cl",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+     "publisher": "EHF"
+    }
+   ],
+   "olbg": {
+    "event_id": 12135,
+    "label": "28 Oct",
+    "tip": "Tie",
+    "market": "Money Line",
+    "share": "4/6",
+    "url": "https://www.olbg.com/betting-tips/Handball/20"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "home": 31.3,
+     "away": 32.8,
+     "total": 64.1,
+     "margin": -1.5
+    },
+    "markets": [
+     {
+      "key": "1x2",
+      "name": "Match Result (1X2)",
+      "outcomes": [
+       {
+        "name": "RK Celje win",
+        "prob": 0.3549,
+        "price": 182
+       },
+       {
+        "name": "Draw",
+        "prob": 0.0696,
+        "price": 1336
+       },
+       {
+        "name": "HC Zagreb win",
+        "prob": 0.5755,
+        "price": -136
+       }
+      ]
+     },
+     {
+      "key": "hcap",
+      "name": "Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "HC Zagreb -1.5",
+        "prob": 0.5034,
+        "price": -101
+       },
+       {
+        "name": "RK Celje +1.5",
+        "prob": 0.4966,
+        "price": 101
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 64.5",
+      "outcomes": [
+       {
+        "name": "Over 64.5",
+        "prob": 0.4702,
+        "price": 113
+       },
+       {
+        "name": "Under 64.5",
+        "prob": 0.5298,
+        "price": -113
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "ehf-202711020101065",
+   "sport": "handball",
+   "competition": "EHF Champions League, Group F",
+   "event": "SC Magdeburg v HC Kriens-Luzern",
+   "home": "SC Magdeburg",
+   "away": "HC Kriens-Luzern",
+   "date": "2026-10-28",
+   "start": "2026-10-28 20:45 CET",
+   "venue": "",
+   "sources": [
+    {
+     "id": "ehf-match",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101065/SCMagdeburg-HCKriensLuzern/",
+     "publisher": "EHF"
+    },
+    {
+     "id": "ehf-cl",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+     "publisher": "EHF"
+    }
+   ],
+   "olbg": {
+    "event_id": 12136,
+    "label": "28 Oct",
+    "tip": "Tie",
+    "market": "Money Line",
+    "share": "7/11",
+    "url": "https://www.olbg.com/betting-tips/Handball/20"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "home": 34.9,
+     "away": 28.5,
+     "total": 63.4,
+     "margin": 6.4
+    },
+    "markets": [
+     {
+      "key": "1x2",
+      "name": "Match Result (1X2)",
+      "outcomes": [
+       {
+        "name": "SC Magdeburg win",
+        "prob": 0.8567,
+        "price": -598
+       },
+       {
+        "name": "Draw",
+        "prob": 0.0372,
+        "price": 2589
+       },
+       {
+        "name": "HC Kriens-Luzern win",
+        "prob": 0.1061,
+        "price": 842
+       }
+      ]
+     },
+     {
+      "key": "hcap",
+      "name": "Handicap 6.5",
+      "outcomes": [
+       {
+        "name": "SC Magdeburg -6.5",
+        "prob": 0.4899,
+        "price": 104
+       },
+       {
+        "name": "HC Kriens-Luzern +6.5",
+        "prob": 0.5101,
+        "price": -104
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 63.5",
+      "outcomes": [
+       {
+        "name": "Over 63.5",
+        "prob": 0.4924,
+        "price": 103
+       },
+       {
+        "name": "Under 63.5",
+        "prob": 0.5076,
+        "price": -103
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "ehf-202711020101026",
+   "sport": "handball",
+   "competition": "EHF Champions League, Group C",
+   "event": "Paris Saint-Germain v Aalborg Handbold",
+   "home": "Paris Saint-Germain",
+   "away": "Aalborg Handbold",
+   "date": "2026-10-28",
+   "start": "2026-10-28 20:45 CET",
+   "venue": "",
+   "sources": [
+    {
+     "id": "ehf-match",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101026/ParisSaintGermain-AalborgH%C3%A5ndbold/",
+     "publisher": "EHF"
+    },
+    {
+     "id": "ehf-cl",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+     "publisher": "EHF"
+    }
+   ],
+   "olbg": {
+    "event_id": 12134,
+    "label": "28 Oct",
+    "tip": "Tie",
+    "market": "Money Line",
+    "share": "4/6",
+    "url": "https://www.olbg.com/betting-tips/Handball/20"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "home": 33.5,
+     "away": 32.1,
+     "total": 65.6,
+     "margin": 1.4
+    },
+    "markets": [
+     {
+      "key": "1x2",
+      "name": "Match Result (1X2)",
+      "outcomes": [
+       {
+        "name": "Paris Saint-Germain win",
+        "prob": 0.5617,
+        "price": -128
+       },
+       {
+        "name": "Draw",
+        "prob": 0.0703,
+        "price": 1323
+       },
+       {
+        "name": "Aalborg Handbold win",
+        "prob": 0.368,
+        "price": 172
+       }
+      ]
+     },
+     {
+      "key": "hcap",
+      "name": "Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Paris Saint-Germain -1.5",
+        "prob": 0.4894,
+        "price": 104
+       },
+       {
+        "name": "Aalborg Handbold +1.5",
+        "prob": 0.5106,
+        "price": -104
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 65.5",
+      "outcomes": [
+       {
+        "name": "Over 65.5",
+        "prob": 0.5038,
+        "price": -102
+       },
+       {
+        "name": "Under 65.5",
+        "prob": 0.4962,
+        "price": 102
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "ehf-202711020101046",
+   "sport": "handball",
+   "competition": "EHF Champions League, Group D",
+   "event": "IFK Kristianstad v OTP Bank-PICK Szeged",
+   "home": "IFK Kristianstad",
+   "away": "OTP Bank-PICK Szeged",
+   "date": "2026-10-29",
+   "start": "2026-10-29 18:45 CET",
+   "venue": "",
+   "sources": [
+    {
+     "id": "ehf-match",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101046/IFKKristianstad-OTPBankPICKSzeged/",
+     "publisher": "EHF"
+    },
+    {
+     "id": "ehf-cl",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+     "publisher": "EHF"
+    }
+   ],
+   "olbg": {
+    "event_id": 12131,
+    "label": "29 Oct",
+    "tip": "Tie",
+    "market": "Money Line",
+    "share": "1/3",
+    "url": "https://www.olbg.com/betting-tips/Handball/20"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "home": 34.1,
+     "away": 37.6,
+     "total": 71.7,
+     "margin": -3.5
+    },
+    "markets": [
+     {
+      "key": "1x2",
+      "name": "Match Result (1X2)",
+      "outcomes": [
+       {
+        "name": "IFK Kristianstad win",
+        "prob": 0.2361,
+        "price": 324
+       },
+       {
+        "name": "Draw",
+        "prob": 0.0595,
+        "price": 1581
+       },
+       {
+        "name": "OTP Bank-PICK Szeged win",
+        "prob": 0.7044,
+        "price": -238
+       }
+      ]
+     },
+     {
+      "key": "hcap",
+      "name": "Handicap 3.5",
+      "outcomes": [
+       {
+        "name": "OTP Bank-PICK Szeged -3.5",
+        "prob": 0.4967,
+        "price": 101
+       },
+       {
+        "name": "IFK Kristianstad +3.5",
+        "prob": 0.5033,
+        "price": -101
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 71.5",
+      "outcomes": [
+       {
+        "name": "Over 71.5",
+        "prob": 0.5136,
+        "price": -106
+       },
+       {
+        "name": "Under 71.5",
+        "prob": 0.4864,
+        "price": 106
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "ehf-202711020101040",
+   "sport": "handball",
+   "competition": "EHF Champions League, Group D",
+   "event": "GOG v Sporting CP",
+   "home": "GOG",
+   "away": "Sporting CP",
+   "date": "2026-10-29",
+   "start": "2026-10-29 18:45 CET",
+   "venue": "",
+   "sources": [
+    {
+     "id": "ehf-match",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101040/GOG-SportingClubedePortugal/",
+     "publisher": "EHF"
+    },
+    {
+     "id": "ehf-cl",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+     "publisher": "EHF"
+    }
+   ],
+   "olbg": {
+    "event_id": 12129,
+    "label": "29 Oct",
+    "tip": "GOG",
+    "market": "Money Line",
+    "share": "2/4",
+    "url": "https://www.olbg.com/betting-tips/Handball/20"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "home": 35.7,
+     "away": 36.8,
+     "total": 72.5,
+     "margin": -1.1
+    },
+    "markets": [
+     {
+      "key": "1x2",
+      "name": "Match Result (1X2)",
+      "outcomes": [
+       {
+        "name": "GOG win",
+        "prob": 0.3831,
+        "price": 161
+       },
+       {
+        "name": "Draw",
+        "prob": 0.0709,
+        "price": 1310
+       },
+       {
+        "name": "Sporting CP win",
+        "prob": 0.546,
+        "price": -120
+       }
+      ]
+     },
+     {
+      "key": "hcap",
+      "name": "Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Sporting CP -1.5",
+        "prob": 0.4736,
+        "price": 111
+       },
+       {
+        "name": "GOG +1.5",
+        "prob": 0.5264,
+        "price": -111
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 72.5",
+      "outcomes": [
+       {
+        "name": "Over 72.5",
+        "prob": 0.4969,
+        "price": 101
+       },
+       {
+        "name": "Under 72.5",
+        "prob": 0.5031,
+        "price": -101
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "ehf-202711020101009",
+   "sport": "handball",
+   "competition": "EHF Champions League, Group A",
+   "event": "Fuchse Berlin v RK Partizan",
+   "home": "Fuchse Berlin",
+   "away": "RK Partizan",
+   "date": "2026-10-29",
+   "start": "2026-10-29 18:45 CET",
+   "venue": "",
+   "sources": [
+    {
+     "id": "ehf-match",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101009/F%C3%BCchseBerlin-RKPartizanAdmiralBet/",
+     "publisher": "EHF"
+    },
+    {
+     "id": "ehf-cl",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+     "publisher": "EHF"
+    }
+   ],
+   "olbg": {
+    "event_id": 12128,
+    "label": "29 Oct",
+    "tip": "Tie",
+    "market": "Money Line",
+    "share": "6/11",
+    "url": "https://www.olbg.com/betting-tips/Handball/20"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "home": 39.0,
+     "away": 31.2,
+     "total": 70.2,
+     "margin": 7.8
+    },
+    "markets": [
+     {
+      "key": "1x2",
+      "name": "Match Result (1X2)",
+      "outcomes": [
+       {
+        "name": "Fuchse Berlin win",
+        "prob": 0.9092,
+        "price": -1001
+       },
+       {
+        "name": "Draw",
+        "prob": 0.0262,
+        "price": 3710
+       },
+       {
+        "name": "RK Partizan win",
+        "prob": 0.0645,
+        "price": 1449
+       }
+      ]
+     },
+     {
+      "key": "hcap",
+      "name": "Handicap 8.5",
+      "outcomes": [
+       {
+        "name": "Fuchse Berlin -8.5",
+        "prob": 0.4528,
+        "price": 121
+       },
+       {
+        "name": "RK Partizan +8.5",
+        "prob": 0.5472,
+        "price": -121
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 70.5",
+      "outcomes": [
+       {
+        "name": "Over 70.5",
+        "prob": 0.4794,
+        "price": 109
+       },
+       {
+        "name": "Under 70.5",
+        "prob": 0.5206,
+        "price": -109
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "ehf-202711020101055",
+   "sport": "handball",
+   "competition": "EHF Champions League, Group E",
+   "event": "Montpellier Handball v Dinamo Bucuresti",
+   "home": "Montpellier Handball",
+   "away": "Dinamo Bucuresti",
+   "date": "2026-10-29",
+   "start": "2026-10-29 20:45 CET",
+   "venue": "",
+   "sources": [
+    {
+     "id": "ehf-match",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101055/MontpellierHandball-DinamoBucuresti/",
+     "publisher": "EHF"
+    },
+    {
+     "id": "ehf-cl",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+     "publisher": "EHF"
+    }
+   ],
+   "olbg": {
+    "event_id": 12133,
+    "label": "29 Oct",
+    "tip": "Tie",
+    "market": "Money Line",
+    "share": "2/3",
+    "url": "https://www.olbg.com/betting-tips/Handball/20"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "home": 29.7,
+     "away": 28.6,
+     "total": 58.2,
+     "margin": 1.1
+    },
+    "markets": [
+     {
+      "key": "1x2",
+      "name": "Match Result (1X2)",
+      "outcomes": [
+       {
+        "name": "Montpellier Handball win",
+        "prob": 0.5461,
+        "price": -120
+       },
+       {
+        "name": "Draw",
+        "prob": 0.0709,
+        "price": 1310
+       },
+       {
+        "name": "Dinamo Bucuresti win",
+        "prob": 0.383,
+        "price": 161
+       }
+      ]
+     },
+     {
+      "key": "hcap",
+      "name": "Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Montpellier Handball -1.5",
+        "prob": 0.4737,
+        "price": 111
+       },
+       {
+        "name": "Dinamo Bucuresti +1.5",
+        "prob": 0.5263,
+        "price": -111
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 58.5",
+      "outcomes": [
+       {
+        "name": "Over 58.5",
+        "prob": 0.4832,
+        "price": 107
+       },
+       {
+        "name": "Under 58.5",
+        "prob": 0.5168,
+        "price": -107
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "ehf-202711020101054",
+   "sport": "handball",
+   "competition": "EHF Champions League, Group E",
+   "event": "SAH-Aarhus v Barca",
+   "home": "SAH-Aarhus",
+   "away": "Barca",
+   "date": "2026-10-29",
+   "start": "2026-10-29 20:45 CET",
+   "venue": "",
+   "sources": [
+    {
+     "id": "ehf-match",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101054/SAHAarhus-Bar%C3%A7a/",
+     "publisher": "EHF"
+    },
+    {
+     "id": "ehf-cl",
+     "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/",
+     "publisher": "EHF"
+    }
+   ],
+   "olbg": {
+    "event_id": 12137,
+    "label": "29 Oct",
+    "tip": "Barcelona",
+    "market": "Money Line",
+    "share": "1/3",
+    "url": "https://www.olbg.com/betting-tips/Handball/20"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "home": 28.9,
+     "away": 33.8,
+     "total": 62.6,
+     "margin": -4.9
+    },
+    "markets": [
+     {
+      "key": "1x2",
+      "name": "Match Result (1X2)",
+      "outcomes": [
+       {
+        "name": "SAH-Aarhus win",
+        "prob": 0.1625,
+        "price": 515
+       },
+       {
+        "name": "Draw",
+        "prob": 0.0487,
+        "price": 1955
+       },
+       {
+        "name": "Barca win",
+        "prob": 0.7888,
+        "price": -374
+       }
+      ]
+     },
+     {
+      "key": "hcap",
+      "name": "Handicap 5.5",
+      "outcomes": [
+       {
+        "name": "Barca -5.5",
+        "prob": 0.4575,
+        "price": 119
+       },
+       {
+        "name": "SAH-Aarhus +5.5",
+        "prob": 0.5425,
+        "price": -119
+       }
+      ]
+     },
+     {
+      "key": "tot",
+      "name": "Total Goals 62.5",
+      "outcomes": [
+       {
+        "name": "Over 62.5",
+        "prob": 0.5077,
+        "price": -103
+       },
+       {
+        "name": "Under 62.5",
+        "prob": 0.4923,
+        "price": 103
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "lvf-oma-ber",
+   "sport": "volleyball",
+   "competition": "Serie A1 Tigotà (women)",
+   "event": "Omag Consolini Volley 1907 v Volley Bergamo",
+   "home": "Omag Consolini Volley 1907",
+   "away": "Volley Bergamo",
+   "date": "",
+   "start": "OLBG label: Tomorrow (27 Oct)",
+   "venue": "",
+   "sources": [
+    {
+     "id": "lvf-table",
+     "url": "https://www.legavolleyfemminile.it/classifica/",
+     "publisher": "Lega Volley Femminile"
+    }
+   ],
+   "olbg": {
+    "event_id": 37075,
+    "label": "Tomorrow",
+    "tip": "Bergamo W",
+    "market": "Win Match",
+    "share": "2/3",
+    "url": "https://www.olbg.com/betting-tips/Volleyball/21"
+   },
+   "confirmed": false,
+   "priced": {
+    "exp": {
+     "rally_q": 0.5022,
+     "set_prob": 0.513,
+     "share_home": 0.498,
+     "share_away": 0.504
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Match Winner",
+      "outcomes": [
+       {
+        "name": "Omag Consolini Volley 1907 win",
+        "prob": 0.5226,
+        "price": -109
+       },
+       {
+        "name": "Volley Bergamo win",
+        "prob": 0.4774,
+        "price": 109
+       }
+      ]
+     },
+     {
+      "key": "sets",
+      "name": "Set Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Omag Consolini Volley 1907 -1.5 sets (3-0 or 3-1)",
+        "prob": 0.3316,
+        "price": 202
+       },
+       {
+        "name": "Volley Bergamo +1.5 sets",
+        "prob": 0.6684,
+        "price": -202
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "lvf-con-val",
+   "sport": "volleyball",
+   "competition": "Serie A1 Tigotà (women)",
+   "event": "Imoco Conegliano v Savio Vallefoglia",
+   "home": "Imoco Conegliano",
+   "away": "Savio Vallefoglia",
+   "date": "",
+   "start": "OLBG label: 28 Oct",
+   "venue": "",
+   "sources": [
+    {
+     "id": "lvf-table",
+     "url": "https://www.legavolleyfemminile.it/classifica/",
+     "publisher": "Lega Volley Femminile"
+    }
+   ],
+   "olbg": {
+    "event_id": 37076,
+    "label": "28 Oct",
+    "tip": "Vallefoglia W",
+    "market": "Win Match",
+    "share": "5/7",
+    "url": "https://www.olbg.com/betting-tips/Volleyball/21"
+   },
+   "confirmed": false,
+   "priced": {
+    "exp": {
+     "rally_q": 0.5367,
+     "set_prob": 0.701,
+     "share_home": 0.581,
+     "share_away": 0.518
+    },
+    "markets": [
+     {
+      "key": "ml",
+      "name": "Match Winner",
+      "outcomes": [
+       {
+        "name": "Imoco Conegliano win",
+        "prob": 0.8276,
+        "price": -480
+       },
+       {
+        "name": "Savio Vallefoglia win",
+        "prob": 0.1724,
+        "price": 480
+       }
+      ]
+     },
+     {
+      "key": "sets",
+      "name": "Set Handicap 1.5",
+      "outcomes": [
+       {
+        "name": "Imoco Conegliano -1.5 sets (3-0 or 3-1)",
+        "prob": 0.6537,
+        "price": -189
+       },
+       {
+        "name": "Savio Vallefoglia +1.5 sets",
+        "prob": 0.3463,
+        "price": 189
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "f1-mexico",
+   "sport": "motor-racing",
+   "competition": "Formula 1 World Championship",
+   "event": "Mexico City Grand Prix",
+   "home": "",
+   "away": "",
+   "date": "",
+   "start": "OLBG label: 01 Nov 15:00",
+   "venue": "",
+   "sources": [
+    {
+     "id": "f1-races",
+     "url": "https://www.formula1.com/en/results/2026/races",
+     "publisher": "Formula 1"
+    }
+   ],
+   "olbg": {
+    "event_id": 914,
+    "label": "01 Nov 15:00",
+    "tip": "Charles Leclerc",
+    "market": "Race Winner",
+    "share": "1/2",
+    "url": "https://www.olbg.com/betting-tips/Motor_Racing/14"
+   },
+   "confirmed": true,
+   "priced": {
+    "exp": {
+     "wins": {
+      "George Russell": 3,
+      "Kimi Antonelli": 9,
+      "Lewis Hamilton": 1,
+      "Charles Leclerc": 1,
+      "Lando Norris": 2,
+      "Max Verstappen": 2
+     },
+     "denom": 23.0
+    },
+    "markets": [
+     {
+      "key": "win",
+      "name": "Race Winner",
+      "outcomes": [
+       {
+        "name": "Kimi Antonelli to win",
+        "prob": 0.413,
+        "price": 142
+       },
+       {
+        "name": "George Russell to win",
+        "prob": 0.1522,
+        "price": 557
+       },
+       {
+        "name": "Lando Norris to win",
+        "prob": 0.1087,
+        "price": 820
+       },
+       {
+        "name": "Max Verstappen to win",
+        "prob": 0.1087,
+        "price": 820
+       },
+       {
+        "name": "Lewis Hamilton to win",
+        "prob": 0.0652,
+        "price": 1433
+       },
+       {
+        "name": "Charles Leclerc to win",
+        "prob": 0.0652,
+        "price": 1433
+       },
+       {
+        "name": "Any other driver to win",
+        "prob": 0.087,
+        "price": 1050
+       }
+      ]
+     },
+     {
+      "key": "team",
+      "name": "Winning Constructor: Mercedes",
+      "outcomes": [
+       {
+        "name": "A Mercedes driver wins",
+        "prob": 0.5652,
+        "price": -130
+       },
+       {
+        "name": "Any other team wins",
+        "prob": 0.4348,
+        "price": 130
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "key": "icc-271648",
+   "sport": "cricket",
+   "competition": "International T20",
+   "event": "New Zealand v India (3rd T20I)",
+   "home": "",
+   "away": "",
+   "date": "",
+   "start": "OLBG label: Tomorrow 03:00",
+   "venue": "",
+   "sources": [
+    {
+     "id": "icc-match",
+     "url": "https://www.icc-cricket.com/matches/271648/new-zealand-vs-india",
+     "publisher": "ICC"
+    }
+   ],
+   "olbg": {
+    "event_id": 188852,
+    "label": "Tomorrow 03:00",
+    "tip": "India",
+    "market": "Match Winner",
+    "share": "14/21",
+    "url": "https://www.olbg.com/betting-tips/Cricket/7"
+   },
+   "confirmed": true,
+   "priced": null,
+   "unpriced": "The ICC fixture page confirms the match, but the ICC team-rankings table rendered empty, so no official rating was available to price it."
+  },
+  {
+   "key": "icc-275412",
+   "sport": "cricket",
+   "competition": "International ODI",
+   "event": "Namibia v Ireland (3rd ODI)",
+   "home": "",
+   "away": "",
+   "date": "",
+   "start": "OLBG label: Tomorrow 03:30",
+   "venue": "",
+   "sources": [
+    {
+     "id": "icc-match",
+     "url": "https://www.icc-cricket.com/matches/275412/namibia-vs-ireland",
+     "publisher": "ICC"
+    }
+   ],
+   "olbg": {
+    "event_id": 188854,
+    "label": "Tomorrow 03:30",
+    "tip": "Ireland",
+    "market": "Match Winner",
+    "share": "11/16",
+    "url": "https://www.olbg.com/betting-tips/Cricket/7"
+   },
+   "confirmed": true,
+   "priced": null,
+   "unpriced": "The ICC fixture page confirms the match, but the ICC team-rankings table rendered empty, so no official rating was available to price it."
+  },
+  {
+   "key": "icc-274146",
+   "sport": "cricket",
+   "competition": "International ODI",
+   "event": "Pakistan v Sri Lanka (ODI)",
+   "home": "",
+   "away": "",
+   "date": "",
+   "start": "OLBG label: Tomorrow 04:00",
+   "venue": "",
+   "sources": [
+    {
+     "id": "icc-match",
+     "url": "https://www.icc-cricket.com/matches/274146/pakistan-vs-sri-lanka",
+     "publisher": "ICC"
+    }
+   ],
+   "olbg": {
+    "event_id": 188868,
+    "label": "Tomorrow 04:00",
+    "tip": "Pakistan",
+    "market": "Match Winner",
+    "share": "5/9",
+    "url": "https://www.olbg.com/betting-tips/Cricket/7"
+   },
+   "confirmed": true,
+   "priced": null,
+   "unpriced": "The ICC fixture page confirms the match, but the ICC team-rankings table rendered empty, so no official rating was available to price it."
+  },
+  {
+   "key": "icc-269792",
+   "sport": "cricket",
+   "competition": "World Test Championship",
+   "event": "South Africa v Australia (Test)",
+   "home": "",
+   "away": "",
+   "date": "",
+   "start": "OLBG label: 31 Oct",
+   "venue": "",
+   "sources": [
+    {
+     "id": "icc-match",
+     "url": "https://www.icc-cricket.com/tournaments/world-test-championship/matches/269792/south-africa-vs-australia",
+     "publisher": "ICC"
+    }
+   ],
+   "olbg": {
+    "event_id": 188835,
+    "label": "31 Oct",
+    "tip": "AK Markram",
+    "market": "Man of the Match",
+    "share": "3/5",
+    "url": "https://www.olbg.com/betting-tips/Cricket/7"
+   },
+   "confirmed": true,
+   "priced": null,
+   "unpriced": "The ICC fixture page confirms the match, but the ICC team-rankings table rendered empty, so no official rating was available to price it."
+  }
+ ],
+ "picks": [
+  {
+   "id": "nhl-2026020185-ml",
+   "fixture": "nhl-2026020185",
+   "sport": "ice-hockey",
+   "event": "Los Angeles Kings @ New York Rangers",
+   "competition": "NHL",
+   "start": "2026-10-26T23:00Z",
+   "selection": "New York Rangers win",
+   "market": "Money Line (incl. OT/SO)",
+   "prob": 0.6962,
+   "price": -229,
+   "price_text": "-229",
+   "grade": "High",
+   "capped": false,
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+   "has_pred": true
+  },
+  {
+   "id": "nhl-2026020197-ml",
+   "fixture": "nhl-2026020197",
+   "sport": "ice-hockey",
+   "event": "Vancouver Canucks @ Anaheim Ducks",
+   "competition": "NHL",
+   "start": "2026-10-28T02:00Z",
+   "selection": "Anaheim Ducks win",
+   "market": "Money Line (incl. OT/SO)",
+   "prob": 0.6895,
+   "price": -222,
+   "price_text": "-222",
+   "grade": "High",
+   "capped": false,
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+   "has_pred": true
+  },
+  {
+   "id": "nhl-2026020187-ml",
+   "fixture": "nhl-2026020187",
+   "sport": "ice-hockey",
+   "event": "Detroit Red Wings @ Edmonton Oilers",
+   "competition": "NHL",
+   "start": "2026-10-27T01:30Z",
+   "selection": "Edmonton Oilers win",
+   "market": "Money Line (incl. OT/SO)",
+   "prob": 0.6876,
+   "price": -220,
+   "price_text": "-220",
+   "grade": "High",
+   "capped": false,
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+   "has_pred": true
+  },
+  {
+   "id": "nhl-2026020193-ml",
+   "fixture": "nhl-2026020193",
+   "sport": "ice-hockey",
+   "event": "New Jersey Devils @ Dallas Stars",
+   "competition": "NHL",
+   "start": "2026-10-28T00:00Z",
+   "selection": "Dallas Stars win",
+   "market": "Money Line (incl. OT/SO)",
+   "prob": 0.6231,
+   "price": -165,
+   "price_text": "-165",
+   "grade": "High",
+   "capped": false,
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+   "has_pred": true
+  },
+  {
+   "id": "del-koe-man-ml",
+   "fixture": "del-koe-man",
+   "sport": "ice-hockey",
+   "event": "Adler Mannheim @ Koelner Haie",
+   "competition": "PENNY DEL",
+   "start": "2026-10-27 19:00 CET",
+   "selection": "Adler Mannheim win",
+   "market": "Money Line (incl. OT/SO)",
+   "prob": 0.5831,
+   "price": -140,
+   "price_text": "-140",
+   "grade": "Medium",
+   "capped": false,
+   "source": "https://www.penny-del.org/tabelle",
+   "has_pred": true
+  },
+  {
+   "id": "nhl-2026020196-ml",
+   "fixture": "nhl-2026020196",
+   "sport": "ice-hockey",
+   "event": "Ottawa Senators @ Vegas Golden Knights",
+   "competition": "NHL",
+   "start": "2026-10-28T02:00Z",
+   "selection": "Vegas Golden Knights win",
+   "market": "Money Line (incl. OT/SO)",
+   "prob": 0.5804,
+   "price": -138,
+   "price_text": "-138",
+   "grade": "Medium",
+   "capped": false,
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+   "has_pred": false
+  },
+  {
+   "id": "nhl-2026020188-ml",
+   "fixture": "nhl-2026020188",
+   "sport": "ice-hockey",
+   "event": "Columbus Blue Jackets @ Philadelphia Flyers",
+   "competition": "NHL",
+   "start": "2026-10-27T23:00Z",
+   "selection": "Columbus Blue Jackets win",
+   "market": "Money Line (incl. OT/SO)",
+   "prob": 0.5424,
+   "price": -119,
+   "price_text": "-119",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+   "has_pred": false
+  },
+  {
+   "id": "nhl-2026020191-ml",
+   "fixture": "nhl-2026020191",
+   "sport": "ice-hockey",
+   "event": "Montreal Canadiens @ St. Louis Blues",
+   "competition": "NHL",
+   "start": "2026-10-28T00:00Z",
+   "selection": "St. Louis Blues win",
+   "market": "Money Line (incl. OT/SO)",
+   "prob": 0.5388,
+   "price": -117,
+   "price_text": "-117",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+   "has_pred": false
+  },
+  {
+   "id": "nhl-2026020192-ml",
+   "fixture": "nhl-2026020192",
+   "sport": "ice-hockey",
+   "event": "New York Islanders @ Nashville Predators",
+   "competition": "NHL",
+   "start": "2026-10-28T00:00Z",
+   "selection": "New York Islanders win",
+   "market": "Money Line (incl. OT/SO)",
+   "prob": 0.5297,
+   "price": -113,
+   "price_text": "-113",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+   "has_pred": false
+  },
+  {
+   "id": "nhl-2026020190-ml",
+   "fixture": "nhl-2026020190",
+   "sport": "ice-hockey",
+   "event": "Los Angeles Kings @ Chicago Blackhawks",
+   "competition": "NHL",
+   "start": "2026-10-28T00:00Z",
+   "selection": "Los Angeles Kings win",
+   "market": "Money Line (incl. OT/SO)",
+   "prob": 0.5275,
+   "price": -112,
+   "price_text": "-112",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+   "has_pred": false
+  },
+  {
+   "id": "bas-djo-hum-ml",
+   "fixture": "bas-djo-hum",
+   "sport": "tennis",
+   "event": "Novak Djokovic v Ugo Humbert",
+   "competition": "ATP 500 Basel, R32",
+   "start": "Order of play not yet published at read time",
+   "selection": "Novak Djokovic win",
+   "market": "Match Winner",
+   "prob": 0.7087,
+   "price": -243,
+   "price_text": "-243",
+   "grade": "High",
+   "capped": false,
+   "source": "https://www.atptour.com/en/scores/current/basel/328/draws",
+   "has_pred": true
+  },
+  {
+   "id": "vie-van-tie-ml",
+   "fixture": "vie-van-tie",
+   "sport": "tennis",
+   "event": "Luca Van Assche v Learner Tien",
+   "competition": "ATP 500 Vienna, R32",
+   "start": "Mon 26 Oct, Centre Court, not before 20:00 CET",
+   "selection": "Learner Tien win",
+   "market": "Match Winner",
+   "prob": 0.6797,
+   "price": -212,
+   "price_text": "-212",
+   "grade": "High",
+   "capped": false,
+   "source": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+   "has_pred": true
+  },
+  {
+   "id": "bas-tab-jod-ml",
+   "fixture": "bas-tab-jod",
+   "sport": "tennis",
+   "event": "Alejandro Tabilo v Rafael Jodar",
+   "competition": "ATP 500 Basel, R32",
+   "start": "Order of play not yet published at read time",
+   "selection": "Rafael Jodar win",
+   "market": "Match Winner",
+   "prob": 0.6739,
+   "price": -207,
+   "price_text": "-207",
+   "grade": "High",
+   "capped": false,
+   "source": "https://www.atptour.com/en/scores/current/basel/328/draws",
+   "has_pred": true
+  },
+  {
+   "id": "vie-fer-fea-ml",
+   "fixture": "vie-fer-fea",
+   "sport": "tennis",
+   "event": "Arthur Fery v Jacob Fearnley",
+   "competition": "ATP 500 Vienna, R32",
+   "start": "Mon 26 Oct, Glaubandich Court, 17:30 CET",
+   "selection": "Arthur Fery win",
+   "market": "Match Winner",
+   "prob": 0.6721,
+   "price": -205,
+   "price_text": "-205",
+   "grade": "High",
+   "capped": false,
+   "source": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+   "has_pred": true
+  },
+  {
+   "id": "vie-dar-arn-ml",
+   "fixture": "vie-dar-arn",
+   "sport": "tennis",
+   "event": "Luciano Darderi v Matteo Arnaldi",
+   "competition": "ATP 500 Vienna, R32",
+   "start": "Mon 26 Oct, Glaubandich Court, second match",
+   "selection": "Luciano Darderi win",
+   "market": "Match Winner",
+   "prob": 0.6223,
+   "price": -165,
+   "price_text": "-165",
+   "grade": "High",
+   "capped": false,
+   "source": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+   "has_pred": true
+  },
+  {
+   "id": "vie-ber-etc-ml",
+   "fixture": "vie-ber-etc",
+   "sport": "tennis",
+   "event": "Matteo Berrettini v Tomas Martin Etcheverry",
+   "competition": "ATP 500 Vienna, R32",
+   "start": "Mon 26 Oct, Centre Court, first match 13:30 CET",
+   "selection": "Tomas Martin Etcheverry win",
+   "market": "Match Winner",
+   "prob": 0.591,
+   "price": -145,
+   "price_text": "-145",
+   "grade": "Medium",
+   "capped": false,
+   "source": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+   "has_pred": false
+  },
+  {
+   "id": "bas-vac-nav-ml",
+   "fixture": "bas-vac-nav",
+   "sport": "tennis",
+   "event": "Valentin Vacherot v Mariano Navone",
+   "competition": "ATP 500 Basel, R32",
+   "start": "Mon 26 Oct, Center Court, first match 13:30 CET",
+   "selection": "Valentin Vacherot win",
+   "market": "Match Winner",
+   "prob": 0.5598,
+   "price": -127,
+   "price_text": "-127",
+   "grade": "Medium",
+   "capped": false,
+   "source": "https://www.atptour.com/en/scores/current/basel/328/daily-schedule",
+   "has_pred": false
+  },
+  {
+   "id": "bas-alt-cer-ml",
+   "fixture": "bas-alt-cer",
+   "sport": "tennis",
+   "event": "Daniel Altmaier v Juan Manuel Cerundolo",
+   "competition": "ATP 500 Basel, R32",
+   "start": "Mon 26 Oct, IWB Court 1, second match",
+   "selection": "Juan Manuel Cerundolo win",
+   "market": "Match Winner",
+   "prob": 0.5336,
+   "price": -114,
+   "price_text": "-114",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://www.atptour.com/en/scores/current/basel/328/daily-schedule",
+   "has_pred": false
+  },
+  {
+   "id": "vie-mac-dem-sets",
+   "fixture": "vie-mac-dem",
+   "sport": "tennis",
+   "event": "Tomas Machac v Alex de Minaur",
+   "competition": "ATP 500 Vienna, R32",
+   "start": "Mon 26 Oct, Centre Court, second match",
+   "selection": "Alex de Minaur -1.5 sets (2-0)",
+   "market": "Set Handicap 1.5",
+   "prob": 0.5118,
+   "price": -105,
+   "price_text": "-105",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+   "has_pred": false
+  },
+  {
+   "id": "ehf-202711020101046-1x2",
+   "fixture": "ehf-202711020101046",
+   "sport": "handball",
+   "event": "IFK Kristianstad v OTP Bank-PICK Szeged",
+   "competition": "EHF Champions League, Group D",
+   "start": "2026-10-29 18:45 CET",
+   "selection": "OTP Bank-PICK Szeged win",
+   "market": "Match Result (1X2)",
+   "prob": 0.7044,
+   "price": -238,
+   "price_text": "-238",
+   "grade": "High",
+   "capped": false,
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101046/IFKKristianstad-OTPBankPICKSzeged/",
+   "has_pred": true
+  },
+  {
+   "id": "ehf-202711020101016-1x2",
+   "fixture": "ehf-202711020101016",
+   "sport": "handball",
+   "event": "Orlen Wisla Plock v HBC Nantes",
+   "competition": "EHF Champions League, Group B",
+   "start": "2026-10-28 18:45 CET",
+   "selection": "Orlen Wisla Plock win",
+   "market": "Match Result (1X2)",
+   "prob": 0.6211,
+   "price": -164,
+   "price_text": "-164",
+   "grade": "High",
+   "capped": false,
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101016/OrlenWislaPlock-HBCNantes/",
+   "has_pred": true
+  },
+  {
+   "id": "ehf-202711020101036-1x2",
+   "fixture": "ehf-202711020101036",
+   "sport": "handball",
+   "event": "RK Celje v HC Zagreb",
+   "competition": "EHF Champions League, Group C",
+   "start": "2026-10-28 20:45 CET",
+   "selection": "HC Zagreb win",
+   "market": "Match Result (1X2)",
+   "prob": 0.5755,
+   "price": -136,
+   "price_text": "-136",
+   "grade": "Medium",
+   "capped": false,
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101036/RKCeljePivovarnaLa%C5%A1ko-HCZagreb/",
+   "has_pred": true
+  },
+  {
+   "id": "ehf-202711020101026-1x2",
+   "fixture": "ehf-202711020101026",
+   "sport": "handball",
+   "event": "Paris Saint-Germain v Aalborg Handbold",
+   "competition": "EHF Champions League, Group C",
+   "start": "2026-10-28 20:45 CET",
+   "selection": "Paris Saint-Germain win",
+   "market": "Match Result (1X2)",
+   "prob": 0.5617,
+   "price": -128,
+   "price_text": "-128",
+   "grade": "Medium",
+   "capped": false,
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101026/ParisSaintGermain-AalborgH%C3%A5ndbold/",
+   "has_pred": true
+  },
+  {
+   "id": "ehf-202711020101055-1x2",
+   "fixture": "ehf-202711020101055",
+   "sport": "handball",
+   "event": "Montpellier Handball v Dinamo Bucuresti",
+   "competition": "EHF Champions League, Group E",
+   "start": "2026-10-29 20:45 CET",
+   "selection": "Montpellier Handball win",
+   "market": "Match Result (1X2)",
+   "prob": 0.5461,
+   "price": -120,
+   "price_text": "-120",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101055/MontpellierHandball-DinamoBucuresti/",
+   "has_pred": true
+  },
+  {
+   "id": "ehf-202711020101040-1x2",
+   "fixture": "ehf-202711020101040",
+   "sport": "handball",
+   "event": "GOG v Sporting CP",
+   "competition": "EHF Champions League, Group D",
+   "start": "2026-10-29 18:45 CET",
+   "selection": "Sporting CP win",
+   "market": "Match Result (1X2)",
+   "prob": 0.546,
+   "price": -120,
+   "price_text": "-120",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101040/GOG-SportingClubedePortugal/",
+   "has_pred": false
+  },
+  {
+   "id": "ehf-202711020101022-1x2",
+   "fixture": "ehf-202711020101022",
+   "sport": "handball",
+   "event": "HC Vardar 1961 v MT Melsungen",
+   "competition": "EHF Champions League, Group B",
+   "start": "2026-10-28 18:45 CET",
+   "selection": "HC Vardar 1961 win",
+   "market": "Match Result (1X2)",
+   "prob": 0.5393,
+   "price": -117,
+   "price_text": "-117",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101022/HCVardar1961-MTMelsungen/",
+   "has_pred": false
+  },
+  {
+   "id": "ehf-202711020101004-hcap",
+   "fixture": "ehf-202711020101004",
+   "sport": "handball",
+   "event": "FC Porto v One Veszprem HC",
+   "competition": "EHF Champions League, Group A",
+   "start": "2026-10-28 18:45 CET",
+   "selection": "One Veszprem HC -5.5",
+   "market": "Handicap 5.5",
+   "prob": 0.4921,
+   "price": 103,
+   "price_text": "+103",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101004/FCPorto-OneVeszpr%C3%A9mHC/",
+   "has_pred": false
+  },
+  {
+   "id": "ehf-202711020101065-hcap",
+   "fixture": "ehf-202711020101065",
+   "sport": "handball",
+   "event": "SC Magdeburg v HC Kriens-Luzern",
+   "competition": "EHF Champions League, Group F",
+   "start": "2026-10-28 20:45 CET",
+   "selection": "SC Magdeburg -6.5",
+   "market": "Handicap 6.5",
+   "prob": 0.4899,
+   "price": 104,
+   "price_text": "+104",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101065/SCMagdeburg-HCKriensLuzern/",
+   "has_pred": false
+  },
+  {
+   "id": "ehf-202711020101067-hcap",
+   "fixture": "ehf-202711020101067",
+   "sport": "handball",
+   "event": "Industria Kielce v Kolstad Handball",
+   "competition": "EHF Champions League, Group F",
+   "start": "2026-10-28 20:45 CET",
+   "selection": "Industria Kielce -6.5",
+   "market": "Handicap 6.5",
+   "prob": 0.4652,
+   "price": 115,
+   "price_text": "+115",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101067/IndustriaKielce-KolstadH%C3%A5ndball/",
+   "has_pred": false
+  },
+  {
+   "id": "mlb-849804-ml",
+   "fixture": "mlb-849804",
+   "sport": "baseball",
+   "event": "Milwaukee Brewers @ Tampa Bay Rays",
+   "competition": "MLB World Series, Game 3",
+   "start": "2026-10-27T00:00Z",
+   "selection": "Milwaukee Brewers win",
+   "market": "Money Line",
+   "prob": 0.5832,
+   "price": -140,
+   "price_text": "-140",
+   "grade": "Medium",
+   "capped": false,
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-20&endDate=2026-11-05&gameType=W&hydrate=probablePitcher,linescore",
+   "has_pred": true
+  },
+  {
+   "id": "lvf-con-val-sets",
+   "fixture": "lvf-con-val",
+   "sport": "volleyball",
+   "event": "Imoco Conegliano v Savio Vallefoglia",
+   "competition": "Serie A1 Tigotà (women)",
+   "start": "OLBG label: 28 Oct",
+   "selection": "Imoco Conegliano -1.5 sets (3-0 or 3-1)",
+   "market": "Set Handicap 1.5",
+   "prob": 0.6537,
+   "price": -189,
+   "price_text": "-189",
+   "grade": "Low",
+   "capped": true,
+   "source": "https://www.legavolleyfemminile.it/classifica/",
+   "has_pred": true
+  },
+  {
+   "id": "lvf-oma-ber-ml",
+   "fixture": "lvf-oma-ber",
+   "sport": "volleyball",
+   "event": "Omag Consolini Volley 1907 v Volley Bergamo",
+   "competition": "Serie A1 Tigotà (women)",
+   "start": "OLBG label: Tomorrow (27 Oct)",
+   "selection": "Omag Consolini Volley 1907 win",
+   "market": "Match Winner",
+   "prob": 0.5226,
+   "price": -109,
+   "price_text": "-109",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://www.legavolleyfemminile.it/classifica/",
+   "has_pred": true
+  },
+  {
+   "id": "f1-mexico-team",
+   "fixture": "f1-mexico",
+   "sport": "motor-racing",
+   "event": "Mexico City Grand Prix",
+   "competition": "Formula 1 World Championship",
+   "start": "OLBG label: 01 Nov 15:00",
+   "selection": "A Mercedes driver wins",
+   "market": "Winning Constructor: Mercedes",
+   "prob": 0.5652,
+   "price": -130,
+   "price_text": "-130",
+   "grade": "Medium",
+   "capped": false,
+   "source": "https://www.formula1.com/en/results/2026/races",
+   "has_pred": true
+  },
+  {
+   "id": "f1-mexico-win",
+   "fixture": "f1-mexico",
+   "sport": "motor-racing",
+   "event": "Mexico City Grand Prix",
+   "competition": "Formula 1 World Championship",
+   "start": "OLBG label: 01 Nov 15:00",
+   "selection": "Kimi Antonelli to win",
+   "market": "Race Winner",
+   "prob": 0.413,
+   "price": 142,
+   "price_text": "+142",
+   "grade": "Low",
+   "capped": false,
+   "source": "https://www.formula1.com/en/results/2026/races",
+   "has_pred": true
+  }
+ ],
+ "predictions": [
+  {
+   "pick": "nhl-2026020185-ml",
+   "sport": "ice-hockey",
+   "event": "Los Angeles Kings @ New York Rangers",
+   "selection": "New York Rangers win",
+   "market": "Money Line (incl. OT/SO)",
+   "grade": "High",
+   "price_text": "-229",
+   "text": "New York Rangers to beat Los Angeles at Madison Square Garden. The Rangers are a perfect 6-0-0 at home, outscoring visitors 29-10, although they arrive on a two-game losing run. The Kings are 2-5-2, have scored only 21 goals in nine games while allowing 32, and the NHL schedule has them in Chicago the following night. We set the Rangers at 70%, a fair -229.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-26"
+  },
+  {
+   "pick": "nhl-2026020197-ml",
+   "sport": "ice-hockey",
+   "event": "Vancouver Canucks @ Anaheim Ducks",
+   "selection": "Anaheim Ducks win",
+   "market": "Money Line (incl. OT/SO)",
+   "grade": "High",
+   "price_text": "-222",
+   "text": "Anaheim Ducks to beat Vancouver at Honda Center. Vancouver are 2-10-1 with 60 goals against in 13 games and have taken one point from their last ten (0-9-1), the current skid running to four. Anaheim's own home form is weak at 1-3-0, which is the reason the number stops at -222 (69%) instead of going shorter.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-26"
+  },
+  {
+   "pick": "nhl-2026020187-ml",
+   "sport": "ice-hockey",
+   "event": "Detroit Red Wings @ Edmonton Oilers",
+   "selection": "Edmonton Oilers win",
+   "market": "Money Line (incl. OT/SO)",
+   "grade": "High",
+   "price_text": "-220",
+   "text": "Edmonton Oilers over Detroit at Rogers Place. Edmonton are 8-2-1 with 49 goals in 11 games and won eight of their last ten. Detroit are 4-4-3 and have one regulation-or-overtime win in four road trips. Edmonton's home split (3-2-1, 22 scored, 26 allowed) is the soft spot, so we hold the Oilers at 69%, fair -220.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-26"
+  },
+  {
+   "pick": "nhl-2026020193-ml",
+   "sport": "ice-hockey",
+   "event": "New Jersey Devils @ Dallas Stars",
+   "selection": "Dallas Stars win",
+   "market": "Money Line (incl. OT/SO)",
+   "grade": "High",
+   "price_text": "-165",
+   "text": "Dallas Stars to beat New Jersey at American Airlines Center. Dallas have conceded 20 goals in 11 games, the fewest in the league table read on 26 October, and bring a five-game winning streak. New Jersey are 6-2-0 at home but 1-2-0 away, with just seven road goals. Our fair line on Dallas is -165, or 62%.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://api-web.nhle.com/v1/schedule/2026-10-26"
+  },
+  {
+   "pick": "del-koe-man-ml",
+   "sport": "ice-hockey",
+   "event": "Adler Mannheim @ Koelner Haie",
+   "selection": "Adler Mannheim win",
+   "market": "Money Line (incl. OT/SO)",
+   "grade": "Medium",
+   "price_text": "-140",
+   "text": "Adler Mannheim to win in Cologne on Tuesday night. Mannheim are fifth in the PENNY DEL on 23 points from 12 games and have allowed 29 goals; Koelner Haie, seventh on 19, have conceded 45 in the same number of games. Cologne do score freely (45 goals), so we expect goals as well and price Mannheim at 58%, fair -140.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://www.penny-del.org/tabelle"
+  },
+  {
+   "pick": "bas-djo-hum-ml",
+   "sport": "tennis",
+   "event": "Novak Djokovic v Ugo Humbert",
+   "selection": "Novak Djokovic win",
+   "market": "Match Winner",
+   "grade": "High",
+   "price_text": "-243",
+   "text": "Novak Djokovic to beat Ugo Humbert in the Basel first round. Djokovic is the fourth seed, entered on a wildcard, and holds 3,090 points at No. 12 against Humbert's 1,270 at No. 38. That ratio puts Djokovic at 71%, a fair -243. The order of play for this match was not yet out when we read it, so the day shown is OLBG's label.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://www.atptour.com/en/scores/current/basel/328/draws"
+  },
+  {
+   "pick": "vie-van-tie-ml",
+   "sport": "tennis",
+   "event": "Luca Van Assche v Learner Tien",
+   "selection": "Learner Tien win",
+   "market": "Match Winner",
+   "grade": "High",
+   "price_text": "-212",
+   "text": "Learner Tien to beat Luca Van Assche in Vienna's late session, not before 20:00 CET. Tien is No. 18 on 2,345 points, more than double Van Assche's 1,105 at No. 46. The points split makes Tien 68%, a fair -212. OLBG carried no tip on this match, so there is no crowd view to compare against.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule"
+  },
+  {
+   "pick": "bas-tab-jod-ml",
+   "sport": "tennis",
+   "event": "Alejandro Tabilo v Rafael Jodar",
+   "selection": "Rafael Jodar win",
+   "market": "Match Winner",
+   "grade": "High",
+   "price_text": "-207",
+   "text": "Rafael Jodar, the Basel third seed, to beat Alejandro Tabilo. Jodar is No. 11 with 3,234 points; Tabilo is No. 30 with 1,565. The most-tipped OLBG side is Tabilo, on two of four tips, which runs against a ranking gap of that size. We make Jodar 67%, fair -207.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://www.atptour.com/en/scores/current/basel/328/draws"
+  },
+  {
+   "pick": "vie-fer-fea-ml",
+   "sport": "tennis",
+   "event": "Arthur Fery v Jacob Fearnley",
+   "selection": "Arthur Fery win",
+   "market": "Match Winner",
+   "grade": "High",
+   "price_text": "-205",
+   "text": "Arthur Fery to beat qualifier Jacob Fearnley on the Glaubandich Court at 17:30 CET. Fery is No. 35 with 1,406 points and Fearnley No. 86 with 686, close to a two-to-one edge on the ATP list. That converts to 67%, a fair -205. The single OLBG tip on this match backed Fearnley.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule"
+  },
+  {
+   "pick": "vie-dar-arn-ml",
+   "sport": "tennis",
+   "event": "Luciano Darderi v Matteo Arnaldi",
+   "selection": "Luciano Darderi win",
+   "market": "Match Winner",
+   "grade": "High",
+   "price_text": "-165",
+   "text": "Luciano Darderi over Matteo Arnaldi in an all-Italian Vienna opener, second on the Glaubandich Court. Darderi is No. 23 on 2,160 points and Arnaldi No. 36 on 1,311. We price Darderi at 62%, fair -165; a straight-sets win on its own is less likely than not, so the match result is the cleaner way to back him.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule"
+  },
+  {
+   "pick": "ehf-202711020101046-1x2",
+   "sport": "handball",
+   "event": "IFK Kristianstad v OTP Bank-PICK Szeged",
+   "selection": "OTP Bank-PICK Szeged win",
+   "market": "Match Result (1X2)",
+   "grade": "High",
+   "price_text": "-238",
+   "text": "OTP Bank-PICK Szeged to win away at IFK Kristianstad. Kristianstad have lost all five group games and conceded 197 goals, the most of any club in the competition; Szeged are 1-2-2 but have a positive goal difference (172-169). We make a Szeged win in regulation 70%, fair -238, with the draw priced as its own outcome.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101046/IFKKristianstad-OTPBankPICKSzeged/"
+  },
+  {
+   "pick": "ehf-202711020101016-1x2",
+   "sport": "handball",
+   "event": "Orlen Wisla Plock v HBC Nantes",
+   "selection": "Orlen Wisla Plock win",
+   "market": "Match Result (1X2)",
+   "grade": "High",
+   "price_text": "-164",
+   "text": "Orlen Wisla Plock to beat HBC Nantes in Group B, where the top three all have six points. Plock have the best defence in the group, 136 conceded in five games, and the best goal difference at plus five; Nantes are minus one. Home court adds to that, giving 62% and a fair -164. Most OLBG tipsters chose the tie.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101016/OrlenWislaPlock-HBCNantes/"
+  },
+  {
+   "pick": "ehf-202711020101036-1x2",
+   "sport": "handball",
+   "event": "RK Celje v HC Zagreb",
+   "selection": "HC Zagreb win",
+   "market": "Match Result (1X2)",
+   "grade": "Medium",
+   "price_text": "-136",
+   "text": "HC Zagreb to win at RK Celje. Celje are bottom of Group C with no points from five games and 188 goals against; Zagreb have two wins and four points. The line already credits Celje with home court and still makes Zagreb 58%, fair -136. This is Medium rather than High because Zagreb sit on minus 12 themselves.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101036/RKCeljePivovarnaLa%C5%A1ko-HCZagreb/"
+  },
+  {
+   "pick": "ehf-202711020101026-1x2",
+   "sport": "handball",
+   "event": "Paris Saint-Germain v Aalborg Handbold",
+   "selection": "Paris Saint-Germain win",
+   "market": "Match Result (1X2)",
+   "grade": "Medium",
+   "price_text": "-128",
+   "text": "Paris Saint-Germain to beat Aalborg in the Group C top-two game. Both clubs are plus 25 on goal difference, but PSG have scored 182 to Aalborg's 170 and they are at home. Aalborg lead the group unbeaten at 4-1-0, which is why this is only Medium at -128 (56%).",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101026/ParisSaintGermain-AalborgH%C3%A5ndbold/"
+  },
+  {
+   "pick": "ehf-202711020101055-1x2",
+   "sport": "handball",
+   "event": "Montpellier Handball v Dinamo Bucuresti",
+   "selection": "Montpellier Handball win",
+   "market": "Match Result (1X2)",
+   "grade": "Low",
+   "price_text": "-120",
+   "text": "Montpellier to beat Dinamo Bucuresti at home, a meeting of the bottom two in Group E. Montpellier are 1-0-4 but score more, 150 goals to 134; Dinamo concede fewer, 145 to 165. Our number is a narrow 55%, fair -120, so treat it as a Low-confidence lean rather than a strong opinion.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101055/MontpellierHandball-DinamoBucuresti/"
+  },
+  {
+   "pick": "mlb-849804-ml",
+   "sport": "baseball",
+   "event": "Milwaukee Brewers @ Tampa Bay Rays",
+   "selection": "Milwaukee Brewers win",
+   "market": "Money Line",
+   "grade": "Medium",
+   "price_text": "-140",
+   "text": "Milwaukee Brewers to win Game 3 at Tropicana Field and go 3-0 up in the World Series, after 3-2 and 5-4 wins at home. Robert Gasser starts for Milwaukee with a 3.87 ERA over 20 starts; Freddy Peralta starts for Tampa Bay with 4.42 over 32, split between the Mets and the Rays. His ten Rays starts came at 3.25, which is why we stop at Medium: 58%, fair -140.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-20&endDate=2026-11-05&gameType=W&hydrate=probablePitcher,linescore"
+  },
+  {
+   "pick": "lvf-con-val-sets",
+   "sport": "volleyball",
+   "event": "Imoco Conegliano v Savio Vallefoglia",
+   "selection": "Imoco Conegliano -1.5 sets (3-0 or 3-1)",
+   "market": "Set Handicap 1.5",
+   "grade": "Low",
+   "price_text": "-189",
+   "text": "Imoco Conegliano to beat Savio Vallefoglia 3-0 or 3-1. Conegliano are 4-0 without dropping a set (12-0) and have won 58 percent of rally points; Vallefoglia are also 4-0 but have lost four sets and won under 52 percent of points. The outright winner price is too short for the band, so the set handicap carries the view at -189. It is graded Low only because the match date is not on an official page.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://www.legavolleyfemminile.it/classifica/"
+  },
+  {
+   "pick": "lvf-oma-ber-ml",
+   "sport": "volleyball",
+   "event": "Omag Consolini Volley 1907 v Volley Bergamo",
+   "selection": "Omag Consolini Volley 1907 win",
+   "market": "Match Winner",
+   "grade": "Low",
+   "price_text": "-109",
+   "text": "Omag Consolini Volley 1907, listed as Marignano on OLBG, to edge Volley Bergamo at home. On rally points the two are almost level, 49.8 percent for Omag and 50.4 for Bergamo, while the records read 1-3 and 3-1. Home court tips our number to Omag at 52%, fair -109; this is a lean, and the date comes from OLBG alone.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://www.legavolleyfemminile.it/classifica/"
+  },
+  {
+   "pick": "f1-mexico-team",
+   "sport": "motor-racing",
+   "event": "Mexico City Grand Prix",
+   "selection": "A Mercedes driver wins",
+   "market": "Winning Constructor: Mercedes",
+   "grade": "Medium",
+   "price_text": "-130",
+   "text": "A Mercedes driver to win the Mexico City Grand Prix. Mercedes have won 12 of the 18 Grands Prix run in 2026, nine for Kimi Antonelli and three for George Russell, including Austin on 25 October. A smoothed share of wins gives the team 57%, a fair -130. No grid or qualifying result existed when we read, so this rests on season results alone.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://www.formula1.com/en/results/2026/races"
+  },
+  {
+   "pick": "f1-mexico-win",
+   "sport": "motor-racing",
+   "event": "Mexico City Grand Prix",
+   "selection": "Kimi Antonelli to win",
+   "market": "Race Winner",
+   "grade": "Low",
+   "price_text": "+142",
+   "text": "Kimi Antonelli to win in Mexico City. He has won nine of the 18 races this season, exactly half, and took the most recent one in the United States. After shrinking that record toward the rest of the field we make him 41%, fair +142. Low confidence, because a single driver rarely clears even money before qualifying.",
+   "availability": "No official injury report, lineup or team sheet was read for this fixture, so no player availability is claimed.",
+   "source": "https://www.formula1.com/en/results/2026/races"
+  }
+ ],
+ "discovery": [
+  {
+   "sport": "ice-hockey",
+   "event": "Sonderjyske v Aalborg",
+   "competition": "Denmark Metal Ligaen",
+   "label": "Today 14:30",
+   "tip": "Sonderjyske",
+   "market": "Money Line",
+   "share": "4/4",
+   "event_id": 200050,
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "Los Angeles Kings v New York Rangers",
+   "competition": "NHL",
+   "label": "Today 19:07",
+   "tip": "New York Rangers",
+   "market": "Money Line",
+   "share": "3/3",
+   "event_id": 200101,
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+   "fixture": "nhl-2026020185"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "Frederikshavn v Odense",
+   "competition": "Denmark Metal Ligaen",
+   "label": "Today 14:00",
+   "tip": "Frederikshavn -1.5",
+   "market": "Puck Line",
+   "share": "2/2",
+   "event_id": 200058,
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "Toronto Maple Leafs v Calgary Flames",
+   "competition": "NHL",
+   "label": "Today 20:37",
+   "tip": "Calgary +1.5",
+   "market": "Puck Line",
+   "share": "1/1",
+   "event_id": 200103,
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+   "fixture": "nhl-2026020186"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "Detroit Red Wings v Edmonton Oilers",
+   "competition": "NHL",
+   "label": "Today 21:37",
+   "tip": "Edmonton Oilers",
+   "market": "Money Line",
+   "share": "1/1",
+   "event_id": 200102,
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "official_url": "https://api-web.nhle.com/v1/schedule/2026-10-26",
+   "fixture": "nhl-2026020187"
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "Kalpa v Sport",
+   "competition": "Finland Liiga",
+   "label": "Tomorrow 12:30",
+   "tip": "Kalpa",
+   "market": "Money Line",
+   "share": "2/2",
+   "event_id": 200081,
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "Malmo v Linkoping",
+   "competition": "Sweden SHL",
+   "label": "Tomorrow 14:00",
+   "tip": "Malmo",
+   "market": "Money Line",
+   "share": "2/2",
+   "event_id": 200082,
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "Frolunda v Rogle",
+   "competition": "Sweden SHL",
+   "label": "Tomorrow 14:00",
+   "tip": "Frolunda",
+   "market": "Money Line",
+   "share": "2/2",
+   "event_id": 200083,
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "ice-hockey",
+   "event": "Koln v Mannheim",
+   "competition": "Germany DEL",
+   "label": "Tomorrow 14:00",
+   "tip": "Mannheim",
+   "market": "Money Line",
+   "share": "1/1",
+   "event_id": 200100,
+   "olbg_url": "https://www.olbg.com/betting-tips/Ice_Hockey/13",
+   "official_url": "https://www.penny-del.org/tabelle",
+   "fixture": "del-koe-man"
+  },
+  {
+   "sport": "volleyball",
+   "event": "Norde v Renata",
+   "competition": "Brazil Superliga",
+   "label": "Today 20:00",
+   "tip": "Norde",
+   "market": "Win Match",
+   "share": "6/8",
+   "event_id": 37102,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "volleyball",
+   "event": "Montes Claros v Sada Cruzeiro",
+   "competition": "Brazil Superliga",
+   "label": "Today 18:00",
+   "tip": "Sada Cruzeiro",
+   "market": "Win Match",
+   "share": "5/10",
+   "event_id": 37101,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "volleyball",
+   "event": "Amstetten v Ried",
+   "competition": "Austria AVL",
+   "label": "Today",
+   "tip": "Ried",
+   "market": "Win Match",
+   "share": "4/5",
+   "event_id": 37116,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "volleyball",
+   "event": "BKS Bielsko W v LKS Lodz W",
+   "competition": "Poland TAURON Liga",
+   "label": "Today",
+   "tip": "LKS Lodz W",
+   "market": "Win Match",
+   "share": "4/7",
+   "event_id": 37080,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "volleyball",
+   "event": "UVC Graz v Waldviertel",
+   "competition": "Austria AVL",
+   "label": "Today",
+   "tip": "Waldviertel",
+   "market": "Win Match",
+   "share": "4/5",
+   "event_id": 37119,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "volleyball",
+   "event": "Klagenfurt v Aich/Dob",
+   "competition": "Austria AVL",
+   "label": "Today",
+   "tip": "Aich/Dob",
+   "market": "Win Match",
+   "share": "3/4",
+   "event_id": 37118,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "volleyball",
+   "event": "Sancor W v SESI Bauru W",
+   "competition": "Brazil Superliga W",
+   "label": "Today",
+   "tip": "SESI Bauru W",
+   "market": "Win Match",
+   "share": "3/5",
+   "event_id": 37004,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "volleyball",
+   "event": "Hollabrunn v Hartberg",
+   "competition": "Austria AVL",
+   "label": "Today",
+   "tip": "Hartberg 3-2",
+   "market": "Set Score",
+   "share": "3/x",
+   "event_id": 37117,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "volleyball",
+   "event": "Marignano W v Bergamo W",
+   "competition": "Italy Serie A1 W",
+   "label": "Tomorrow",
+   "tip": "Bergamo W",
+   "market": "Win Match",
+   "share": "2/3",
+   "event_id": 37075,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "https://www.legavolleyfemminile.it/classifica/",
+   "fixture": "lvf-oma-ber"
+  },
+  {
+   "sport": "volleyball",
+   "event": "Opole W v Palac W",
+   "competition": "Poland TAURON Liga",
+   "label": "Tomorrow",
+   "tip": "Palac W",
+   "market": "Win Match",
+   "share": "2/4",
+   "event_id": 37081,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "volleyball",
+   "event": "Suzano v Goias",
+   "competition": "Brazil Superliga",
+   "label": "Tomorrow",
+   "tip": "Suzano",
+   "market": "Win Match",
+   "share": "2/3",
+   "event_id": 37103,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "volleyball",
+   "event": "Praia v Sao Jose",
+   "competition": "Brazil Superliga",
+   "label": "Tomorrow",
+   "tip": "Praia",
+   "market": "Win Match",
+   "share": "2/3",
+   "event_id": 37104,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "volleyball",
+   "event": "Conegliano W v Vallefoglia W",
+   "competition": "Italy Serie A1 W",
+   "label": "28 Oct",
+   "tip": "Vallefoglia W",
+   "market": "Win Match",
+   "share": "5/7",
+   "event_id": 37076,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "https://www.legavolleyfemminile.it/classifica/",
+   "fixture": "lvf-con-val"
+  },
+  {
+   "sport": "volleyball",
+   "event": "Budowlani W v Radomka W",
+   "competition": "Poland TAURON Liga",
+   "label": "28 Oct",
+   "tip": "Radomka 3-0",
+   "market": "Set Score",
+   "share": "3/x",
+   "event_id": 37082,
+   "olbg_url": "https://www.olbg.com/betting-tips/Volleyball/21",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "cricket",
+   "event": "New Zealand v India (3rd T20I)",
+   "competition": "International T20",
+   "label": "Tomorrow 03:00",
+   "tip": "India",
+   "market": "Match Winner",
+   "share": "14/21",
+   "event_id": 188852,
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "official_url": "https://www.icc-cricket.com/matches/271648/new-zealand-vs-india",
+   "fixture": "icc-271648"
+  },
+  {
+   "sport": "cricket",
+   "event": "Namibia v Ireland (3rd ODI)",
+   "competition": "International ODI",
+   "label": "Tomorrow 03:30",
+   "tip": "Ireland",
+   "market": "Match Winner",
+   "share": "11/16",
+   "event_id": 188854,
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "official_url": "https://www.icc-cricket.com/matches/275412/namibia-vs-ireland",
+   "fixture": "icc-275412"
+  },
+  {
+   "sport": "cricket",
+   "event": "Pakistan v Sri Lanka (ODI)",
+   "competition": "International ODI",
+   "label": "Tomorrow 04:00",
+   "tip": "Pakistan",
+   "market": "Match Winner",
+   "share": "5/9",
+   "event_id": 188868,
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "official_url": "https://www.icc-cricket.com/matches/274146/pakistan-vs-sri-lanka",
+   "fixture": "icc-274146"
+  },
+  {
+   "sport": "cricket",
+   "event": "Melbourne Stars W v Hobart Hurricanes W",
+   "competition": "WBBL",
+   "label": "29 Oct",
+   "tip": "Hobart Hurricanes W",
+   "market": "Match Winner",
+   "share": "4/6",
+   "event_id": 188864,
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "cricket",
+   "event": "Brisbane Heat W v Sydney Sixers W",
+   "competition": "WBBL",
+   "label": "30 Oct",
+   "tip": "Sydney Sixers W",
+   "market": "Match Winner",
+   "share": "3/5",
+   "event_id": 188865,
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "cricket",
+   "event": "South Africa v Australia (Test)",
+   "competition": "World Test Championship",
+   "label": "31 Oct",
+   "tip": "AK Markram",
+   "market": "Man of the Match",
+   "share": "3/5",
+   "event_id": 188835,
+   "olbg_url": "https://www.olbg.com/betting-tips/Cricket/7",
+   "official_url": "https://www.icc-cricket.com/tournaments/world-test-championship/matches/269792/south-africa-vs-australia",
+   "fixture": "icc-269792"
+  },
+  {
+   "sport": "tennis",
+   "event": "Badosa v Carol Young Suh Lee",
+   "competition": "WTA",
+   "label": "Today 03:30",
+   "tip": "Badosa",
+   "market": "Win Match",
+   "share": "6/7",
+   "event_id": 902300,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "tennis",
+   "event": "Eala v Stojsavljevic",
+   "competition": "WTA",
+   "label": "Today 04:00",
+   "tip": "Eala",
+   "market": "Win Match",
+   "share": "6/9",
+   "event_id": 902175,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "tennis",
+   "event": "Sasnovich v Bartunkova",
+   "competition": "WTA/ITF",
+   "label": "Today",
+   "tip": "Bartunkova",
+   "market": "Win Match",
+   "share": "3/6",
+   "event_id": 902306,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "tennis",
+   "event": "Han Shi v Ibragimova",
+   "competition": "WTA/ITF",
+   "label": "Today",
+   "tip": "Han Shi",
+   "market": "Win Match",
+   "share": "3/5",
+   "event_id": 902299,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "tennis",
+   "event": "Berrettini v Etcheverry",
+   "competition": "ATP Vienna",
+   "label": "Today 08:30",
+   "tip": "Berrettini",
+   "market": "Win Match",
+   "share": "3/4",
+   "event_id": 902208,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+   "fixture": "vie-ber-etc"
+  },
+  {
+   "sport": "tennis",
+   "event": "Mensik v Neumayer",
+   "competition": "ATP Vienna",
+   "label": "Today 12:30",
+   "tip": "Mensik",
+   "market": "Win Match",
+   "share": "3/3",
+   "event_id": 902321,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+   "fixture": "vie-men-neu"
+  },
+  {
+   "sport": "tennis",
+   "event": "Fernandez v Sakatsume",
+   "competition": "WTA",
+   "label": "Today 22:00",
+   "tip": "Fernandez",
+   "market": "Win Match",
+   "share": "3/5",
+   "event_id": 902172,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "tennis",
+   "event": "Dart v Prozorova",
+   "competition": "WTA/ITF",
+   "label": "Today",
+   "tip": "Over 22.5 games",
+   "market": "Total Games",
+   "share": "2/2",
+   "event_id": 902303,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "tennis",
+   "event": "Kotliar v Senica",
+   "competition": "Challenger/ITF",
+   "label": "Today",
+   "tip": "Kotliar",
+   "market": "Win Match",
+   "share": "2/3",
+   "event_id": 902315,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "tennis",
+   "event": "Machac v De Minaur",
+   "competition": "ATP Vienna",
+   "label": "Today",
+   "tip": "De Minaur",
+   "market": "Win Match",
+   "share": "2/2",
+   "event_id": 902318,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+   "fixture": "vie-mac-dem"
+  },
+  {
+   "sport": "tennis",
+   "event": "Vergara Rivera v Gomes",
+   "competition": "Challenger/ITF",
+   "label": "Today",
+   "tip": "Vergara Rivera",
+   "market": "Win Match",
+   "share": "2/2",
+   "event_id": 902334,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "tennis",
+   "event": "Fullana v Ayala",
+   "competition": "Challenger/ITF",
+   "label": "Today",
+   "tip": "Fullana",
+   "market": "Win Match",
+   "share": "2/2",
+   "event_id": 902339,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "tennis",
+   "event": "Vacherot v Navone",
+   "competition": "ATP Basel",
+   "label": "Today",
+   "tip": "Navone",
+   "market": "Win Match",
+   "share": "1/2",
+   "event_id": 902237,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "https://www.atptour.com/en/scores/current/basel/328/daily-schedule",
+   "fixture": "bas-vac-nav"
+  },
+  {
+   "sport": "tennis",
+   "event": "Rune v Halys",
+   "competition": "ATP Basel",
+   "label": "Today",
+   "tip": "Halys",
+   "market": "Win Match",
+   "share": "1/2",
+   "event_id": 902236,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "https://www.atptour.com/en/scores/current/basel/328/daily-schedule",
+   "fixture": "bas-run-hal"
+  },
+  {
+   "sport": "tennis",
+   "event": "Labrana v Ce",
+   "competition": "Challenger/ITF",
+   "label": "Today",
+   "tip": "Ce",
+   "market": "Win Match",
+   "share": "1/1",
+   "event_id": 902340,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "tennis",
+   "event": "Fery v Fearnley",
+   "competition": "ATP Vienna",
+   "label": "Today",
+   "tip": "Fearnley",
+   "market": "Win Match",
+   "share": "1/1",
+   "event_id": 902319,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "https://www.atptour.com/en/scores/current/vienna/337/daily-schedule",
+   "fixture": "vie-fer-fea"
+  },
+  {
+   "sport": "tennis",
+   "event": "Djokovic v Humbert",
+   "competition": "ATP Basel",
+   "label": "Tomorrow 06:00",
+   "tip": "Djokovic",
+   "market": "Win Match",
+   "share": "4/5",
+   "event_id": 902233,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "https://www.atptour.com/en/scores/current/basel/328/draws",
+   "fixture": "bas-djo-hum"
+  },
+  {
+   "sport": "tennis",
+   "event": "Wawrinka v Lehecka",
+   "competition": "ATP Basel",
+   "label": "Tomorrow",
+   "tip": "Lehecka",
+   "market": "Win Match",
+   "share": "4/7",
+   "event_id": 902232,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "tennis",
+   "event": "Tagger v Venus Williams",
+   "competition": "WTA",
+   "label": "Tomorrow",
+   "tip": "Venus Williams 2-0",
+   "market": "Set Betting",
+   "share": "2/2",
+   "event_id": 902189,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "tennis",
+   "event": "Tabilo v Jodar",
+   "competition": "ATP Basel",
+   "label": "Tomorrow",
+   "tip": "Tabilo",
+   "market": "Win Match",
+   "share": "2/4",
+   "event_id": 902238,
+   "olbg_url": "https://www.olbg.com/betting-tips/Tennis/3",
+   "official_url": "https://www.atptour.com/en/scores/current/basel/328/draws",
+   "fixture": "bas-tab-jod"
+  },
+  {
+   "sport": "handball",
+   "event": "Magdeburg v Kriens",
+   "competition": "EHF Champions League",
+   "label": "28 Oct",
+   "tip": "Tie",
+   "market": "Money Line",
+   "share": "7/11",
+   "event_id": 12136,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "official_url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101065/SCMagdeburg-HCKriensLuzern/",
+   "fixture": "ehf-202711020101065"
+  },
+  {
+   "sport": "handball",
+   "event": "Kielce v Kolstad",
+   "competition": "EHF Champions League",
+   "label": "28 Oct",
+   "tip": "Tie",
+   "market": "Money Line",
+   "share": "5/8",
+   "event_id": 12132,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "official_url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101067/IndustriaKielce-KolstadH%C3%A5ndball/",
+   "fixture": "ehf-202711020101067"
+  },
+  {
+   "sport": "handball",
+   "event": "Vardar v Melsungen",
+   "competition": "EHF Champions League",
+   "label": "28 Oct",
+   "tip": "Tie",
+   "market": "Money Line",
+   "share": "4/7",
+   "event_id": 12130,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "official_url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101022/HCVardar1961-MTMelsungen/",
+   "fixture": "ehf-202711020101022"
+  },
+  {
+   "sport": "handball",
+   "event": "Wisla Plock v Nantes",
+   "competition": "EHF Champions League",
+   "label": "28 Oct",
+   "tip": "Tie",
+   "market": "Money Line",
+   "share": "4/6",
+   "event_id": 12138,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "official_url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101016/OrlenWislaPlock-HBCNantes/",
+   "fixture": "ehf-202711020101016"
+  },
+  {
+   "sport": "handball",
+   "event": "PSG v Aalborg",
+   "competition": "EHF Champions League",
+   "label": "28 Oct",
+   "tip": "Tie",
+   "market": "Money Line",
+   "share": "4/6",
+   "event_id": 12134,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "official_url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101026/ParisSaintGermain-AalborgH%C3%A5ndbold/",
+   "fixture": "ehf-202711020101026"
+  },
+  {
+   "sport": "handball",
+   "event": "Celje v Zagreb",
+   "competition": "EHF Champions League",
+   "label": "28 Oct",
+   "tip": "Tie",
+   "market": "Money Line",
+   "share": "4/6",
+   "event_id": 12135,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "official_url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101036/RKCeljePivovarnaLa%C5%A1ko-HCZagreb/",
+   "fixture": "ehf-202711020101036"
+  },
+  {
+   "sport": "handball",
+   "event": "Porto v Veszprem",
+   "competition": "EHF Champions League",
+   "label": "28 Oct",
+   "tip": "Tie",
+   "market": "Money Line",
+   "share": "3/6",
+   "event_id": 12127,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "official_url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101004/FCPorto-OneVeszpr%C3%A9mHC/",
+   "fixture": "ehf-202711020101004"
+  },
+  {
+   "sport": "handball",
+   "event": "Fuchse Berlin v Partizan",
+   "competition": "EHF Champions League",
+   "label": "29 Oct",
+   "tip": "Tie",
+   "market": "Money Line",
+   "share": "6/11",
+   "event_id": 12128,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "official_url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101009/F%C3%BCchseBerlin-RKPartizanAdmiralBet/",
+   "fixture": "ehf-202711020101009"
+  },
+  {
+   "sport": "handball",
+   "event": "GOG v Sporting",
+   "competition": "EHF Champions League",
+   "label": "29 Oct",
+   "tip": "GOG",
+   "market": "Money Line",
+   "share": "2/4",
+   "event_id": 12129,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "official_url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101040/GOG-SportingClubedePortugal/",
+   "fixture": "ehf-202711020101040"
+  },
+  {
+   "sport": "handball",
+   "event": "Montpellier v Dinamo Bucuresti",
+   "competition": "EHF Champions League",
+   "label": "29 Oct",
+   "tip": "Tie",
+   "market": "Money Line",
+   "share": "2/3",
+   "event_id": 12133,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "official_url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101055/MontpellierHandball-DinamoBucuresti/",
+   "fixture": "ehf-202711020101055"
+  },
+  {
+   "sport": "handball",
+   "event": "Kristianstad v Szeged",
+   "competition": "EHF Champions League",
+   "label": "29 Oct",
+   "tip": "Tie",
+   "market": "Money Line",
+   "share": "1/3",
+   "event_id": 12131,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "official_url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101046/IFKKristianstad-OTPBankPICKSzeged/",
+   "fixture": "ehf-202711020101046"
+  },
+  {
+   "sport": "handball",
+   "event": "Skanderborg v Barcelona",
+   "competition": "EHF Champions League",
+   "label": "29 Oct",
+   "tip": "Barcelona",
+   "market": "Money Line",
+   "share": "1/3",
+   "event_id": 12137,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "official_url": "https://ehfcl.eurohandball.com/men/2026-27/matches/details/202711020101054/SAHAarhus-Bar%C3%A7a/",
+   "fixture": "ehf-202711020101054"
+  },
+  {
+   "sport": "handball",
+   "event": "Helsingborg v Hallby",
+   "competition": "Sweden Handbollsligan",
+   "label": "Today",
+   "tip": "Helsingborg",
+   "market": "Money Line",
+   "share": "5/10",
+   "event_id": 12150,
+   "olbg_url": "https://www.olbg.com/betting-tips/Handball/20",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "gaelic",
+   "event": "Kanturk v Eire Og",
+   "competition": "Cork club football",
+   "label": "01 Nov",
+   "tip": "Eire Og +0.5",
+   "market": "Handicap",
+   "share": "6/6",
+   "event_id": 3531,
+   "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "gaelic",
+   "event": "Fr Caseys v Kildimo Pallaskenry",
+   "competition": "Limerick club football",
+   "label": "01 Nov",
+   "tip": "Kildimo Pallaskenry +3.5",
+   "market": "Handicap",
+   "share": "5/7",
+   "event_id": 3537,
+   "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/25",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "greyhounds",
+   "event": "3:19 Monmore",
+   "competition": "GBGB",
+   "label": "Today 11:19",
+   "tip": "Tullymurry Skies",
+   "market": "Win",
+   "share": "1/1",
+   "event_id": 690193,
+   "olbg_url": "https://www.olbg.com/betting-tips/Greyhounds/28",
+   "official_url": "",
+   "fixture": ""
+  },
+  {
+   "sport": "motor-racing",
+   "event": "Mexico City Grand Prix",
+   "competition": "Formula 1",
+   "label": "01 Nov 15:00",
+   "tip": "Charles Leclerc",
+   "market": "Race Winner",
+   "share": "1/2",
+   "event_id": 914,
+   "olbg_url": "https://www.olbg.com/betting-tips/Motor_Racing/14",
+   "official_url": "https://www.formula1.com/en/results/2026/races",
+   "fixture": "f1-mexico"
+  }
+ ],
+ "outrights": [
+  {
+   "sport": "rugby-union",
+   "market": "Six Nations 2027",
+   "tip": "Ireland",
+   "share": "3/10",
+   "event_id": 609013,
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_Union/9"
+  },
+  {
+   "sport": "darts",
+   "market": "PDC World Championship 2027 (from 3 Jan 2027)",
+   "tip": "Luke Littler",
+   "share": "22/36 (61%)",
+   "event_id": 26023,
+   "olbg_url": "https://www.olbg.com/betting-tips/Darts/15"
+  },
+  {
+   "sport": "rugby-league",
+   "market": "State of Origin 2027",
+   "tip": "New South Wales",
+   "share": "9/12",
+   "event_id": 2695857,
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_League/10"
+  },
+  {
+   "sport": "rugby-league",
+   "market": "Super League 2027 Grand Final",
+   "tip": "Wigan",
+   "share": "2/4",
+   "event_id": 2801554,
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_League/10"
+  },
+  {
+   "sport": "rugby-league",
+   "market": "NRL 2027 Grand Final",
+   "tip": "Penrith",
+   "share": "1/3",
+   "event_id": 2801600,
+   "olbg_url": "https://www.olbg.com/betting-tips/Rugby_League/10"
+  },
+  {
+   "sport": "gaelic",
+   "market": "All-Ireland Football 2027",
+   "tip": "Kerry",
+   "share": "6/8",
+   "event_id": 3327,
+   "olbg_url": "https://www.olbg.com/betting-tips/Gaelic_Football/25"
+  }
+ ],
+ "flags": [
+  {
+   "id": "F01",
+   "sport": "basketball",
+   "kind": "source",
+   "text": "No official NBA game list for 26 October could be read: the cdn.nba.com scoreboard and schedule JSON returned HTTP 500, stats.nba.com did not answer, and nba.com/games is rendered in the browser. OLBG listed no basketball market either. No basketball fixture or pick is published.",
+   "url": "https://www.nba.com/games?date=2026-10-26"
+  },
+  {
+   "id": "F02",
+   "sport": "golf",
+   "kind": "coverage",
+   "text": "OLBG returned \"No tips found.\" on the golf hub. The PGA TOUR schedule page was read but no field or player figure was captured, so nothing is priced.",
+   "url": "https://www.pgatour.com/schedule"
+  },
+  {
+   "id": "F03",
+   "sport": "snooker",
+   "kind": "coverage",
+   "text": "OLBG returned \"No tips found.\" on the snooker hub and no WST draw was read.",
+   "url": "https://www.olbg.com/betting-tips/Snooker/8"
+  },
+  {
+   "id": "F04",
+   "sport": "darts",
+   "kind": "coverage",
+   "text": "OLBG listed only the 2027 PDC World Championship outright (Luke Littler most tipped). Earlier desks recorded a cookie wall on pdc.tv; no darts match is priced.",
+   "url": "https://www.olbg.com/betting-tips/Darts/15"
+  },
+  {
+   "id": "F05",
+   "sport": "rugby-union",
+   "kind": "coverage",
+   "text": "OLBG listed only the Six Nations 2027 outright. No rugby union match market existed to price.",
+   "url": "https://www.olbg.com/betting-tips/Rugby_Union/9"
+  },
+  {
+   "id": "F06",
+   "sport": "rugby-league",
+   "kind": "coverage",
+   "text": "OLBG listed three 2027 outrights (State of Origin, Super League, NRL) and no match market.",
+   "url": "https://www.olbg.com/betting-tips/Rugby_League/10"
+  },
+  {
+   "id": "F07",
+   "sport": "gaelic",
+   "kind": "source",
+   "text": "OLBG lists two club football handicaps for 1 November (Cork and Limerick club competitions). No county board fixture page was read, so the rows are discovery only and unpriced.",
+   "url": "https://www.olbg.com/betting-tips/Gaelic_Football/25"
+  },
+  {
+   "id": "F08",
+   "sport": "greyhounds",
+   "kind": "source",
+   "text": "OLBG listed one Monmore race (3:19) with one tip on Tullymurry Skies. No GBGB racecard was read, so trap, form and price are blank.",
+   "url": "https://www.olbg.com/betting-tips/Greyhounds/28"
+  },
+  {
+   "id": "F09",
+   "sport": "cricket",
+   "kind": "source",
+   "text": "Four OLBG cricket fixtures were matched to ICC match pages, but the ICC team-rankings table rendered empty, so there is no official rating to price from. The WBBL rows were not matched to any official page.",
+   "url": "https://www.icc-cricket.com/rankings/team-rankings/mens/t20i"
+  },
+  {
+   "id": "F10",
+   "sport": "tennis",
+   "kind": "capture",
+   "text": "Holger Rune, Lukas Neumayer, Stan Wawrinka, Dominic Stricker and Mika Brunold are outside the top 150 on the ATP list that was read (rank 150 holds 378 points). Their exact points are not on that list, so their matches are not priced. Wawrinka v Lehecka sits in the half of the Basel draw that was not captured, so it is listed by OLBG only.",
+   "url": "https://www.atptour.com/en/rankings/singles"
+  },
+  {
+   "id": "F11",
+   "sport": "tennis",
+   "kind": "time",
+   "text": "The Basel order of play for Djokovic v Humbert and Tabilo v Jodar was not yet published at read time. Both matches are confirmed in the official draw; the date column is blank.",
+   "url": "https://www.atptour.com/en/scores/current/basel/328/draws"
+  },
+  {
+   "id": "F12",
+   "sport": "tennis",
+   "kind": "coverage",
+   "text": "Every WTA, ITF and Challenger row on OLBG is listed unpriced: no official draw or ranking list for those events was read this session.",
+   "url": "https://www.olbg.com/betting-tips/Tennis/3"
+  },
+  {
+   "id": "F13",
+   "sport": "volleyball",
+   "kind": "time",
+   "text": "Omag Consolini v Bergamo (27 Oct on OLBG) and Conegliano v Vallefoglia (28 Oct on OLBG) involve clubs with one game fewer than the rest, which fits rescheduled fixtures, but no official LVF page read this session gave their dates. Both are priced from the official table and their grade is capped at Low.",
+   "url": "https://www.legavolleyfemminile.it/classifica/"
+  },
+  {
+   "id": "F14",
+   "sport": "volleyball",
+   "kind": "naming",
+   "text": "OLBG names the LVF club \"Marignano\"; the official table calls it \"Omag Consolini Volley 1907\". The match is treated as the same fixture on that basis.",
+   "url": "https://www.legavolleyfemminile.it/classifica/"
+  },
+  {
+   "id": "F15",
+   "sport": "volleyball",
+   "kind": "source",
+   "text": "tauronliga.pl/table.html, the women's TAURON Liga address, returned tiles naming men's PlusLiga clubs (for example Slepsk Suwalki). No women's table was extracted, so the three Polish women's rows on OLBG are unpriced.",
+   "url": "https://www.tauronliga.pl/table.html"
+  },
+  {
+   "id": "F16",
+   "sport": "volleyball",
+   "kind": "coverage",
+   "text": "Brazilian Superliga and Austrian AVL rows on OLBG are unpriced: no official league table was read for them.",
+   "url": "https://www.olbg.com/betting-tips/Volleyball/21"
+  },
+  {
+   "id": "F17",
+   "sport": "ice-hockey",
+   "kind": "capture",
+   "text": "The PENNY DEL table that was read stops at 13 clubs; the Iserlohn Roosters row was cut off. The league scoring average used for the DEL price is therefore built from 13 clubs.",
+   "url": "https://www.penny-del.org/tabelle"
+  },
+  {
+   "id": "F18",
+   "sport": "ice-hockey",
+   "kind": "source",
+   "text": "Danish Metal Ligaen, Swedish SHL and Finnish Liiga rows on OLBG are unpriced: shl.se returned no table and liiga.fi returned 404.",
+   "url": "https://www.olbg.com/betting-tips/Ice_Hockey/13"
+  },
+  {
+   "id": "F19",
+   "sport": "baseball",
+   "kind": "method",
+   "text": "The league runs-per-game baseline (4.64) comes from the 11 clubs on the first page of the MLB team-stats read, not all 30.",
+   "url": "https://statsapi.mlb.com/api/v1/teams/stats?season=2026&group=hitting,pitching&stats=season&sportIds=1&gameType=R"
+  },
+  {
+   "id": "F20",
+   "sport": "baseball",
+   "kind": "irregularity",
+   "text": "Freddy Peralta's 2026 line is split: 22 starts for the Mets (4.99 ERA) and 10 for the Rays (3.25 ERA). The Game 3 price uses his full-season figure.",
+   "url": "https://statsapi.mlb.com/api/v1/people/642547/stats?stats=season&group=pitching&season=2026&gameType=R"
+  },
+  {
+   "id": "F21",
+   "sport": "baseball",
+   "kind": "coverage",
+   "text": "OLBG's baseball hub listed no World Series market at read time, so the two MLB rows have no OLBG comparison.",
+   "url": "https://www.olbg.com/betting-tips/Baseball/12"
+  },
+  {
+   "id": "F22",
+   "sport": "handball",
+   "kind": "discovery",
+   "text": "Ten of the twelve EHF Champions League rows on OLBG show \"Tie\" as the most-tipped money-line outcome. That is reproduced as published and not used as a signal.",
+   "url": "https://www.olbg.com/betting-tips/Handball/20"
+  },
+  {
+   "id": "F23",
+   "sport": "handball",
+   "kind": "naming",
+   "text": "OLBG lists \"Skanderborg v Barcelona\"; the official EHF fixture is SAH-Aarhus v Barca (match 202711020101054).",
+   "url": "https://ehfcl.eurohandball.com/men/2026-27/standings/"
+  },
+  {
+   "id": "F24",
+   "sport": "motor-racing",
+   "kind": "source",
+   "text": "The formula1.com drivers page returned names without a points column, and no Mexico City grid existed at read time. The race-winner price uses 2026 race wins only. The race date and time are OLBG's label.",
+   "url": "https://www.formula1.com/en/results/2026/drivers"
+  },
+  {
+   "id": "F25",
+   "sport": "all",
+   "kind": "capture",
+   "text": "No injury report, lineup or team sheet was read for any fixture, so no written prediction names an injured or returning player.",
+   "url": "https://api-web.nhle.com/v1/standings/2026-10-25"
+  },
+  {
+   "id": "F26",
+   "sport": "all",
+   "kind": "time",
+   "text": "OLBG prints relative labels such as \"Today 19:07\" in US Eastern time; the NHL feed gives 23:00Z (19:00 ET) for the same Rangers game, so OLBG times are never used as start times.",
+   "url": "https://api-web.nhle.com/v1/schedule/2026-10-26"
+  }
+ ],
+ "audit": [
+  {
+   "id": "R01",
+   "severity": "high",
+   "path": "pipeline/build.py",
+   "lines": "L261-L266",
+   "text": "The front-door banner is a hard-coded paragraph about the 25 October desk, including literal counts (\"Nine fixtures\", \"three graded picks\"). Nothing ties those words to data/a394f91e/desk.json, so they go stale the moment a new desk lands. This desk repoints the banner, but the text is still literal.",
+   "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/90646c82d7bd75d70a8769367d8a76ddb43d9705/pipeline/build.py#L261-L266"
+  },
+  {
+   "id": "R02",
+   "severity": "high",
+   "path": "pipeline/build.py",
+   "lines": "L265",
+   "text": "The banner says \"the twelve with no priced match\". The a394f91e desk priced two sports (basketball and ice hockey), which leaves thirteen, and its own flag F22 says fourteen. Three different numbers describe the same desk.",
+   "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/90646c82d7bd75d70a8769367d8a76ddb43d9705/pipeline/build.py#L265"
+  },
+  {
+   "id": "R03",
+   "severity": "medium",
+   "path": "scripts/sa394f91e_build.py",
+   "lines": "L203",
+   "text": "Flag F22 of the 25 October desk opens \"Fourteen of the fifteen brief sports have no priced match\" and then says \"for thirteen sports\" in the same sentence. Only thirteen is consistent with its fixtures.",
+   "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/90646c82d7bd75d70a8769367d8a76ddb43d9705/scripts/sa394f91e_build.py#L203"
+  },
+  {
+   "id": "R04",
+   "severity": "high",
+   "path": "pipeline/build.py",
+   "lines": "L281-L288",
+   "text": "The canonical summary hard-codes \"Six high-confidence picks are live for the next two days\" and \"ice hockey and baseball\" next to computed KPIs. The cron in current-pages.yml rebuilds this page every three hours, so the sentence can contradict the KPI tiles directly under it.",
+   "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/90646c82d7bd75d70a8769367d8a76ddb43d9705/pipeline/build.py#L281-L288"
+  },
+  {
+   "id": "R05",
+   "severity": "medium",
+   "path": "pipeline/build.py",
+   "lines": "L37",
+   "text": "ARCHIVE labels carry literal counts (\"9 official fixtures ... 22 flags\"). They are never reconciled with the desk data they describe.",
+   "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/90646c82d7bd75d70a8769367d8a76ddb43d9705/pipeline/build.py#L37"
+  },
+  {
+   "id": "R06",
+   "severity": "medium",
+   "path": "pipeline/build.py",
+   "lines": "L349",
+   "text": "archive_panel silently drops any ARCHIVE entry whose file is missing (`if (ROOT / d).is_file()`), so a typo in a desk path removes it from the front door without any error.",
+   "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/90646c82d7bd75d70a8769367d8a76ddb43d9705/pipeline/build.py#L349"
+  },
+  {
+   "id": "R07",
+   "severity": "medium",
+   "path": "pipeline/build.py",
+   "lines": "L859-L862",
+   "text": "The artifact copy loop also skips missing desk folders with `continue`. Combined with the line above, a broken ARCHIVE entry fails silently in both places.",
+   "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/90646c82d7bd75d70a8769367d8a76ddb43d9705/pipeline/build.py#L859-L862"
+  },
+  {
+   "id": "R08",
+   "severity": "high",
+   "path": "pipeline/validate.py",
+   "lines": "L293",
+   "text": "validate_desk only walks manifest[\"pages\"], the root pages. Desk subfolders such as a394f91e/ are copied into the artifact but never checked for broken links, missing sources or empty tables by the canonical gate; each desk relies on its own optional script.",
+   "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/90646c82d7bd75d70a8769367d8a76ddb43d9705/pipeline/validate.py#L293"
+  },
+  {
+   "id": "R09",
+   "severity": "medium",
+   "path": "pipeline/validate.py",
+   "lines": "L334",
+   "text": "The unregistered-HTML check globs only site/*.html, so stray pages inside desk subfolders are never caught.",
+   "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/90646c82d7bd75d70a8769367d8a76ddb43d9705/pipeline/validate.py#L334"
+  },
+  {
+   "id": "R10",
+   "severity": "low",
+   "path": ".github/workflows/current-pages.yml",
+   "lines": "L43",
+   "text": "CI runs `python -m pipeline.refresh` against live sites before building, so the same commit can build different pages depending on which publishers answer within 10 seconds.",
+   "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/90646c82d7bd75d70a8769367d8a76ddb43d9705/.github/workflows/current-pages.yml#L43"
+  },
+  {
+   "id": "R11",
+   "severity": "low",
+   "path": "pipeline/config.py",
+   "lines": "L40-L67",
+   "text": "PUBLISHERS, which feeds OFFICIAL_HOSTS in pipeline/validate.py line 161, lists www.legavolley.it (the men's Lega Pallavolo) but not legavolleyfemminile.it, and no German ice hockey host such as penny-del.org. Women's Serie A1 and DEL rows could not pass the canonical source check even when the link is the official league page.",
+   "url": "https://github.com/buffedlizard55-lab/OLBG1/blob/90646c82d7bd75d70a8769367d8a76ddb43d9705/pipeline/config.py#L40-L67"
+  },
+  {
+   "id": "R12",
+   "severity": "low",
+   "path": "repository root",
+   "lines": "",
+   "text": "79 eight-character session folders contain an index.html but only 20 of them are registered in ARCHIVE. The other 59 (for example 0c9bc692/, 1707d752/, 2360a617/) are committed but are neither copied into the Pages artifact nor linked from the front door.",
+   "url": "https://github.com/buffedlizard55-lab/OLBG1/tree/90646c82d7bd75d70a8769367d8a76ddb43d9705"
+  }
+ ],
+ "constants": {
+  "band": [
+   -250,
+   10000
+  ],
+  "high_min": 0.6,
+  "medium_min": 0.55,
+  "low_min": 0.4,
+  "nhl_league_gpg": 3.152,
+  "del_league_gpg": 3.0,
+  "mlb_league_rpg": 4.642,
+  "ehf_league_gpg": 32.033
+ }
+}

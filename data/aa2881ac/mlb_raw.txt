@@ -1,0 +1,19 @@
+# statsapi.mlb.com reads 2026-10-26T05:00-05:05Z
+# Schedule: https://statsapi.mlb.com/api/v1/schedule?sportId=1&startDate=2026-10-20&endDate=2026-11-05&gameType=W&hydrate=probablePitcher,linescore
+WS G1 849805 2026-10-24T00:00Z American Family Field: TB 2 @ MIL 3 (Final). SP: Nick Martinez (TB), Jacob Misiorowski (MIL)
+WS G2 849802 2026-10-25T00:00Z American Family Field: TB 4 @ MIL 5 (Final). SP: Drew Rasmussen (TB), Logan Henderson (MIL)
+WS G3 849804 2026-10-27T00:00Z Tropicana Field: MIL @ TB, Scheduled. Probables: Robert Gasser (MIL, LHP), Freddy Peralta (TB)
+WS G4 849803 2026-10-28T00:00Z Tropicana Field: MIL @ TB, probables not published
+WS G5 849799 2026-10-29T00:00Z Tropicana Field (if necessary); G6 849801 2026-10-31T00:00Z AmFam Field (if nec); G7 849800 2026-11-01T00:00Z AmFam (if nec)
+Series: MIL leads 2-0 (leagueRecord wins 2 losses 0)
+# Team season (R) https://statsapi.mlb.com/api/v1/teams/stats?season=2026&group=hitting,pitching&stats=season&sportIds=1&gameType=R
+MIL hitting: G162 R832 AVG.258 OBP.341 SLG.403 OPS.744 HR154 SB162
+TB  hitting: G162 R736 AVG.258 OBP.326 SLG.402 OPS.728 HR169 SB164
+# https://statsapi.mlb.com/api/v1/teams/158/stats?stats=season&group=pitching&season=2026&gameType=R
+MIL pitching: R618 ERA3.51 WHIP1.18 K/9 9.61 W103 L59 shutouts12
+# https://statsapi.mlb.com/api/v1/teams/139/stats?stats=season&group=pitching&season=2026&gameType=R
+TB  pitching: R650 ERA3.70 WHIP1.14 K/9 8.25 W98 L64 shutouts13
+# https://statsapi.mlb.com/api/v1/people?personIds=688107,642547&hydrate=stats(...)
+Gasser 2026 R: 21 G, 20 GS, 5-5, ERA 3.87, 109.1 IP, WHIP 1.19, K 103, BB 35, HR 15
+# https://statsapi.mlb.com/api/v1/people/642547/stats?stats=season&group=pitching&season=2026&gameType=R
+Peralta 2026 R total: 32 GS, 10-11, ERA 4.42, 169.0 IP, WHIP 1.33; NYM part 22 GS ERA 4.99; TB part 10 GS 5-2 ERA 3.25 WHIP 1.01 55.1 IP
